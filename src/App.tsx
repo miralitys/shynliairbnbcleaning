@@ -2321,7 +2321,7 @@ function App() {
                       type="text"
                       inputMode="numeric"
                       placeholder="05/13/2026"
-                      pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}"
+                      pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/[0-9]{4}"
                       title="Use MM/DD/YYYY, for example 05/13/2026"
                       className="h-12 rounded-full border-[#dddddd] bg-white font-bold"
                     />
@@ -2335,7 +2335,7 @@ function App() {
                       type="text"
                       inputMode="text"
                       placeholder="8:00 PM"
-                      pattern="(0?[1-9]|1[0-2]):[0-5][0-9]\\s?(AM|PM|am|pm)"
+                      pattern="(0?[1-9]|1[0-2]):[0-5][0-9] ?(AM|PM|am|pm)"
                       title="Use 12-hour time with AM or PM, for example 8:00 PM"
                       className="h-12 rounded-full border-[#dddddd] bg-white font-bold"
                     />
@@ -2347,7 +2347,7 @@ function App() {
                       type="text"
                       inputMode="text"
                       placeholder="4:00 PM"
-                      pattern="(0?[1-9]|1[0-2]):[0-5][0-9]\\s?(AM|PM|am|pm)"
+                      pattern="(0?[1-9]|1[0-2]):[0-5][0-9] ?(AM|PM|am|pm)"
                       title="Use 12-hour time with AM or PM, for example 4:00 PM"
                       className="h-12 rounded-full border-[#dddddd] bg-white font-bold"
                     />
