@@ -1245,8 +1245,12 @@ function fillCityTemplate(value: string, city: ServiceAreaCity) {
   return value.replaceAll("{city}", city.city)
 }
 
+function routeHref(pathname: string) {
+  return pathname === "/" ? "/" : `${pathname.replace(/\/$/, "")}/`
+}
+
 function canonicalFor(pathname: string) {
-  const cleanPath = pathname === "/" ? "" : pathname.replace(/\/$/, "")
+  const cleanPath = pathname === "/" ? "" : routeHref(pathname)
   return `https://shynliairbnbcleaning.com${cleanPath}`
 }
 
@@ -1463,10 +1467,10 @@ function SeoHeader() {
           </span>
         </a>
         <nav className="flex flex-wrap items-center gap-3 text-sm font-black text-[#717171]" aria-label="SEO page navigation">
-          <a href="/service-areas" className="hover:text-[#222222]">Service areas</a>
-          <a href="/airbnb-cleaning-cost" className="hover:text-[#222222]">Cost</a>
-          <a href="/airbnb-cleaning-checklist" className="hover:text-[#222222]">Checklist</a>
-          <a href="/faq" className="hover:text-[#222222]">FAQ</a>
+          <a href="/service-areas/" className="hover:text-[#222222]">Service areas</a>
+          <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cost</a>
+          <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
+          <a href="/faq/" className="hover:text-[#222222]">FAQ</a>
           <Button asChild className="h-11 rounded-full bg-[#ff385c] px-5 font-black text-white shadow-none hover:bg-[#e31c5f]">
             <a href={quoteUrl}>Get quote</a>
           </Button>
@@ -1501,30 +1505,30 @@ function SeoFooter() {
           <div>
             <h3 className="text-sm font-black text-[#222222]">Turnover help</h3>
             <div className="mt-4 grid gap-3">
-              <a href="/airbnb-cleaning" className="hover:text-[#222222]">Airbnb cleaning</a>
-              <a href="/short-term-rental-cleaning" className="hover:text-[#222222]">Short-term rental cleaning</a>
-              <a href="/vacation-rental-cleaning" className="hover:text-[#222222]">Vacation rental cleaning</a>
-              <a href="/airbnb-turnover-cleaning" className="hover:text-[#222222]">Turnover cleaning</a>
+              <a href="/airbnb-cleaning/" className="hover:text-[#222222]">Airbnb cleaning</a>
+              <a href="/short-term-rental-cleaning/" className="hover:text-[#222222]">Short-term rental cleaning</a>
+              <a href="/vacation-rental-cleaning/" className="hover:text-[#222222]">Vacation rental cleaning</a>
+              <a href="/airbnb-turnover-cleaning/" className="hover:text-[#222222]">Turnover cleaning</a>
             </div>
           </div>
           <div>
             <h3 className="text-sm font-black text-[#222222]">Host questions</h3>
             <div className="mt-4 grid gap-3">
-              <a href="/airbnb-cleaning-cost" className="hover:text-[#222222]">Cleaning cost</a>
-              <a href="/airbnb-cleaning-checklist" className="hover:text-[#222222]">Checklist</a>
-              <a href="/what-is-included-in-airbnb-cleaning" className="hover:text-[#222222]">What is included</a>
-              <a href="/faq" className="hover:text-[#222222]">FAQ</a>
+              <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cleaning cost</a>
+              <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
+              <a href="/what-is-included-in-airbnb-cleaning/" className="hover:text-[#222222]">What is included</a>
+              <a href="/faq/" className="hover:text-[#222222]">FAQ</a>
             </div>
           </div>
           <div>
             <h3 className="text-sm font-black text-[#222222]">Company</h3>
             <div className="mt-4 grid gap-3">
-              <a href="/service-areas" className="hover:text-[#222222]">Service areas</a>
+              <a href="/service-areas/" className="hover:text-[#222222]">Service areas</a>
               <a href="https://shynli.com/" className="hover:text-[#222222]">Main Shynli site</a>
               <a href={quoteUrl} className="hover:text-[#222222]">Request a quote</a>
-              <a href="/privacy-policy" className="hover:text-[#222222]">Privacy Policy</a>
-              <a href="/terms-of-service" className="hover:text-[#222222]">Terms of Service</a>
-              <a href="/cancellation-policy" className="hover:text-[#222222]">Cancellation Policy</a>
+              <a href="/privacy-policy/" className="hover:text-[#222222]">Privacy Policy</a>
+              <a href="/terms-of-service/" className="hover:text-[#222222]">Terms of Service</a>
+              <a href="/cancellation-policy/" className="hover:text-[#222222]">Cancellation Policy</a>
             </div>
           </div>
         </div>
@@ -1637,7 +1641,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {seoHubPages.filter((related) => related.path !== page.path).slice(0, 8).map((related) => (
-              <a key={related.path} href={related.path} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+              <a key={related.path} href={routeHref(related.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
                 <span>{related.title}</span>
                 <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
               </a>
@@ -1688,7 +1692,7 @@ function ServiceAreasPage() {
                     const citySlug = city.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")
 
                     return (
-                      <a key={city} href={`/service-areas/${citySlug}`} className="flex min-h-11 items-center justify-between rounded-full border border-[#dddddd] bg-white px-4 text-sm font-black transition-colors hover:border-[#ff385c] hover:text-[#ff385c]">
+                      <a key={city} href={routeHref(`/service-areas/${citySlug}`)} className="flex min-h-11 items-center justify-between rounded-full border border-[#dddddd] bg-white px-4 text-sm font-black transition-colors hover:border-[#ff385c] hover:text-[#ff385c]">
                         {city}
                         <ArrowRight className="size-4" />
                       </a>
@@ -1818,14 +1822,14 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
             </div>
           </div>
           {cityServicePages.map((service) => (
-            <a key={service.slug} href={`/service-areas/${city.slug}/${service.slug}`} className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#ff385c]">
+            <a key={service.slug} href={routeHref(`/service-areas/${city.slug}/${service.slug}`)} className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#ff385c]">
               <p className="text-sm font-black text-[#ff385c]">Local service page</p>
               <h2 className="mt-3 text-3xl font-black">{service.label} in {city.city}</h2>
               <p className="mt-4 text-base font-bold leading-7 text-[#717171]">See the local page built around host questions, turnover scope, timing, supplies, and check-in readiness.</p>
               <ArrowRight className="mt-5 size-5 text-[#ff385c] transition-transform group-hover:translate-x-1" />
             </a>
           ))}
-          <a href="/service-areas" className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#ff385c]">
+          <a href="/service-areas/" className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#ff385c]">
             <p className="text-sm font-black text-[#ff385c]">All cities</p>
             <h2 className="mt-3 text-3xl font-black">Back to service areas</h2>
             <p className="mt-4 text-base font-bold leading-7 text-[#717171]">Compare nearby cities and choose the closest page for the listing you want quoted.</p>
@@ -1836,7 +1840,7 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
             <h2 className="mt-3 text-3xl font-black">Compare nearby coverage before you request a quote.</h2>
             <div className="mt-5 flex flex-wrap gap-3">
               {profile.nearby.map((nearbyCity) => (
-                <a key={nearbyCity.slug} href={`/service-areas/${nearbyCity.slug}`} className="inline-flex min-h-11 items-center rounded-full border border-[#dddddd] px-4 text-sm font-black transition-colors hover:border-[#ff385c] hover:text-[#ff385c]">
+                <a key={nearbyCity.slug} href={routeHref(`/service-areas/${nearbyCity.slug}`)} className="inline-flex min-h-11 items-center rounded-full border border-[#dddddd] px-4 text-sm font-black transition-colors hover:border-[#ff385c] hover:text-[#ff385c]">
                   {nearbyCity.city}
                 </a>
               ))}
@@ -1957,23 +1961,23 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Choose the page closest to the host problem.</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <a href={`/service-areas/${city.slug}`} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+            <a href={routeHref(`/service-areas/${city.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
               <span>{city.city} service area</span>
               <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
             </a>
             {cityServicePages.filter((related) => related.slug !== service.slug).map((related) => (
-              <a key={related.slug} href={`/service-areas/${city.slug}/${related.slug}`} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+              <a key={related.slug} href={routeHref(`/service-areas/${city.slug}/${related.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
                 <span>{related.label} in {city.city}</span>
                 <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
               </a>
             ))}
             {profile.nearby.slice(0, 3).map((nearbyCity) => (
-              <a key={nearbyCity.slug} href={`/service-areas/${nearbyCity.slug}/${service.slug}`} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+              <a key={nearbyCity.slug} href={routeHref(`/service-areas/${nearbyCity.slug}/${service.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
                 <span>{service.label} in {nearbyCity.city}</span>
                 <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
               </a>
             ))}
-            <a href="/service-areas" className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+            <a href="/service-areas/" className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
               <span>All service areas</span>
               <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
             </a>
@@ -2278,7 +2282,7 @@ function App() {
                   {group.cities.map((city) => (
                     <a
                       key={city}
-                      href={`/service-areas/${citySlugFor(city)}`}
+                      href={routeHref(`/service-areas/${citySlugFor(city)}`)}
                       className="inline-flex min-h-9 items-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black text-[#222222] transition-colors hover:border-[#ff385c] hover:text-[#ff385c]"
                     >
                       {city}
@@ -2418,7 +2422,7 @@ function App() {
                   <a href="https://shynli.com/" className="hover:text-[#222222]">Main Shynli site</a>
                   <a href="#scope" className="hover:text-[#222222]">Airbnb cleaning</a>
                   <a href="#turnover" className="hover:text-[#222222]">Short-term rentals</a>
-                  <a href="/service-areas" className="hover:text-[#222222]">Service areas</a>
+                  <a href="/service-areas/" className="hover:text-[#222222]">Service areas</a>
                   <a href={quoteUrl} className="hover:text-[#222222]">Contact</a>
                 </div>
               </div>
@@ -2428,9 +2432,9 @@ function App() {
           <div className="mt-12 flex flex-col gap-4 border-t border-[#dddddd] pt-6 text-sm font-bold text-[#717171] md:flex-row md:items-center md:justify-between">
             <p>© 2026 ShynliAirbnbCleaning.com. A Shynli service concept.</p>
             <div className="flex flex-wrap gap-4">
-              <a href="/privacy-policy" className="hover:text-[#222222]">Privacy</a>
-              <a href="/terms-of-service" className="hover:text-[#222222]">Terms</a>
-              <a href="/cancellation-policy" className="hover:text-[#222222]">Cancellation</a>
+              <a href="/privacy-policy/" className="hover:text-[#222222]">Privacy</a>
+              <a href="/terms-of-service/" className="hover:text-[#222222]">Terms</a>
+              <a href="/cancellation-policy/" className="hover:text-[#222222]">Cancellation</a>
             </div>
           </div>
         </div>

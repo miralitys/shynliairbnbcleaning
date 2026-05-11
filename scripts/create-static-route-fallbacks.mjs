@@ -16,10 +16,7 @@ const routes = [...sitemap.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)]
 
 for (const route of routes) {
   const cleanRoute = route.replace(/^\/+/, "")
-  const hasChildren = routes.some((candidate) => candidate.startsWith(`${route}/`))
-  const routeFile = hasChildren
-    ? path.join(distDir, cleanRoute, "index.html")
-    : path.join(distDir, cleanRoute)
+  const routeFile = path.join(distDir, cleanRoute, "index.html")
 
   mkdirSync(path.dirname(routeFile), { recursive: true })
   copyFileSync(indexPath, routeFile)
