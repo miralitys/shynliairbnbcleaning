@@ -277,7 +277,7 @@ const legalPages = {
   },
 } satisfies Record<string, { title: string; updated: string; intro: string; sections: { title: string; items: string[] }[] }>
 
-function ShinyBadge({ children }: { children: string }) {
+function ShynliBadge({ children }: { children: string }) {
   return (
     <span className="inline-flex min-h-9 items-center rounded-full border border-[#dddddd] bg-white px-4 text-xs font-black text-[#222222] shadow-[0_6px_18px_rgba(0,0,0,0.05)]">
       {children}
@@ -387,7 +387,7 @@ const coreSeoHubPages: SeoPageData[] = [
     description: "Airbnb cleaning for hosts who need a guest-ready home, clear timing, linen notes, restocking checks, and photo confirmation before check-in.",
     eyebrow: "Airbnb cleaning",
     headline: "Airbnb cleaning that helps protect the next review.",
-    intro: "Guests notice bathrooms, beds, floors, and whether the home feels like the photos. Shiny helps hosts reset the listing between stays with a clear scope, realistic arrival window, and proof after the clean.",
+    intro: "Guests notice bathrooms, beds, floors, and whether the home feels like the photos. Shynli helps hosts reset the listing between stays with a clear scope, realistic arrival window, and proof after the clean.",
     promises: ["Guest-facing rooms reset before arrival", "Linen and towel details kept visible", "Photo handoff available after the visit"],
     sections: [
       ["What is included?", "Kitchen, bathrooms, floors, surfaces, trash, beds, towels, and guest-facing details are handled according to the confirmed turnover scope."],
@@ -415,7 +415,7 @@ const coreSeoHubPages: SeoPageData[] = [
     description: "Vacation rental cleaning with guest setup, turnover timing, restocking notes, and photo-ready details for hosts around the Shynli service map.",
     eyebrow: "Vacation rental cleaning",
     headline: "Vacation rental cleaning that makes the stay feel expected.",
-    intro: "Vacation guests arrive with fresh eyes. Shiny focuses on the parts of the home that shape first impressions: clean bathrooms, calm bedrooms, a reset kitchen, staged towels, and supplies that do not feel forgotten.",
+    intro: "Vacation guests arrive with fresh eyes. Shynli focuses on the parts of the home that shape first impressions: clean bathrooms, calm bedrooms, a reset kitchen, staged towels, and supplies that do not feel forgotten.",
     promises: ["Arrival-ready rooms", "Cleaner guest setup", "Notes when something needs attention"],
     sections: [
       ["Guest-first reset", "The clean is planned around what a guest sees when they walk in, not just what looks finished from a distance."],
@@ -429,7 +429,7 @@ const coreSeoHubPages: SeoPageData[] = [
     description: "Airbnb turnover cleaning for same-day and recurring guest resets with beds, bathrooms, kitchen, trash, restocking notes, and photo handoff.",
     eyebrow: "Airbnb turnover cleaning",
     headline: "Turnovers planned around the clock, not wishful thinking.",
-    intro: "A same-day turnover only works when the route, access, property size, linen plan, and guest timing all fit. Shiny starts by checking the real window, then resets the home for arrival.",
+    intro: "A same-day turnover only works when the route, access, property size, linen plan, and guest timing all fit. Shynli starts by checking the real window, then resets the home for arrival.",
     promises: ["Checkout-to-check-in planning", "Beds, towels, trash, kitchen, and bathrooms", "Ready-status confirmation"],
     sections: [
       ["Same-day reality check", "Before a tight booking, we look at checkout, check-in, access, parking, laundry expectations, and the size of the property."],
@@ -446,7 +446,7 @@ const coreSeoHubPages: SeoPageData[] = [
     intro: "Whether the booking comes through VRBO, Airbnb, or another platform, the promise is the same: the next guest should find a clean, stocked, calm home that matches the listing.",
     promises: ["Platform-neutral turnover support", "Guest-ready cleaning scope", "Issue notes after service"],
     sections: [
-      ["For host-managed homes", "Shiny can follow your house notes, owner-closet instructions, supply plan, and check-in priorities."],
+      ["For host-managed homes", "Shynli can follow your house notes, owner-closet instructions, supply plan, and check-in priorities."],
       ["For recurring rentals", "A stable turnover rhythm helps protect reviews, reduce emergency texts, and keep the home from slowly falling behind."],
       ["For remote owners", "Photos and notes make it easier to spot what needs attention without driving to the property."],
     ],
@@ -485,7 +485,7 @@ const coreSeoHubPages: SeoPageData[] = [
     description: "Airbnb cleaning for hosts who want fewer check-in surprises, better turnover notes, recurring cleaning support, and guest-ready homes.",
     eyebrow: "For hosts",
     headline: "Cleaning support for hosts who cannot babysit every turnover.",
-    intro: "Hosting gets easier when cleaning is not a mystery between checkout and check-in. Shiny helps turn the turnover into a repeatable system with scope, timing, supplies, and confirmation.",
+    intro: "Hosting gets easier when cleaning is not a mystery between checkout and check-in. Shynli helps turn the turnover into a repeatable system with scope, timing, supplies, and confirmation.",
     promises: ["Less last-minute guessing", "Cleaner handoff after each visit", "Recurring notes for repeat properties"],
     sections: [
       ["For local hosts", "Spend less time checking basics and more time improving the listing, guest communication, and booking quality."],
@@ -513,7 +513,7 @@ const coreSeoHubPages: SeoPageData[] = [
     description: "Linen and restocking support for Airbnb turnovers, including beds, towels, paper goods, toiletries, coffee, and host supply notes.",
     eyebrow: "Linens and restock",
     headline: "Beds, towels, and supplies should not be the weak point.",
-    intro: "Guests often judge a rental by the details they touch first: sheets, towels, soap, paper goods, coffee, and whether the home feels prepared. Shiny can include linen and restocking notes in the confirmed scope.",
+    intro: "Guests often judge a rental by the details they touch first: sheets, towels, soap, paper goods, coffee, and whether the home feels prepared. Shynli can include linen and restocking notes in the confirmed scope.",
     promises: ["Beds made for arrival", "Towels staged clearly", "Low supplies called out"],
     sections: [
       ["Linen planning", "Confirm where clean linens are stored, where used sets go, how beds should be made, and what towel setup guests expect."],
@@ -544,7 +544,7 @@ const hostIntentPages: SeoPageData[] = [
     description: "Airbnb cleaning for property managers who need repeatable turnovers, photo notes, supply visibility, and cleaner handoffs across multiple rentals.",
     eyebrow: "Property managers",
     headline: "Turnover cleaning that helps property managers stay ahead.",
-    intro: "When you manage more than one rental, cleaning has to be predictable. Shiny helps property managers standardize guest-ready resets, photo notes, supply checks, and issue reporting across repeated bookings.",
+    intro: "When you manage more than one rental, cleaning has to be predictable. Shynli helps property managers standardize guest-ready resets, photo notes, supply checks, and issue reporting across repeated bookings.",
     promises: ["Repeatable turnover scope", "Cleaner notes after each visit", "Useful for multi-listing operations"],
     sections: [
       ["What managers need", "Clear expectations, cleaner arrival windows, supply visibility, and fewer surprise messages right before check-in."],
@@ -558,7 +558,7 @@ const hostIntentPages: SeoPageData[] = [
     description: "Airbnb cleaning for co-hosts who coordinate turnovers, guest readiness, cleaner notes, access, linens, restocking, and photo confirmation.",
     eyebrow: "For co-hosts",
     headline: "Cleaning support that keeps co-hosting ahead of guest problems.",
-    intro: "Co-hosts are often the person who gets the guest message when something feels off. Shiny helps make the cleaning handoff clearer before the next arrival.",
+    intro: "Co-hosts are often the person who gets the guest message when something feels off. Shynli helps make the cleaning handoff clearer before the next arrival.",
     promises: ["Cleaner scope for co-hosts", "Guest-ready setup", "Photo and supply notes"],
     sections: [
       ["What co-hosts can send", "Listing ZIP, room count, guest times, access details, supply standards, linen plan, and the issues guests mention most often."],
@@ -572,7 +572,7 @@ const hostIntentPages: SeoPageData[] = [
     description: "Airbnb cleaning for remote hosts who need photo handoff, supply notes, ready-status updates, and reliable turnover communication.",
     eyebrow: "Remote hosts",
     headline: "Know the listing is ready without driving there.",
-    intro: "Remote hosting depends on trust and visibility. Shiny can help you see the important parts of the turnover: rooms, beds, bathrooms, supplies, visible damage, and ready status.",
+    intro: "Remote hosting depends on trust and visibility. Shynli can help you see the important parts of the turnover: rooms, beds, bathrooms, supplies, visible damage, and ready status.",
     promises: ["Remote-ready photo notes", "Supply visibility", "Guest arrival confidence"],
     sections: [
       ["What you can review", "Photos can show rooms, towels, bathrooms, kitchen, entry areas, supplies, and any visible concern before the next guest arrives."],
@@ -600,7 +600,7 @@ const hostIntentPages: SeoPageData[] = [
     description: "Airbnb cleaning before check-in with guest-facing reset, beds, bathrooms, kitchen, supplies, timing, and ready-status confirmation.",
     eyebrow: "Before check-in",
     headline: "The last clean before check-in is the one guests judge.",
-    intro: "The hours before arrival are where reviews are protected or lost. Shiny focuses on the visible details guests notice when they walk in.",
+    intro: "The hours before arrival are where reviews are protected or lost. Shynli focuses on the visible details guests notice when they walk in.",
     promises: ["Arrival-focused reset", "Guest-facing details", "Ready-status update"],
     sections: [
       ["What matters most", "Bathrooms, beds, towels, kitchen, floors, trash, entry condition, odors, and whether supplies feel prepared."],
@@ -703,7 +703,7 @@ const hostIntentPages: SeoPageData[] = [
     sections: [
       ["What to define", "Where clean linens are stored, where used linens go, how beds should be made, and how many towels each guest should see."],
       ["What causes problems", "Not enough spare sets, locked closets, stains, unclear bed sizes, or assuming laundry fits every same-day turnover."],
-      ["How Shiny can help", "Include linen handling in the confirmed scope so the cleaner is working from the same house standard each time."],
+      ["How Shynli can help", "Include linen handling in the confirmed scope so the cleaner is working from the same house standard each time."],
     ],
   },
   {
@@ -768,7 +768,7 @@ const hostIntentPages: SeoPageData[] = [
     description: "Airbnb cleaning for Superhosts who need consistent guest-ready turnovers, review protection, supply checks, and cleaner handoff notes.",
     eyebrow: "Review protection",
     headline: "Superhost-level cleaning is really consistency.",
-    intro: "Great hosts protect small details because guests notice them. Shiny helps make the turnover standard repeatable: bathrooms, beds, towels, kitchen, supplies, and ready confirmation.",
+    intro: "Great hosts protect small details because guests notice them. Shynli helps make the turnover standard repeatable: bathrooms, beds, towels, kitchen, supplies, and ready confirmation.",
     promises: ["Consistent turnover standard", "Review-sensitive details", "Photo notes available"],
     sections: [
       ["What matters to guests", "Clean bathrooms, fresh-looking beds, stocked basics, no trash, no obvious dust, and a space that feels like the photos."],
@@ -782,7 +782,7 @@ const hostIntentPages: SeoPageData[] = [
     description: "Airbnb cleaning for multi-unit hosts who need repeatable turnovers, cleaner notes, supply standards, and scalable guest-ready routines.",
     eyebrow: "Multi-unit hosts",
     headline: "More units need a cleaner system, not more guessing.",
-    intro: "When one host manages multiple units, the cleaning process has to be clear enough to repeat. Shiny helps standardize the things guests notice and the notes hosts need after each stay.",
+    intro: "When one host manages multiple units, the cleaning process has to be clear enough to repeat. Shynli helps standardize the things guests notice and the notes hosts need after each stay.",
     promises: ["Repeatable unit standards", "Cleaner handoff notes", "Better portfolio visibility"],
     sections: [
       ["What to standardize", "Bed setup, towel counts, supply minimums, access instructions, trash rules, photo expectations, and issue reporting."],
@@ -941,7 +941,7 @@ const hostIntentPages: SeoPageData[] = [
     sections: [
       ["What to ask first", "Can the cleaner reach the listing, fit checkout-to-check-in timing, and follow your house standard?"],
       ["What to compare", "Included tasks, linens, restocking, photo handoff, issue notes, recurring availability, and what happens if guests leave late."],
-      ["How Shiny checks fit", "Start with ZIP, property details, guest times, access, laundry expectations, and supply needs before relying on the booking."],
+      ["How Shynli checks fit", "Start with ZIP, property details, guest times, access, laundry expectations, and supply needs before relying on the booking."],
     ],
   },
   {
@@ -1110,7 +1110,7 @@ const cityServicePages = [
     description: "Airbnb cleaning in {city}, IL for hosts who need turnover cleaning, linen setup, restocking notes, photo handoff, and ready-status confirmation.",
     eyebrow: "Airbnb cleaning in {city}",
     headline: "A cleaner turnover for your next {city} guest.",
-    intro: "Shiny helps {city} hosts with the parts of an Airbnb turnover that matter most before check-in: bathrooms, beds, kitchen, floors, trash, towels, supplies, visible issues, and ready-status confirmation.",
+    intro: "Shynli helps {city} hosts with the parts of an Airbnb turnover that matter most before check-in: bathrooms, beds, kitchen, floors, trash, towels, supplies, visible issues, and ready-status confirmation.",
     promises: ["Guest-ready reset", "Linen and supply notes", "Photo handoff available"],
     steps: [
       ["Before arrival", "Confirm checkout, check-in, access, parking, and whether the home can be reset in time."],
@@ -1154,7 +1154,7 @@ const cityServicePages = [
     description: "Vacation rental cleaning in {city}, IL with guest-ready rooms, bathroom and kitchen reset, supply notes, linens, and photo handoff options.",
     eyebrow: "Vacation rental cleaning in {city}",
     headline: "Vacation rental cleaning in {city} that helps the stay feel prepared.",
-    intro: "Vacation guests arrive expecting the home to feel complete. Shiny helps {city} hosts reset the rooms, supplies, towels, kitchen, and first-impression details before the next stay.",
+    intro: "Vacation guests arrive expecting the home to feel complete. Shynli helps {city} hosts reset the rooms, supplies, towels, kitchen, and first-impression details before the next stay.",
     promises: ["Arrival-ready rooms", "Vacation guest setup", "Issue notes after checkout"],
     steps: [
       ["First impression", "Entry areas, odors, floors, bathrooms, bedrooms, towels, and kitchen details are cleaned with guest arrival in mind."],
@@ -1176,7 +1176,7 @@ const cityServicePages = [
     description: "Airbnb turnover cleaning in {city}, IL for checkout-to-check-in resets, bathrooms, beds, kitchen, trash, linens, supplies, and ready status.",
     eyebrow: "Airbnb turnover cleaning in {city}",
     headline: "Airbnb turnover cleaning in {city} for the next check-in.",
-    intro: "A turnover is about timing and confidence. Shiny helps {city} hosts move from checkout to check-in with a cleaner reset, clearer notes, and fewer last-minute surprises.",
+    intro: "A turnover is about timing and confidence. Shynli helps {city} hosts move from checkout to check-in with a cleaner reset, clearer notes, and fewer last-minute surprises.",
     promises: ["Checkout-to-check-in reset", "Ready-status focus", "Host notes after service"],
     steps: [
       ["Window check", "We start with checkout, check-in, access, parking, laundry, and property size so the clean is realistic."],
@@ -1586,7 +1586,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
             <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">{page.intro}</p>
             <div className="mt-7 flex flex-wrap gap-2">
               {page.promises.map((promise) => (
-                <ShinyBadge key={promise}>{promise}</ShinyBadge>
+                <ShynliBadge key={promise}>{promise}</ShynliBadge>
               ))}
             </div>
           </div>
@@ -1713,7 +1713,7 @@ function ServiceAreasPage() {
               Your city is the start. The turnover window decides the clean.
             </h2>
             <p className="mt-5 text-lg font-bold leading-8 text-[#717171]">
-              Service-area coverage does not mean every last-minute request is automatically safe. Send the listing ZIP, guest times, access notes, property size, linen plan, and restocking needs so Shiny can confirm whether the route and scope work.
+              Service-area coverage does not mean every last-minute request is automatically safe. Send the listing ZIP, guest times, access notes, property size, linen plan, and restocking needs so Shynli can confirm whether the route and scope work.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -1768,12 +1768,12 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
               Airbnb cleaning in {city.city} for guest-ready turnovers.
             </h1>
             <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">
-              If your listing is in {city.city}, start with the turnover window. Shiny can help reset bathrooms, bedrooms, kitchen, floors, trash, guest supplies, and host notes before the next check-in.
+              If your listing is in {city.city}, start with the turnover window. Shynli can help reset bathrooms, bedrooms, kitchen, floors, trash, guest supplies, and host notes before the next check-in.
             </p>
             <div className="mt-7 flex flex-wrap gap-2">
-              <ShinyBadge>{`${city.city} Airbnb cleaning`}</ShinyBadge>
-              <ShinyBadge>Short-term rental turnover</ShinyBadge>
-              <ShinyBadge>Photo handoff available</ShinyBadge>
+              <ShynliBadge>{`${city.city} Airbnb cleaning`}</ShynliBadge>
+              <ShynliBadge>Short-term rental turnover</ShynliBadge>
+              <ShynliBadge>Photo handoff available</ShynliBadge>
             </div>
           </div>
           <div className="rounded-[32px] border border-[#dddddd] bg-[#f7f7f7] p-5 shadow-[0_20px_70px_rgba(0,0,0,0.10)]">
@@ -1891,7 +1891,7 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
           </p>
           <div className="mt-7 flex flex-wrap gap-2">
             {service.promises.map((promise) => (
-              <ShinyBadge key={promise}>{promise}</ShinyBadge>
+              <ShynliBadge key={promise}>{promise}</ShynliBadge>
             ))}
           </div>
         </div>
@@ -2077,11 +2077,11 @@ function App() {
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
           <div className="max-w-4xl">
             <div className="mb-5 flex flex-wrap gap-2">
-              <ShinyBadge>For Airbnb and VRBO hosts</ShinyBadge>
-              <ShinyBadge>Guest-ready turnover support</ShinyBadge>
+              <ShynliBadge>For Airbnb and VRBO hosts</ShynliBadge>
+              <ShynliBadge>Guest-ready turnover support</ShynliBadge>
             </div>
             <h1 className="max-w-4xl text-[clamp(3.4rem,7.4vw,8.1rem)] font-black leading-[0.84] tracking-normal">
-              Shiny Airbnb Cleaning
+              Shynli Airbnb Cleaning
             </h1>
             <p className="mt-6 max-w-3xl text-[clamp(1.7rem,3.4vw,4rem)] font-black leading-[0.94]">
               Airbnb turnovers before the next guest arrives.
@@ -2198,7 +2198,7 @@ function App() {
               </h2>
             </div>
             <p className="text-lg font-bold leading-8 text-[#717171]">
-              Choose what the property needs before the visit, then confirm what Shiny can support for the route, timing, and listing.
+              Choose what the property needs before the visit, then confirm what Shynli can support for the route, timing, and listing.
             </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-4">
@@ -2303,7 +2303,7 @@ function App() {
               Start with the details that decide the clean.
             </h2>
             <p className="mt-5 text-lg font-bold leading-8 text-[#717171]">
-              Send the ZIP, turnover date, guest times, and what you need handled. Shiny can confirm the route and scope before you rely on the booking.
+              Send the ZIP, turnover date, guest times, and what you need handled. Shynli can confirm the route and scope before you rely on the booking.
             </p>
           </div>
           <Card className="rounded-[28px] border-[#dddddd] bg-white shadow-[0_12px_48px_rgba(0,0,0,0.10)]">
