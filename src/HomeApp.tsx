@@ -113,6 +113,80 @@ const serviceAreaCities = serviceAreaGroups.flatMap((group) =>
   })),
 )
 
+const homeGuideGroups = [
+  {
+    label: "Core cleaning pages",
+    pages: [
+      ["Airbnb Cleaning", "/airbnb-cleaning"],
+      ["Short-Term Rental Cleaning", "/short-term-rental-cleaning"],
+      ["Vacation Rental Cleaning", "/vacation-rental-cleaning"],
+      ["Airbnb Turnover Cleaning", "/airbnb-turnover-cleaning"],
+      ["VRBO Cleaning", "/vrbo-cleaning"],
+      ["Airbnb Cleaning Cost", "/airbnb-cleaning-cost"],
+      ["Airbnb Cleaning Checklist", "/airbnb-cleaning-checklist"],
+      ["Airbnb Cleaning for Hosts", "/airbnb-cleaning-for-hosts"],
+      ["Photo Handoff Cleaning", "/photo-handoff-cleaning"],
+      ["Linen and Restocking Service", "/linen-and-restocking-service"],
+      ["Airbnb Cleaning FAQ", "/faq"],
+    ],
+  },
+  {
+    label: "Host situations",
+    pages: [
+      ["Airbnb Cleaning for Property Managers", "/cleaning-for-property-managers"],
+      ["Airbnb Cleaning for Co-Hosts", "/airbnb-cleaning-for-cohosts"],
+      ["Airbnb Cleaning for Remote Hosts", "/airbnb-cleaning-for-remote-hosts"],
+      ["Airbnb Cleaning for New Hosts", "/airbnb-cleaning-for-new-hosts"],
+      ["Airbnb Cleaning Before Check-In", "/airbnb-cleaning-before-check-in"],
+      ["Airbnb Cleaning After Checkout", "/airbnb-cleaning-after-checkout"],
+      ["Same-Day Airbnb Turnover", "/same-day-airbnb-turnover"],
+      ["Airbnb Deep Cleaning", "/airbnb-deep-cleaning"],
+      ["Airbnb Cleaning vs Regular Cleaning", "/airbnb-cleaning-vs-regular-cleaning"],
+      ["Airbnb Cleaning vs Deep Cleaning", "/airbnb-cleaning-vs-deep-cleaning"],
+      ["Airbnb Laundry Service", "/airbnb-laundry-service"],
+      ["Airbnb Linen Service", "/airbnb-linen-service"],
+      ["Airbnb Restocking Service", "/airbnb-restocking-service"],
+      ["Airbnb Cleaning With Photo Report", "/airbnb-cleaning-with-photo-report"],
+      ["Airbnb Cleaning Supply Check", "/airbnb-cleaning-supply-check"],
+      ["Airbnb Cleaning Damage Report", "/airbnb-cleaning-damage-report"],
+      ["Airbnb Cleaning for Superhosts", "/airbnb-cleaning-for-superhosts"],
+      ["Airbnb Cleaning for Multi-Unit Hosts", "/airbnb-cleaning-for-multi-unit-hosts"],
+    ],
+  },
+  {
+    label: "Pricing, scope, and timing",
+    pages: [
+      ["How Much Does Airbnb Cleaning Cost?", "/how-much-does-airbnb-cleaning-cost"],
+      ["How Long Does Airbnb Cleaning Take?", "/how-long-does-airbnb-cleaning-take"],
+      ["What Is Included in Airbnb Cleaning?", "/what-is-included-in-airbnb-cleaning"],
+      ["Do Airbnb Cleaners Change Linens?", "/do-airbnb-cleaners-change-linens"],
+      ["Do Airbnb Cleaners Restock Supplies?", "/do-airbnb-cleaners-restock-supplies"],
+      ["How to Prepare for an Airbnb Cleaner", "/how-to-prepare-for-airbnb-cleaner"],
+      ["Airbnb Turnover Checklist", "/airbnb-turnover-checklist"],
+      ["Short-Term Rental Turnover Checklist", "/short-term-rental-turnover-checklist"],
+      ["Vacation Rental Turnover Checklist", "/vacation-rental-turnover-checklist"],
+      ["Airbnb Host Cleaning Guide", "/airbnb-host-cleaning-guide"],
+      ["Airbnb Cleaning Service Near Me", "/airbnb-cleaning-service-near-me"],
+    ],
+  },
+  {
+    label: "Local and trust guides",
+    pages: [
+      ["Short-Term Rental Cleaning Service Near Me", "/short-term-rental-cleaning-service-near-me"],
+      ["Vacation Rental Cleaning Service Near Me", "/vacation-rental-cleaning-service-near-me"],
+      ["Airbnb Cleaning Company", "/airbnb-cleaning-company"],
+      ["Vacation Rental Cleaning Company", "/vacation-rental-cleaning-company"],
+      ["Airbnb Cleaning Pricing Guide", "/airbnb-cleaning-pricing-guide"],
+      ["Airbnb Cleaning Fee Guide", "/airbnb-cleaning-fee-guide"],
+      ["Airbnb Cleaning Reviews Guide", "/airbnb-cleaning-reviews-guide"],
+      ["Airbnb Cleaning Photos Guide", "/airbnb-cleaning-photos-guide"],
+      ["Airbnb Cleaning Supplies Guide", "/airbnb-cleaning-supplies-guide"],
+      ["Airbnb Cleaning Maintenance Notes", "/airbnb-cleaning-maintenance-notes"],
+      ["Airbnb Cleaning Between Guests", "/airbnb-cleaning-between-guests"],
+    ],
+  },
+] as const
+
 export const homeStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -471,6 +545,35 @@ function HomeApp() {
         </div>
       </section>
 
+      <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div className="lg:sticky lg:top-24">
+            <p className="mb-4 text-sm font-black text-[#d7043f]">Host guides</p>
+            <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
+              Find the exact Airbnb cleaning question you are trying to solve.
+            </h2>
+            <p className="mt-5 text-lg font-bold leading-8 text-[#717171]">
+              Use these guides to understand what to book, what to prepare, and which details affect the quote before the next guest arrives.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {homeGuideGroups.map((group) => (
+              <div key={group.label} className="rounded-[24px] border border-[#dddddd] bg-white p-5">
+                <p className="text-sm font-black text-[#d7043f]">{group.label}</p>
+                <div className="mt-4 grid gap-2">
+                  {group.pages.map(([title, pathname]) => (
+                    <a key={pathname} href={routeHref(pathname)} className="group flex min-h-11 items-center justify-between rounded-full border border-[#dddddd] px-4 text-sm font-black transition-colors hover:border-[#d7043f] hover:text-[#d7043f]">
+                      <span>{title}</span>
+                      <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="areas" className="border-y border-[#dddddd] bg-white px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-[0.76fr_1fr] md:items-end">
@@ -566,9 +669,18 @@ function HomeApp() {
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {["Cleaning", "Linens", "Restock"].map((item) => (
-                    <button key={item} type="button" className="min-h-12 rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors first:border-[#d7043f] first:bg-[#d7043f] first:text-white hover:border-[#d7043f]">
-                      {item}
-                    </button>
+                    <label key={item} className="cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="need"
+                        value={item}
+                        defaultChecked={item === "Cleaning"}
+                        className="peer sr-only"
+                      />
+                      <span className="flex min-h-12 items-center justify-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors peer-checked:border-[#d7043f] peer-checked:bg-[#d7043f] peer-checked:text-white hover:border-[#d7043f]">
+                        {item}
+                      </span>
+                    </label>
                   ))}
                 </div>
                 <Button type="submit" className="h-13 rounded-full bg-[#d7043f] text-base font-black text-white shadow-none hover:bg-[#b51645]">

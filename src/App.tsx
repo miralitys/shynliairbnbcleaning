@@ -1096,6 +1096,25 @@ const hostIntentPages: SeoPageData[] = [
 
 const seoHubPages: SeoPageData[] = [...coreSeoHubPages, ...hostIntentPages]
 
+const seoGuideGroups = [
+  {
+    label: "Core cleaning pages",
+    pages: coreSeoHubPages.slice(0, 11),
+  },
+  {
+    label: "Host situations",
+    pages: hostIntentPages.slice(0, 18),
+  },
+  {
+    label: "Pricing, scope, and timing",
+    pages: hostIntentPages.slice(18, 29),
+  },
+  {
+    label: "Checklists and local intent",
+    pages: hostIntentPages.slice(29),
+  },
+]
+
 const cityServicePages = [
   {
     slug: "airbnb-cleaning",
@@ -1241,6 +1260,13 @@ function fillCityTemplate(value: string, city: ServiceAreaCity) {
 
 function routeHref(pathname: string) {
   return pathname === "/" ? "/" : `${pathname.replace(/\/$/, "")}/`
+}
+
+function getRelatedSeoHubPages(page: SeoHubPageData, limit = 8) {
+  const pageIndex = seoHubPages.findIndex((item) => item.path === page.path)
+  if (pageIndex < 0) return seoHubPages.filter((item) => item.path !== page.path).slice(0, limit)
+
+  return Array.from({ length: seoHubPages.length - 1 }, (_, index) => seoHubPages[(pageIndex + index + 1) % seoHubPages.length]).slice(0, limit)
 }
 
 function canonicalFor(pathname: string) {
@@ -1760,7 +1786,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Keep moving through the host questions.</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            {seoHubPages.filter((related) => related.path !== page.path).slice(0, 8).map((related) => (
+            {getRelatedSeoHubPages(page).map((related) => (
               <a key={related.path} href={routeHref(related.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
                 <span>{related.title}</span>
                 <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
@@ -2413,6 +2439,35 @@ function App({ initialPath }: AppProps = {}) {
         </div>
       </section>
 
+      <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-16 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div className="lg:sticky lg:top-24">
+            <p className="mb-4 text-sm font-black text-[#d7043f]">Host guides</p>
+            <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
+              Find the exact Airbnb cleaning question you are trying to solve.
+            </h2>
+            <p className="mt-5 text-lg font-bold leading-8 text-[#717171]">
+              Use these guides to understand what to book, what to prepare, and which details affect the quote before the next guest arrives.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {seoGuideGroups.map((group) => (
+              <div key={group.label} className="rounded-[24px] border border-[#dddddd] bg-white p-5">
+                <p className="text-sm font-black text-[#d7043f]">{group.label}</p>
+                <div className="mt-4 grid gap-2">
+                  {group.pages.map((page) => (
+                    <a key={page.path} href={routeHref(page.path)} className="group flex min-h-11 items-center justify-between rounded-full border border-[#dddddd] px-4 text-sm font-black transition-colors hover:border-[#d7043f] hover:text-[#d7043f]">
+                      <span>{page.title}</span>
+                      <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="areas" className="border-y border-[#dddddd] bg-white px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-[0.76fr_1fr] md:items-end">
@@ -2508,9 +2563,18 @@ function App({ initialPath }: AppProps = {}) {
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {["Cleaning", "Linens", "Restock"].map((item) => (
-                    <button key={item} type="button" className="min-h-12 rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors first:border-[#d7043f] first:bg-[#d7043f] first:text-white hover:border-[#d7043f]">
-                      {item}
-                    </button>
+                    <label key={item} className="cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="need"
+                        value={item}
+                        defaultChecked={item === "Cleaning"}
+                        className="peer sr-only"
+                      />
+                      <span className="flex min-h-12 items-center justify-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors peer-checked:border-[#d7043f] peer-checked:bg-[#d7043f] peer-checked:text-white hover:border-[#d7043f]">
+                        {item}
+                      </span>
+                    </label>
                   ))}
                 </div>
                 <Button type="submit" className="h-13 rounded-full bg-[#d7043f] text-base font-black text-white shadow-none hover:bg-[#b51645]">
