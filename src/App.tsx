@@ -1307,6 +1307,125 @@ function useStructuredData(id: string, nodes: unknown[]) {
   }, [id, nodes])
 }
 
+export function getStaticRouteHead(pathname: string) {
+  const currentPath = pathname.replace(/\/$/, "") || "/"
+  const legalPage = legalPages[currentPath as keyof typeof legalPages]
+  const seoHubPage = seoHubPages.find((page) => page.path === currentPath)
+  const cityServiceMatch = serviceAreaCities.flatMap((city) =>
+    cityServicePages.map((service) => ({ city, service, path: `/service-areas/${city.slug}/${service.slug}` })),
+  ).find((match) => match.path === currentPath)
+  const cityPage = serviceAreaCities.find((city) => currentPath === `/service-areas/${city.slug}`)
+
+  if (legalPage) {
+    const description = `${legalPage.title} for ShynliAirbnbCleaning.com, covering host quote requests, booking rules, service expectations, and customer choices.`
+
+    return {
+      title: `${legalPage.title} | ShynliAirbnbCleaning.com`,
+      description,
+      canonical: canonicalFor(currentPath),
+      structuredData: [
+        businessSchema(),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          [legalPage.title, canonicalFor(currentPath)],
+        ]),
+      ],
+    }
+  }
+
+  if (seoHubPage) {
+    return {
+      title: `${seoHubPage.title} | ShynliAirbnbCleaning.com`,
+      description: seoHubPage.description,
+      canonical: canonicalFor(seoHubPage.path),
+      structuredData: [
+        businessSchema(),
+        serviceSchema(seoHubPage.title, seoHubPage.description, seoHubPage.path),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          [seoHubPage.title, canonicalFor(seoHubPage.path)],
+        ]),
+      ],
+    }
+  }
+
+  if (currentPath === "/service-areas") {
+    const title = "Airbnb Cleaning Service Areas"
+    const description = "Airbnb and short-term rental cleaning service areas for ShynliAirbnbCleaning.com, including Naperville, Aurora, Wheaton, Plainfield, Yorkville, and nearby cities."
+
+    return {
+      title: `${title} | ShynliAirbnbCleaning.com`,
+      description,
+      canonical: canonicalFor("/service-areas"),
+      structuredData: [
+        businessSchema(),
+        serviceSchema(title, "Airbnb and short-term rental cleaning service areas across the Shynli service map.", "/service-areas"),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          ["Service Areas", "https://shynliairbnbcleaning.com/service-areas"],
+        ]),
+      ],
+    }
+  }
+
+  if (cityServiceMatch) {
+    const { city, service } = cityServiceMatch
+    const serviceDescription = fillCityTemplate(service.description, city)
+    const servicePath = `/service-areas/${city.slug}/${service.slug}`
+    const pageFaqs = service.faqs.map(([question, answer]) => [fillCityTemplate(question, city), fillCityTemplate(answer, city)] as [string, string])
+    const title = `${service.title} in ${city.city}, IL`
+
+    return {
+      title: `${title} | ShynliAirbnbCleaning.com`,
+      description: serviceDescription,
+      canonical: canonicalFor(servicePath),
+      structuredData: [
+        businessSchema(),
+        serviceSchema(title, serviceDescription, servicePath, city),
+        faqSchema(pageFaqs),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          ["Service Areas", "https://shynliairbnbcleaning.com/service-areas"],
+          [`${city.city}, IL`, canonicalFor(`/service-areas/${city.slug}`)],
+          [title, canonicalFor(servicePath)],
+        ]),
+      ],
+    }
+  }
+
+  if (cityPage) {
+    const title = `Airbnb Cleaning Service Area in ${cityPage.city}, IL`
+    const description = `Airbnb and short-term rental cleaning in ${cityPage.city}, IL with turnover timing, guest-ready reset, linen notes, restocking checks, and photo handoff options.`
+
+    return {
+      title: `${title} | ShynliAirbnbCleaning.com`,
+      description,
+      canonical: canonicalFor(`/service-areas/${cityPage.slug}`),
+      structuredData: [
+        businessSchema(),
+        serviceSchema(title, `Airbnb and short-term rental cleaning in ${cityPage.city}, IL with turnover timing, local route checks, linens, restocking, and photo handoff.`, `/service-areas/${cityPage.slug}`, cityPage),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          ["Service Areas", "https://shynliairbnbcleaning.com/service-areas"],
+          [`${cityPage.city}, IL`, canonicalFor(`/service-areas/${cityPage.slug}`)],
+        ]),
+      ],
+    }
+  }
+
+  return {
+    title: "ShynliAirbnbCleaning.com | Airbnb Turnover Cleaning",
+    description: "Guest-ready Airbnb turnover cleaning with linens, restocking notes, photo handoff, and host-first availability checks.",
+    canonical: canonicalFor("/"),
+    structuredData: [
+      businessSchema(),
+      websiteSchema(),
+      serviceSchema("Airbnb Turnover Cleaning", "Guest-ready Airbnb turnover cleaning with linens, restocking notes, photo handoff, and host-first availability checks.", "/"),
+      breadcrumbSchema([["Home", "https://shynliairbnbcleaning.com"]]),
+    ],
+  }
+}
+
 function businessSchema() {
   return {
     "@type": ["LocalBusiness", "HouseCleaningService"],

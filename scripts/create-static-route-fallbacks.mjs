@@ -84,13 +84,43 @@ function createStaticHomeHtml(html, homeModule) {
 
 function createStaticRouteHtml(html, appModule, route) {
   const staticMarkup = renderToString(React.createElement(appModule.default, { initialPath: route }))
+  const routeHead = appModule.getStaticRouteHead(route)
   const cssHref = html.match(/href="([^"]+\.css)"/)?.[1]
   const inlineCss = cssHref
     ? readFileSync(path.join(distDir, cssHref.replace(/^\//, "")), "utf8").replace(/<\/style/gi, "<\\/style")
     : ""
+  const structuredData = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": routeHead.structuredData,
+  })
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
 
   return html
+    .replace(/\s*<script type="module"(?: crossorigin)? src="[^"]+"><\/script>/g, "")
+    .replace(/\s*<link rel="modulepreload"(?: crossorigin)? href="[^"]+">/g, "")
     .replace(/\s*<link rel="preload" crossorigin href="[^"]+\.css" as="style" onload="this\.onload=null;this\.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="[^"]+\.css"><\/noscript>/g, "")
-    .replace("</head>", () => `${inlineCss ? `<style data-inline-route-css>${inlineCss}</style>` : ""}</head>`)
+    .replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(routeHead.title)}</title>`)
+    .replace(
+      /<meta name="description" content="[^"]*" \/>/,
+      `<meta name="description" content="${escapeAttribute(routeHead.description)}" />`,
+    )
+    .replace(/\s*<link rel="canonical" href="[^"]+"\s*\/?>/g, "")
+    .replace(
+      "</head>",
+      () => `<link rel="canonical" href="${escapeAttribute(routeHead.canonical)}" />${inlineCss ? `<style data-inline-route-css>${inlineCss}</style>` : ""}<script id="structured-data-route" type="application/ld+json">${structuredData}</script></head>`,
+    )
     .replace(/<body>[\s\S]*<\/body>/, () => `<body>\n    <div id="root">${staticMarkup}</div>\n  </body>`)
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+}
+
+function escapeAttribute(value) {
+  return escapeHtml(value).replace(/"/g, "&quot;")
 }
