@@ -72,6 +72,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main[data-home-page="true"] > section:not(:first-of-type),
+main[data-home-page="true"] > footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 760px;
+}
+
 button,
 input {
   font: inherit;

@@ -232,7 +232,7 @@ function HomeApp() {
   useHomeMeta()
 
   return (
-    <main className="min-h-screen overflow-hidden bg-white text-[#222222]">
+    <main data-home-page="true" className="min-h-screen overflow-hidden bg-white text-[#222222]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#dddddd] bg-white/94 px-4 backdrop-blur-xl md:px-8">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between">
           <a href="/" className="flex min-h-11 items-center gap-3" aria-label="ShynliAirbnbCleaning.com home">
