@@ -2046,7 +2046,7 @@ function App() {
     <main className="min-h-screen overflow-hidden bg-white text-[#222222]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#dddddd] bg-white/94 px-4 backdrop-blur-xl md:px-8">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between">
-          <a href="/" className="flex min-h-11 items-center gap-3" aria-label="ShynliAirbnbCleaning.com home">
+          <a href="/" className="flex min-h-11 items-center gap-3">
             <span className="grid size-10 place-items-center rounded-full bg-[#d7043f] text-white">
               <KeyRound className="size-5" />
             </span>
@@ -2100,7 +2100,7 @@ function App() {
                   <span className="mt-1 block text-sm font-bold text-[#717171]">{value}</span>
                 </a>
               ))}
-              <a href={quoteUrl} className="grid min-h-16 place-items-center px-3">
+              <a href={quoteUrl} className="grid min-h-16 place-items-center px-3" aria-label="Check availability">
                 <span className="grid size-12 place-items-center rounded-full bg-[#d7043f] text-white">
                   <Search className="size-5" />
                 </span>
