@@ -324,7 +324,7 @@ function LegalPage({ page }: { page: (typeof legalPages)[keyof typeof legalPages
       <header className="border-b border-[#dddddd] px-4 py-5 md:px-8">
         <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <a href="/" className="flex min-h-11 items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-full bg-[#ff385c] text-white">
+            <span className="grid size-10 place-items-center rounded-full bg-[#d7043f] text-white">
               <KeyRound className="size-5" />
             </span>
             <span className="font-black">ShynliAirbnbCleaning.com</span>
@@ -337,7 +337,7 @@ function LegalPage({ page }: { page: (typeof legalPages)[keyof typeof legalPages
 
       <section className="px-4 py-12 md:px-8 md:py-16">
         <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-black text-[#ff385c]">{page.updated}</p>
+          <p className="text-sm font-black text-[#d7043f]">{page.updated}</p>
           <h1 className="mt-4 text-5xl font-black leading-[0.96] md:text-7xl">{page.title}</h1>
           <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">{page.intro}</p>
 
@@ -349,7 +349,7 @@ function LegalPage({ page }: { page: (typeof legalPages)[keyof typeof legalPages
                   <ul className="mt-5 grid gap-3 text-base font-bold leading-7 text-[#717171]">
                     {section.items.map((item) => (
                       <li key={item} className="grid grid-cols-[10px_1fr] gap-3">
-                        <span className="mt-3 size-1.5 rounded-full bg-[#ff385c]" />
+                        <span className="mt-3 size-1.5 rounded-full bg-[#d7043f]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -1458,12 +1458,12 @@ function SeoHeader() {
     <header className="border-b border-[#dddddd] bg-white px-4 py-5 md:px-8">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <a href="/" className="flex min-h-11 items-center gap-3">
-          <span className="grid size-10 place-items-center rounded-full bg-[#ff385c] text-white">
+          <span className="grid size-10 place-items-center rounded-full bg-[#d7043f] text-white">
             <KeyRound className="size-5" />
           </span>
           <span className="leading-none">
             <span className="block font-black">ShynliAirbnbCleaning.com</span>
-            <span className="mt-1 block text-xs font-black text-[#ff385c]">Airbnb turnover cleaning</span>
+            <span className="mt-1 block text-xs font-black text-[#d7043f]">Airbnb turnover cleaning</span>
           </span>
         </a>
         <nav className="flex flex-wrap items-center gap-3 text-sm font-black text-[#717171]" aria-label="SEO page navigation">
@@ -1471,7 +1471,7 @@ function SeoHeader() {
           <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cost</a>
           <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
           <a href="/faq/" className="hover:text-[#222222]">FAQ</a>
-          <Button asChild className="h-11 rounded-full bg-[#ff385c] px-5 font-black text-white shadow-none hover:bg-[#e31c5f]">
+          <Button asChild className="h-11 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
             <a href={quoteUrl}>Get quote</a>
           </Button>
         </nav>
@@ -1486,7 +1486,7 @@ function SeoFooter() {
       <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_1.3fr]">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-full bg-[#ff385c] text-white">
+            <span className="grid size-10 place-items-center rounded-full bg-[#d7043f] text-white">
               <KeyRound className="size-5" />
             </span>
             <p className="font-black">ShynliAirbnbCleaning.com</p>
@@ -1494,7 +1494,7 @@ function SeoFooter() {
           <p className="mt-4 max-w-md text-sm font-bold leading-6 text-[#717171]">
             Airbnb, short-term rental, and vacation rental turnover cleaning across the Shynli service map.
           </p>
-          <Button asChild className="mt-5 h-11 rounded-full bg-[#ff385c] px-5 font-black text-white shadow-none hover:bg-[#e31c5f]">
+          <Button asChild className="mt-5 h-11 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
             <a href={quoteUrl}>
               Check availability
               <ArrowRight className="size-4" />
@@ -1548,10 +1548,10 @@ function SeoCtaBand({ city, serviceLabel }: { city?: ServiceAreaCity; serviceLab
   const href = quoteUrl
 
   return (
-    <section className="bg-[#ff385c] px-4 py-14 text-white md:px-8">
+    <section className="bg-[#d7043f] px-4 py-14 text-white md:px-8">
       <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-[1fr_auto] md:items-center">
         <div>
-          <p className="text-sm font-black opacity-85">Ready to check the turnover window?</p>
+          <p className="text-sm font-black">Ready to check the turnover window?</p>
           <h2 className="mt-3 max-w-3xl text-4xl font-black leading-[0.98] md:text-6xl">
             {headline}
           </h2>
@@ -1581,7 +1581,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">{page.eyebrow}</p>
+            <p className="text-sm font-black text-[#d7043f]">{page.eyebrow}</p>
             <h1 className="mt-4 text-5xl font-black leading-[0.94] md:text-7xl">{page.headline}</h1>
             <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">{page.intro}</p>
             <div className="mt-7 flex flex-wrap gap-2">
@@ -1601,7 +1601,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
           {page.sections.map(([title, copy]) => (
             <Card key={title} className="rounded-[24px] border-[#dddddd] bg-white shadow-none">
               <CardContent className="p-6">
-                <p className="text-sm font-black text-[#ff385c]">{title}</p>
+                <p className="text-sm font-black text-[#d7043f]">{title}</p>
                 <p className="mt-4 text-xl font-black leading-tight">{copy}</p>
               </CardContent>
             </Card>
@@ -1612,7 +1612,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">Before you book</p>
+            <p className="text-sm font-black text-[#d7043f]">Before you book</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
               The quote should answer the host questions first.
             </h2>
@@ -1636,14 +1636,14 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
       <section className="border-t border-[#dddddd] px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">Related searches</p>
+            <p className="text-sm font-black text-[#d7043f]">Related searches</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Keep moving through the host questions.</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {seoHubPages.filter((related) => related.path !== page.path).slice(0, 8).map((related) => (
-              <a key={related.path} href={routeHref(related.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+              <a key={related.path} href={routeHref(related.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
                 <span>{related.title}</span>
-                <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
               </a>
             ))}
           </div>
@@ -1675,7 +1675,7 @@ function ServiceAreasPage() {
       <SeoHeader />
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-black text-[#ff385c]">Service areas</p>
+          <p className="text-sm font-black text-[#d7043f]">Service areas</p>
           <h1 className="mt-4 max-w-5xl text-5xl font-black leading-[0.94] md:text-7xl">
             Airbnb turnover cleaning across the Shynli service map.
           </h1>
@@ -1686,13 +1686,13 @@ function ServiceAreasPage() {
           <div className="mt-10 grid gap-4 lg:grid-cols-4">
             {serviceAreaGroups.map((group) => (
               <div key={group.label} className="rounded-[24px] border border-[#dddddd] bg-[#f7f7f7] p-5">
-                <p className="text-sm font-black text-[#ff385c]">{group.label}</p>
+                <p className="text-sm font-black text-[#d7043f]">{group.label}</p>
                 <div className="mt-4 grid gap-2">
                   {group.cities.map((city) => {
                     const citySlug = city.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")
 
                     return (
-                      <a key={city} href={routeHref(`/service-areas/${citySlug}`)} className="flex min-h-11 items-center justify-between rounded-full border border-[#dddddd] bg-white px-4 text-sm font-black transition-colors hover:border-[#ff385c] hover:text-[#ff385c]">
+                      <a key={city} href={routeHref(`/service-areas/${citySlug}`)} className="flex min-h-11 items-center justify-between rounded-full border border-[#dddddd] bg-white px-4 text-sm font-black transition-colors hover:border-[#d7043f] hover:text-[#d7043f]">
                         {city}
                         <ArrowRight className="size-4" />
                       </a>
@@ -1708,7 +1708,7 @@ function ServiceAreasPage() {
       <section className="border-t border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">How coverage works</p>
+            <p className="text-sm font-black text-[#d7043f]">How coverage works</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
               Your city is the start. The turnover window decides the clean.
             </h2>
@@ -1725,7 +1725,7 @@ function ServiceAreasPage() {
             ].map(([title, copy]) => (
               <Card key={title} className="rounded-[24px] border-[#dddddd] bg-white shadow-none">
                 <CardContent className="p-6">
-                  <p className="text-sm font-black text-[#ff385c]">{title}</p>
+                  <p className="text-sm font-black text-[#d7043f]">{title}</p>
                   <p className="mt-4 text-lg font-black leading-tight">{copy}</p>
                 </CardContent>
               </Card>
@@ -1763,7 +1763,7 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">{city.city}, IL</p>
+            <p className="text-sm font-black text-[#d7043f]">{city.city}, IL</p>
             <h1 className="mt-4 text-5xl font-black leading-[0.94] md:text-7xl">
               Airbnb cleaning in {city.city} for guest-ready turnovers.
             </h1>
@@ -1778,12 +1778,12 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
           </div>
           <div className="rounded-[32px] border border-[#dddddd] bg-[#f7f7f7] p-5 shadow-[0_20px_70px_rgba(0,0,0,0.10)]">
             <div className="rounded-[26px] bg-white p-5">
-              <p className="text-sm font-black text-[#ff385c]">Best next step</p>
+              <p className="text-sm font-black text-[#d7043f]">Best next step</p>
               <h2 className="mt-3 text-3xl font-black leading-tight">Check whether the route and guest times fit.</h2>
               <p className="mt-4 text-base font-bold leading-7 text-[#717171]">
                 Send your ZIP, bedroom/bath count, checkout time, check-in time, access notes, linen expectations, and restocking list. That is what decides whether the clean can be done well.
               </p>
-              <Button asChild className="mt-6 h-12 rounded-full bg-[#ff385c] px-5 font-black text-white shadow-none hover:bg-[#e31c5f]">
+              <Button asChild className="mt-6 h-12 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
                 <a href={quoteUrl}>Request {city.city} availability</a>
               </Button>
             </div>
@@ -1800,7 +1800,7 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
           ].map(([title, copy]) => (
             <Card key={title} className="rounded-[24px] border-[#dddddd] bg-white shadow-none">
               <CardContent className="p-6">
-                <p className="text-sm font-black text-[#ff385c]">{title}</p>
+                <p className="text-sm font-black text-[#d7043f]">{title}</p>
                 <p className="mt-4 text-xl font-black leading-tight">{copy}</p>
               </CardContent>
             </Card>
@@ -1811,7 +1811,7 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-[1fr_1fr]">
           <div className="rounded-[26px] border border-[#dddddd] bg-[#f7f7f7] p-6 md:col-span-2">
-            <p className="text-sm font-black text-[#ff385c]">Local relevance</p>
+            <p className="text-sm font-black text-[#d7043f]">Local relevance</p>
             <h2 className="mt-3 text-3xl font-black leading-tight">{city.city} hosts need more than a city match.</h2>
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               <p className="text-base font-bold leading-7 text-[#717171]">{profile.localFit}</p>
@@ -1822,25 +1822,25 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
             </div>
           </div>
           {cityServicePages.map((service) => (
-            <a key={service.slug} href={routeHref(`/service-areas/${city.slug}/${service.slug}`)} className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#ff385c]">
-              <p className="text-sm font-black text-[#ff385c]">Local service page</p>
+            <a key={service.slug} href={routeHref(`/service-areas/${city.slug}/${service.slug}`)} className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#d7043f]">
+              <p className="text-sm font-black text-[#d7043f]">Local service page</p>
               <h2 className="mt-3 text-3xl font-black">{service.label} in {city.city}</h2>
               <p className="mt-4 text-base font-bold leading-7 text-[#717171]">See the local page built around host questions, turnover scope, timing, supplies, and check-in readiness.</p>
-              <ArrowRight className="mt-5 size-5 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="mt-5 size-5 text-[#d7043f] transition-transform group-hover:translate-x-1" />
             </a>
           ))}
-          <a href="/service-areas/" className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#ff385c]">
-            <p className="text-sm font-black text-[#ff385c]">All cities</p>
+          <a href="/service-areas/" className="group rounded-[26px] border border-[#dddddd] bg-white p-6 transition-colors hover:border-[#d7043f]">
+            <p className="text-sm font-black text-[#d7043f]">All cities</p>
             <h2 className="mt-3 text-3xl font-black">Back to service areas</h2>
             <p className="mt-4 text-base font-bold leading-7 text-[#717171]">Compare nearby cities and choose the closest page for the listing you want quoted.</p>
-            <ArrowRight className="mt-5 size-5 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="mt-5 size-5 text-[#d7043f] transition-transform group-hover:translate-x-1" />
           </a>
           <div className="rounded-[26px] border border-[#dddddd] bg-white p-6 md:col-span-2">
-            <p className="text-sm font-black text-[#ff385c]">Nearby city pages</p>
+            <p className="text-sm font-black text-[#d7043f]">Nearby city pages</p>
             <h2 className="mt-3 text-3xl font-black">Compare nearby coverage before you request a quote.</h2>
             <div className="mt-5 flex flex-wrap gap-3">
               {profile.nearby.map((nearbyCity) => (
-                <a key={nearbyCity.slug} href={routeHref(`/service-areas/${nearbyCity.slug}`)} className="inline-flex min-h-11 items-center rounded-full border border-[#dddddd] px-4 text-sm font-black transition-colors hover:border-[#ff385c] hover:text-[#ff385c]">
+                <a key={nearbyCity.slug} href={routeHref(`/service-areas/${nearbyCity.slug}`)} className="inline-flex min-h-11 items-center rounded-full border border-[#dddddd] px-4 text-sm font-black transition-colors hover:border-[#d7043f] hover:text-[#d7043f]">
                   {nearbyCity.city}
                 </a>
               ))}
@@ -1882,7 +1882,7 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
       <SeoHeader />
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-black text-[#ff385c]">{fillCityTemplate(service.eyebrow, city)}</p>
+          <p className="text-sm font-black text-[#d7043f]">{fillCityTemplate(service.eyebrow, city)}</p>
           <h1 className="mt-4 max-w-5xl text-5xl font-black leading-[0.94] md:text-7xl">
             {fillCityTemplate(service.headline, city)}
           </h1>
@@ -1902,7 +1902,7 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
           {service.steps.map(([title, copy]) => (
             <Card key={title} className="rounded-[24px] border-[#dddddd] bg-white shadow-none">
               <CardContent className="p-6">
-                <p className="text-sm font-black text-[#ff385c]">{title}</p>
+                <p className="text-sm font-black text-[#d7043f]">{title}</p>
                 <p className="mt-4 text-lg font-black leading-tight">{fillCityTemplate(copy, city)}</p>
               </CardContent>
             </Card>
@@ -1913,7 +1913,7 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">Host answers</p>
+            <p className="text-sm font-black text-[#d7043f]">Host answers</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">What {city.city} hosts usually need to know.</h2>
           </div>
           <div className="grid gap-4">
@@ -1930,7 +1930,7 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
       <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">Local fit and pricing logic</p>
+            <p className="text-sm font-black text-[#d7043f]">Local fit and pricing logic</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
               {service.title} in {city.city} should be quoted from the actual turnover.
             </h2>
@@ -1945,7 +1945,7 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
             ].map(([title, copy]) => (
               <Card key={title} className="rounded-[24px] border-[#dddddd] bg-white shadow-none">
                 <CardContent className="p-6">
-                  <p className="text-sm font-black text-[#ff385c]">{title}</p>
+                  <p className="text-sm font-black text-[#d7043f]">{title}</p>
                   <p className="mt-4 text-lg font-black leading-tight">{copy}</p>
                 </CardContent>
               </Card>
@@ -1957,29 +1957,29 @@ function CityServicePage({ city, service }: { city: ServiceAreaCity; service: Ci
       <section className="border-t border-[#dddddd] px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
-            <p className="text-sm font-black text-[#ff385c]">Related {city.city} pages</p>
+            <p className="text-sm font-black text-[#d7043f]">Related {city.city} pages</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Choose the page closest to the host problem.</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            <a href={routeHref(`/service-areas/${city.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+            <a href={routeHref(`/service-areas/${city.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
               <span>{city.city} service area</span>
-              <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
             </a>
             {cityServicePages.filter((related) => related.slug !== service.slug).map((related) => (
-              <a key={related.slug} href={routeHref(`/service-areas/${city.slug}/${related.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+              <a key={related.slug} href={routeHref(`/service-areas/${city.slug}/${related.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
                 <span>{related.label} in {city.city}</span>
-                <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
               </a>
             ))}
             {profile.nearby.slice(0, 3).map((nearbyCity) => (
-              <a key={nearbyCity.slug} href={routeHref(`/service-areas/${nearbyCity.slug}/${service.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+              <a key={nearbyCity.slug} href={routeHref(`/service-areas/${nearbyCity.slug}/${service.slug}`)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
                 <span>{service.label} in {nearbyCity.city}</span>
-                <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
               </a>
             ))}
-            <a href="/service-areas/" className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#ff385c]">
+            <a href="/service-areas/" className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
               <span>All service areas</span>
-              <ArrowRight className="size-4 text-[#ff385c] transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
@@ -2047,12 +2047,12 @@ function App() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#dddddd] bg-white/94 px-4 backdrop-blur-xl md:px-8">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between">
           <a href="/" className="flex min-h-11 items-center gap-3" aria-label="ShynliAirbnbCleaning.com home">
-            <span className="grid size-10 place-items-center rounded-full bg-[#ff385c] text-white">
+            <span className="grid size-10 place-items-center rounded-full bg-[#d7043f] text-white">
               <KeyRound className="size-5" />
             </span>
             <span className="leading-none">
               <span className="block text-lg font-black">ShynliAirbnbCleaning.com</span>
-              <span className="mt-1 block text-xs font-black text-[#ff385c]">Airbnb turnover cleaning</span>
+              <span className="mt-1 block text-xs font-black text-[#d7043f]">Airbnb turnover cleaning</span>
             </span>
           </a>
           <nav className="hidden items-center gap-1 rounded-full border border-[#dddddd] bg-white p-1 text-sm font-black text-[#717171] shadow-[0_3px_16px_rgba(0,0,0,0.08)] md:flex" aria-label="Main navigation">
@@ -2067,7 +2067,7 @@ function App() {
               </a>
             ))}
           </nav>
-          <Button asChild className="h-11 rounded-full bg-[#ff385c] px-5 font-black text-white shadow-none hover:bg-[#e31c5f]">
+          <Button asChild className="h-11 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
             <a href={quoteUrl}>Check window</a>
           </Button>
         </div>
@@ -2101,7 +2101,7 @@ function App() {
                 </a>
               ))}
               <a href={quoteUrl} className="grid min-h-16 place-items-center px-3">
-                <span className="grid size-12 place-items-center rounded-full bg-[#ff385c] text-white">
+                <span className="grid size-12 place-items-center rounded-full bg-[#d7043f] text-white">
                   <Search className="size-5" />
                 </span>
               </a>
@@ -2120,7 +2120,7 @@ function App() {
                 <div className="absolute inset-0 bg-cover bg-[50%_44%]" style={{ backgroundImage: `url(${airbnbSiteImages.secondary})` }} aria-hidden="true" />
               </div>
               <div className="rounded-[28px] border border-[#dddddd] bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
-                <p className="text-sm font-black text-[#ff385c]">What hosts ask first</p>
+                <p className="text-sm font-black text-[#d7043f]">What hosts ask first</p>
                 <div className="mt-4 grid gap-3">
                   {airbnbSiteProof.map(([title, copy]) => (
                     <div key={title} className="border-t border-[#eeeeee] pt-3 first:border-t-0 first:pt-0">
@@ -2138,7 +2138,7 @@ function App() {
       <section id="turnover" className="px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24">
-            <p className="mb-4 text-sm font-black text-[#ff385c]">For back-to-back bookings</p>
+            <p className="mb-4 text-sm font-black text-[#d7043f]">For back-to-back bookings</p>
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               The clean is only done when the next guest can walk in.
             </h2>
@@ -2149,7 +2149,7 @@ function App() {
           <div className="grid gap-4 md:grid-cols-2">
             {airbnbSitePillars.map(({ icon: Icon, eyebrow, title, copy }) => (
               <div key={title} className="min-h-72 rounded-[24px] border border-[#dddddd] bg-white p-6 shadow-[0_6px_24px_rgba(0,0,0,0.06)]">
-                <Icon className="size-7 text-[#ff385c]" />
+                <Icon className="size-7 text-[#d7043f]" />
                 <p className="mt-8 text-xs font-black text-[#717171]">{eyebrow}</p>
                 <h3 className="mt-3 text-3xl font-black leading-[1.02]">{title}</h3>
                 <p className="mt-4 text-sm font-bold leading-6 text-[#717171]">{copy}</p>
@@ -2169,7 +2169,7 @@ function App() {
               <h2 className="mt-4 max-w-2xl text-5xl font-black leading-[0.92] md:text-7xl">
                 Checkout at 11. Check-in at 3.
               </h2>
-              <p className="mt-5 max-w-xl text-lg font-bold leading-8 text-white/74">
+              <p className="mt-5 max-w-xl text-lg font-bold leading-8 text-white">
                 When the window is tight, every detail needs to be known before the cleaner arrives.
               </p>
             </div>
@@ -2177,7 +2177,7 @@ function App() {
           <div className="grid gap-8">
             {airbnbSiteTimeline.map(([title, copy], index) => (
               <div key={title} className="grid grid-cols-[56px_1fr] gap-5 border-t border-[#dddddd] pt-7 first:border-t-0 first:pt-0">
-                <span className="text-3xl font-black text-[#ff385c]">{String(index + 1).padStart(2, "0")}</span>
+                <span className="text-3xl font-black text-[#d7043f]">{String(index + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="text-3xl font-black">{title}</h3>
                   <p className="mt-3 text-base font-bold leading-7 text-[#717171]">{copy}</p>
@@ -2192,7 +2192,7 @@ function App() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-[0.76fr_1fr] md:items-end">
             <div>
-              <p className="mb-4 text-sm font-black text-[#ff385c]">What can be included</p>
+              <p className="mb-4 text-sm font-black text-[#d7043f]">What can be included</p>
               <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
                 Cleaning, setup, and notes in one turnover.
               </h2>
@@ -2219,7 +2219,7 @@ function App() {
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               Know what happened without driving over.
             </h2>
-            <p className="mt-5 text-lg font-bold leading-8 text-white/66">
+            <p className="mt-5 text-lg font-bold leading-8 text-white">
               A quick handoff helps you catch low supplies, visible issues, and readiness questions before they turn into guest messages.
             </p>
             <div className="relative mt-8 min-h-72 overflow-hidden rounded-[28px] bg-white/8">
@@ -2234,7 +2234,7 @@ function App() {
               <div key={String(title)} className="min-h-56 rounded-[24px] border border-white/12 bg-white/7 p-6">
                 <Icon className="size-7 text-[#ffb3c1]" />
                 <h3 className="mt-7 text-2xl font-black">{String(title)}</h3>
-                <p className="mt-3 text-sm font-bold leading-6 text-white/66">{String(copy)}</p>
+                <p className="mt-3 text-sm font-bold leading-6 text-white">{String(copy)}</p>
               </div>
             ))}
           </div>
@@ -2244,7 +2244,7 @@ function App() {
       <section className="px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.74fr_1fr]">
           <div>
-            <p className="mb-4 text-sm font-black text-[#ff385c]">Why hosts book</p>
+            <p className="mb-4 text-sm font-black text-[#d7043f]">Why hosts book</p>
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               Fewer surprises between guests.
             </h2>
@@ -2252,7 +2252,7 @@ function App() {
           <div className="grid gap-4 md:grid-cols-2">
             {hostReasons.map(([name, move]) => (
               <div key={name} className="rounded-[24px] border border-[#dddddd] bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.05)]">
-                <p className="text-sm font-black text-[#ff385c]">{name}</p>
+                <p className="text-sm font-black text-[#d7043f]">{name}</p>
                 <p className="mt-3 text-xl font-black leading-tight">{move}</p>
               </div>
             ))}
@@ -2264,7 +2264,7 @@ function App() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-[0.76fr_1fr] md:items-end">
             <div>
-              <p className="mb-4 text-sm font-black text-[#ff385c]">Service areas</p>
+              <p className="mb-4 text-sm font-black text-[#d7043f]">Service areas</p>
               <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
                 Airbnb turnover help across the Shynli service map.
               </h2>
@@ -2277,13 +2277,13 @@ function App() {
           <div className="mt-10 grid gap-4 lg:grid-cols-4">
             {serviceAreaGroups.map((group) => (
               <div key={group.label} className="rounded-[24px] border border-[#dddddd] bg-[#f7f7f7] p-5">
-                <p className="text-sm font-black text-[#ff385c]">{group.label}</p>
+                <p className="text-sm font-black text-[#d7043f]">{group.label}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {group.cities.map((city) => (
                     <a
                       key={city}
                       href={routeHref(`/service-areas/${citySlugFor(city)}`)}
-                      className="inline-flex min-h-9 items-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black text-[#222222] transition-colors hover:border-[#ff385c] hover:text-[#ff385c]"
+                      className="inline-flex min-h-9 items-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black text-[#222222] transition-colors hover:border-[#d7043f] hover:text-[#d7043f]"
                     >
                       {city}
                     </a>
@@ -2298,7 +2298,7 @@ function App() {
       <section id="quote" className="bg-[#f7f7f7] px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
-            <p className="mb-4 text-sm font-black text-[#ff385c]">Check availability</p>
+            <p className="mb-4 text-sm font-black text-[#d7043f]">Check availability</p>
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               Start with the details that decide the clean.
             </h2>
@@ -2355,12 +2355,12 @@ function App() {
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {["Cleaning", "Linens", "Restock"].map((item) => (
-                    <button key={item} type="button" className="min-h-12 rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors first:border-[#ff385c] first:bg-[#ff385c] first:text-white hover:border-[#ff385c]">
+                    <button key={item} type="button" className="min-h-12 rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors first:border-[#d7043f] first:bg-[#d7043f] first:text-white hover:border-[#d7043f]">
                       {item}
                     </button>
                   ))}
                 </div>
-                <Button type="submit" className="h-13 rounded-full bg-[#ff385c] text-base font-black text-white shadow-none hover:bg-[#e31c5f]">
+                <Button type="submit" className="h-13 rounded-full bg-[#d7043f] text-base font-black text-white shadow-none hover:bg-[#b51645]">
                   Check host availability
                   <ArrowRight />
                 </Button>
@@ -2378,7 +2378,7 @@ function App() {
           <div className="grid gap-10 lg:grid-cols-[1.1fr_1.7fr]">
             <div>
               <a href="/" className="flex min-h-11 items-center gap-3">
-                <span className="grid size-11 place-items-center rounded-full bg-[#ff385c] text-white">
+                <span className="grid size-11 place-items-center rounded-full bg-[#d7043f] text-white">
                   <KeyRound className="size-5" />
                 </span>
                 <span className="leading-none">
@@ -2389,7 +2389,7 @@ function App() {
               <p className="mt-6 max-w-md text-base font-bold leading-7 text-[#717171]">
                 Guest-ready cleaning, linens, restocking notes, and photo handoff for hosts who need the next check-in to feel calm.
               </p>
-              <Button asChild className="mt-6 h-12 rounded-full bg-[#ff385c] px-6 font-black text-white shadow-none hover:bg-[#e31c5f]">
+              <Button asChild className="mt-6 h-12 rounded-full bg-[#d7043f] px-6 font-black text-white shadow-none hover:bg-[#b51645]">
                 <a href={quoteUrl}>
                   Check availability
                   <ArrowRight className="size-4" />

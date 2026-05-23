@@ -236,12 +236,12 @@ function HomeApp() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#dddddd] bg-white/94 px-4 backdrop-blur-xl md:px-8">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between">
           <a href="/" className="flex min-h-11 items-center gap-3" aria-label="ShynliAirbnbCleaning.com home">
-            <span className="grid size-10 place-items-center rounded-full bg-[#ff385c] text-white">
+            <span className="grid size-10 place-items-center rounded-full bg-[#d7043f] text-white">
               <KeyRound className="size-5" />
             </span>
             <span className="leading-none">
               <span className="block text-lg font-black">ShynliAirbnbCleaning.com</span>
-              <span className="mt-1 block text-xs font-black text-[#ff385c]">Airbnb turnover cleaning</span>
+              <span className="mt-1 block text-xs font-black text-[#d7043f]">Airbnb turnover cleaning</span>
             </span>
           </a>
           <nav className="hidden items-center gap-1 rounded-full border border-[#dddddd] bg-white p-1 text-sm font-black text-[#717171] shadow-[0_3px_16px_rgba(0,0,0,0.08)] md:flex" aria-label="Main navigation">
@@ -256,7 +256,7 @@ function HomeApp() {
               </a>
             ))}
           </nav>
-          <Button asChild className="h-11 rounded-full bg-[#ff385c] px-5 font-black text-white shadow-none hover:bg-[#e31c5f]">
+          <Button asChild className="h-11 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
             <a href={quoteUrl}>Check window</a>
           </Button>
         </div>
@@ -290,7 +290,7 @@ function HomeApp() {
                 </a>
               ))}
               <a href={quoteUrl} className="grid min-h-16 place-items-center px-3">
-                <span className="grid size-12 place-items-center rounded-full bg-[#ff385c] text-white">
+                <span className="grid size-12 place-items-center rounded-full bg-[#d7043f] text-white">
                   <Search className="size-5" />
                 </span>
               </a>
@@ -309,7 +309,7 @@ function HomeApp() {
                 <div className="absolute inset-0 bg-cover bg-[50%_44%]" style={{ backgroundImage: `url(${airbnbSiteImages.secondary})` }} aria-hidden="true" />
               </div>
               <div className="rounded-[28px] border border-[#dddddd] bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
-                <p className="text-sm font-black text-[#ff385c]">What hosts ask first</p>
+                <p className="text-sm font-black text-[#d7043f]">What hosts ask first</p>
                 <div className="mt-4 grid gap-3">
                   {airbnbSiteProof.map(([title, copy]) => (
                     <div key={title} className="border-t border-[#eeeeee] pt-3 first:border-t-0 first:pt-0">
@@ -327,7 +327,7 @@ function HomeApp() {
       <section id="turnover" className="px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div className="lg:sticky lg:top-24">
-            <p className="mb-4 text-sm font-black text-[#ff385c]">For back-to-back bookings</p>
+            <p className="mb-4 text-sm font-black text-[#d7043f]">For back-to-back bookings</p>
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               The clean is only done when the next guest can walk in.
             </h2>
@@ -338,7 +338,7 @@ function HomeApp() {
           <div className="grid gap-4 md:grid-cols-2">
             {airbnbSitePillars.map(({ icon: Icon, eyebrow, title, copy }) => (
               <div key={title} className="min-h-72 rounded-[24px] border border-[#dddddd] bg-white p-6 shadow-[0_6px_24px_rgba(0,0,0,0.06)]">
-                <Icon className="size-7 text-[#ff385c]" />
+                <Icon className="size-7 text-[#d7043f]" />
                 <p className="mt-8 text-xs font-black text-[#717171]">{eyebrow}</p>
                 <h3 className="mt-3 text-3xl font-black leading-[1.02]">{title}</h3>
                 <p className="mt-4 text-sm font-bold leading-6 text-[#717171]">{copy}</p>
@@ -358,7 +358,7 @@ function HomeApp() {
               <h2 className="mt-4 max-w-2xl text-5xl font-black leading-[0.92] md:text-7xl">
                 Checkout at 11. Check-in at 3.
               </h2>
-              <p className="mt-5 max-w-xl text-lg font-bold leading-8 text-white/74">
+              <p className="mt-5 max-w-xl text-lg font-bold leading-8 text-white">
                 When the window is tight, every detail needs to be known before the cleaner arrives.
               </p>
             </div>
@@ -366,7 +366,7 @@ function HomeApp() {
           <div className="grid gap-8">
             {airbnbSiteTimeline.map(([title, copy], index) => (
               <div key={title} className="grid grid-cols-[56px_1fr] gap-5 border-t border-[#dddddd] pt-7 first:border-t-0 first:pt-0">
-                <span className="text-3xl font-black text-[#ff385c]">{String(index + 1).padStart(2, "0")}</span>
+                <span className="text-3xl font-black text-[#d7043f]">{String(index + 1).padStart(2, "0")}</span>
                 <div>
                   <h3 className="text-3xl font-black">{title}</h3>
                   <p className="mt-3 text-base font-bold leading-7 text-[#717171]">{copy}</p>
@@ -381,7 +381,7 @@ function HomeApp() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-[0.76fr_1fr] md:items-end">
             <div>
-              <p className="mb-4 text-sm font-black text-[#ff385c]">What can be included</p>
+              <p className="mb-4 text-sm font-black text-[#d7043f]">What can be included</p>
               <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
                 Cleaning, setup, and notes in one turnover.
               </h2>
@@ -408,7 +408,7 @@ function HomeApp() {
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               Know what happened without driving over.
             </h2>
-            <p className="mt-5 text-lg font-bold leading-8 text-white/66">
+            <p className="mt-5 text-lg font-bold leading-8 text-white">
               A quick handoff helps you catch low supplies, visible issues, and readiness questions before they turn into guest messages.
             </p>
             <div className="relative mt-8 min-h-72 overflow-hidden rounded-[28px] bg-white/8">
@@ -423,7 +423,7 @@ function HomeApp() {
               <div key={String(title)} className="min-h-56 rounded-[24px] border border-white/12 bg-white/7 p-6">
                 <Icon className="size-7 text-[#ffb3c1]" />
                 <h3 className="mt-7 text-2xl font-black">{String(title)}</h3>
-                <p className="mt-3 text-sm font-bold leading-6 text-white/66">{String(copy)}</p>
+                <p className="mt-3 text-sm font-bold leading-6 text-white">{String(copy)}</p>
               </div>
             ))}
           </div>
@@ -433,7 +433,7 @@ function HomeApp() {
       <section className="px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.74fr_1fr]">
           <div>
-            <p className="mb-4 text-sm font-black text-[#ff385c]">Why hosts book</p>
+            <p className="mb-4 text-sm font-black text-[#d7043f]">Why hosts book</p>
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               Fewer surprises between guests.
             </h2>
@@ -441,7 +441,7 @@ function HomeApp() {
           <div className="grid gap-4 md:grid-cols-2">
             {hostReasons.map(([name, move]) => (
               <div key={name} className="rounded-[24px] border border-[#dddddd] bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.05)]">
-                <p className="text-sm font-black text-[#ff385c]">{name}</p>
+                <p className="text-sm font-black text-[#d7043f]">{name}</p>
                 <p className="mt-3 text-xl font-black leading-tight">{move}</p>
               </div>
             ))}
@@ -453,7 +453,7 @@ function HomeApp() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-[0.76fr_1fr] md:items-end">
             <div>
-              <p className="mb-4 text-sm font-black text-[#ff385c]">Service areas</p>
+              <p className="mb-4 text-sm font-black text-[#d7043f]">Service areas</p>
               <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
                 Airbnb turnover help across the Shynli service map.
               </h2>
@@ -466,13 +466,13 @@ function HomeApp() {
           <div className="mt-10 grid gap-4 lg:grid-cols-4">
             {serviceAreaGroups.map((group) => (
               <div key={group.label} className="rounded-[24px] border border-[#dddddd] bg-[#f7f7f7] p-5">
-                <p className="text-sm font-black text-[#ff385c]">{group.label}</p>
+                <p className="text-sm font-black text-[#d7043f]">{group.label}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {group.cities.map((city) => (
                     <a
                       key={city}
                       href={routeHref(`/service-areas/${citySlugFor(city)}`)}
-                      className="inline-flex min-h-9 items-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black text-[#222222] transition-colors hover:border-[#ff385c] hover:text-[#ff385c]"
+                      className="inline-flex min-h-9 items-center rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black text-[#222222] transition-colors hover:border-[#d7043f] hover:text-[#d7043f]"
                     >
                       {city}
                     </a>
@@ -487,7 +487,7 @@ function HomeApp() {
       <section id="quote" className="bg-[#f7f7f7] px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
-            <p className="mb-4 text-sm font-black text-[#ff385c]">Check availability</p>
+            <p className="mb-4 text-sm font-black text-[#d7043f]">Check availability</p>
             <h2 className="text-4xl font-black leading-[0.96] md:text-6xl">
               Start with the details that decide the clean.
             </h2>
@@ -544,12 +544,12 @@ function HomeApp() {
                 </div>
                 <div className="grid gap-3 sm:grid-cols-3">
                   {["Cleaning", "Linens", "Restock"].map((item) => (
-                    <button key={item} type="button" className="min-h-12 rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors first:border-[#ff385c] first:bg-[#ff385c] first:text-white hover:border-[#ff385c]">
+                    <button key={item} type="button" className="min-h-12 rounded-full border border-[#dddddd] bg-white px-3 text-sm font-black transition-colors first:border-[#d7043f] first:bg-[#d7043f] first:text-white hover:border-[#d7043f]">
                       {item}
                     </button>
                   ))}
                 </div>
-                <Button type="submit" className="h-13 rounded-full bg-[#ff385c] text-base font-black text-white shadow-none hover:bg-[#e31c5f]">
+                <Button type="submit" className="h-13 rounded-full bg-[#d7043f] text-base font-black text-white shadow-none hover:bg-[#b51645]">
                   Check host availability
                   <ArrowRight />
                 </Button>
@@ -567,7 +567,7 @@ function HomeApp() {
           <div className="grid gap-10 lg:grid-cols-[1.1fr_1.7fr]">
             <div>
               <a href="/" className="flex min-h-11 items-center gap-3">
-                <span className="grid size-11 place-items-center rounded-full bg-[#ff385c] text-white">
+                <span className="grid size-11 place-items-center rounded-full bg-[#d7043f] text-white">
                   <KeyRound className="size-5" />
                 </span>
                 <span className="leading-none">
@@ -578,7 +578,7 @@ function HomeApp() {
               <p className="mt-6 max-w-md text-base font-bold leading-7 text-[#717171]">
                 Guest-ready cleaning, linens, restocking notes, and photo handoff for hosts who need the next check-in to feel calm.
               </p>
-              <Button asChild className="mt-6 h-12 rounded-full bg-[#ff385c] px-6 font-black text-white shadow-none hover:bg-[#e31c5f]">
+              <Button asChild className="mt-6 h-12 rounded-full bg-[#d7043f] px-6 font-black text-white shadow-none hover:bg-[#b51645]">
                 <a href={quoteUrl}>
                   Check availability
                   <ArrowRight className="size-4" />
