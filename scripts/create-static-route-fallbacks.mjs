@@ -14,12 +14,20 @@ const routes = [...sitemap.matchAll(/<loc>(https?:\/\/[^<]+)<\/loc>/g)]
   .map((match) => new URL(match[1]).pathname)
   .filter((pathname) => pathname !== "/" && !path.extname(pathname))
 
+const indexHtml = readFileSync(indexPath, "utf8")
+const optimizedIndexHtml = indexHtml.replace(
+  /<link rel="stylesheet" crossorigin href="([^"]+\.css)">/g,
+  `<link rel="preload" crossorigin href="$1" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="$1"></noscript>`,
+)
+
+writeFileSync(indexPath, optimizedIndexHtml)
+
 for (const route of routes) {
   const cleanRoute = route.replace(/^\/+/, "")
   const routeFile = path.join(distDir, cleanRoute, "index.html")
 
   mkdirSync(path.dirname(routeFile), { recursive: true })
-  copyFileSync(indexPath, routeFile)
+  writeFileSync(routeFile, optimizedIndexHtml)
 }
 
 writeFileSync(
