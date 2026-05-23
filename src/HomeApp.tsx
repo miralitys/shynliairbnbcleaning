@@ -18,6 +18,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 
 const quoteUrl = "https://shynlicleaningservice.com/quote"
+export const homeTitle = "ShynliAirbnbCleaning.com | Airbnb Turnover Cleaning"
+export const homeDescription = "Guest-ready Airbnb turnover cleaning with linens, restocking notes, photo handoff, and host-first availability checks."
+export const homeCanonical = "https://shynliairbnbcleaning.com"
 
 const airbnbSiteProof = [
   ["Fast turnover windows", "Tell us checkout and check-in times so we can confirm whether the reset is realistic."],
@@ -116,6 +119,64 @@ const serviceAreaCities = serviceAreaGroups.flatMap((group) =>
   })),
 )
 
+export const homeStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "HouseCleaningService"],
+      "@id": "https://shynliairbnbcleaning.com/#business",
+      name: "ShynliAirbnbCleaning.com",
+      url: "https://shynliairbnbcleaning.com",
+      telephone: "+1-630-812-7077",
+      email: "info@shynli.com",
+      priceRange: "$$",
+      areaServed: serviceAreaCities.map((city) => ({ "@type": "City", name: `${city.city}, IL` })),
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Naperville",
+        addressRegion: "IL",
+        postalCode: "60566",
+        addressCountry: "US",
+      },
+      parentOrganization: {
+        "@type": "Organization",
+        name: "SHYNLI LLC",
+        url: "https://shynli.com/",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shynliairbnbcleaning.com/#website",
+      name: "ShynliAirbnbCleaning.com",
+      url: "https://shynliairbnbcleaning.com",
+      publisher: { "@id": "https://shynliairbnbcleaning.com/#business" },
+    },
+    {
+      "@type": "Service",
+      "@id": "https://shynliairbnbcleaning.com/#service",
+      name: "Airbnb Turnover Cleaning",
+      description: homeDescription,
+      provider: { "@id": "https://shynliairbnbcleaning.com/#business" },
+      serviceType: "Airbnb turnover cleaning",
+      areaServed: serviceAreaCities.map((city) => ({ "@type": "City", name: `${city.city}, IL` })),
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "USD",
+          description: "Custom quote based on listing size, condition, timing, access, linens, restocking, and photo handoff.",
+        },
+        url: quoteUrl,
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://shynliairbnbcleaning.com" }],
+    },
+  ],
+}
+
 function citySlugFor(city: string) {
   return city.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")
 }
@@ -134,93 +195,35 @@ function ShynliBadge({ children }: { children: string }) {
 
 function useHomeMeta() {
   useEffect(() => {
-    document.title = "ShynliAirbnbCleaning.com | Airbnb Turnover Cleaning"
+    document.title = homeTitle
 
-    const description = "Guest-ready Airbnb turnover cleaning with linens, restocking notes, photo handoff, and host-first availability checks."
     const existing = document.querySelector('meta[name="description"]')
     if (existing) {
-      existing.setAttribute("content", description)
+      existing.setAttribute("content", homeDescription)
     } else {
       const meta = document.createElement("meta")
       meta.name = "description"
-      meta.content = description
+      meta.content = homeDescription
       document.head.append(meta)
     }
 
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
     if (canonical) {
-      canonical.href = "https://shynliairbnbcleaning.com"
+      canonical.href = homeCanonical
     } else {
       const link = document.createElement("link")
       link.rel = "canonical"
-      link.href = "https://shynliairbnbcleaning.com"
+      link.href = homeCanonical
       document.head.append(link)
     }
 
     const scriptId = "structured-data-home"
     const existingSchema = document.getElementById(scriptId) as HTMLScriptElement | null
-    const schema = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": ["LocalBusiness", "HouseCleaningService"],
-          "@id": "https://shynliairbnbcleaning.com/#business",
-          name: "ShynliAirbnbCleaning.com",
-          url: "https://shynliairbnbcleaning.com",
-          telephone: "+1-630-812-7077",
-          email: "info@shynli.com",
-          priceRange: "$$",
-          areaServed: serviceAreaCities.map((city) => ({ "@type": "City", name: `${city.city}, IL` })),
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Naperville",
-            addressRegion: "IL",
-            postalCode: "60566",
-            addressCountry: "US",
-          },
-          parentOrganization: {
-            "@type": "Organization",
-            name: "SHYNLI LLC",
-            url: "https://shynli.com/",
-          },
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://shynliairbnbcleaning.com/#website",
-          name: "ShynliAirbnbCleaning.com",
-          url: "https://shynliairbnbcleaning.com",
-          publisher: { "@id": "https://shynliairbnbcleaning.com/#business" },
-        },
-        {
-          "@type": "Service",
-          "@id": "https://shynliairbnbcleaning.com/#service",
-          name: "Airbnb Turnover Cleaning",
-          description: "Guest-ready Airbnb turnover cleaning with linens, restocking notes, photo handoff, and host-first availability checks.",
-          provider: { "@id": "https://shynliairbnbcleaning.com/#business" },
-          serviceType: "Airbnb turnover cleaning",
-          areaServed: serviceAreaCities.map((city) => ({ "@type": "City", name: `${city.city}, IL` })),
-          offers: {
-            "@type": "Offer",
-            availability: "https://schema.org/InStock",
-            priceSpecification: {
-              "@type": "PriceSpecification",
-              priceCurrency: "USD",
-              description: "Custom quote based on listing size, condition, timing, access, linens, restocking, and photo handoff.",
-            },
-            url: quoteUrl,
-          },
-        },
-        {
-          "@type": "BreadcrumbList",
-          itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://shynliairbnbcleaning.com" }],
-        },
-      ],
-    }
 
     const script = existingSchema ?? document.createElement("script")
     script.id = scriptId
     script.type = "application/ld+json"
-    script.textContent = JSON.stringify(schema)
+    script.textContent = JSON.stringify(homeStructuredData)
     if (!existingSchema) document.head.append(script)
   }, [])
 }

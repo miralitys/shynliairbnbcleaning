@@ -1,5 +1,8 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import path from "node:path"
+import React from "react"
+import { renderToString } from "react-dom/server"
+import { createServer } from "vite"
 
 const distDir = path.resolve("dist")
 const sitemapPath = path.join(distDir, "sitemap.xml")
@@ -20,7 +23,20 @@ const optimizedIndexHtml = indexHtml.replace(
   `<link rel="preload" crossorigin href="$1" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="$1"></noscript>`,
 )
 
-writeFileSync(indexPath, optimizedIndexHtml)
+const viteServer = await createServer({
+  appType: "custom",
+  server: { middlewareMode: true },
+})
+
+let staticHomeHtml
+try {
+  const homeModule = await viteServer.ssrLoadModule("/src/HomeApp.tsx")
+  staticHomeHtml = createStaticHomeHtml(optimizedIndexHtml, homeModule)
+} finally {
+  await viteServer.close()
+}
+
+writeFileSync(indexPath, staticHomeHtml)
 
 for (const route of routes) {
   const cleanRoute = route.replace(/^\/+/, "")
@@ -36,3 +52,30 @@ writeFileSync(
 )
 
 console.log(`Created static fallbacks for ${routes.length} sitemap routes.`)
+
+function createStaticHomeHtml(html, homeModule) {
+  const staticMarkup = renderToString(React.createElement(homeModule.default))
+  const cssHref = html.match(/href="([^"]+\.css)"/)?.[1]
+  const inlineCss = cssHref
+    ? readFileSync(path.join(distDir, cssHref.replace(/^\//, "")), "utf8").replace(/<\/style/gi, "<\\/style")
+    : ""
+  const structuredData = JSON.stringify(homeModule.homeStructuredData)
+    .replace(/</g, "\\u003c")
+    .replace(/>/g, "\\u003e")
+    .replace(/&/g, "\\u0026")
+
+  return html
+    .replace(/\s*<script type="module" crossorigin src="[^"]+"><\/script>/g, "")
+    .replace(/\s*<link rel="modulepreload" crossorigin href="[^"]+">/g, "")
+    .replace(/\s*<link rel="preload" crossorigin href="[^"]+\.css" as="style" onload="this\.onload=null;this\.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="[^"]+\.css"><\/noscript>/g, "")
+    .replace(/<title>[^<]*<\/title>/, `<title>${homeModule.homeTitle}</title>`)
+    .replace(
+      /<meta name="description" content="[^"]*" \/>/,
+      `<meta name="description" content="${homeModule.homeDescription}" />`,
+    )
+    .replace(
+      "</head>",
+      () => `<link rel="canonical" href="${homeModule.homeCanonical}" />${inlineCss ? `<style data-inline-home-css>${inlineCss}</style>` : ""}<script id="structured-data-home" type="application/ld+json">${structuredData}</script></head>`,
+    )
+    .replace(/<body>[\s\S]*<\/body>/, () => `<body>\n    <div id="root">${staticMarkup}</div>\n  </body>`)
+}
