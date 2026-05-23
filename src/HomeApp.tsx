@@ -293,6 +293,7 @@ function HomeApp() {
                 <span className="grid size-12 place-items-center rounded-full bg-[#d7043f] text-white">
                   <Search className="size-5" />
                 </span>
+                <span className="sr-only">Check availability</span>
               </a>
             </div>
           </div>
