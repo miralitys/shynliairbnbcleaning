@@ -300,6 +300,7 @@ function HomeApp() {
                 imageClassName="h-full w-full object-cover object-center"
                 sizes="(min-width: 1024px) 52vw, 100vw"
                 loading="eager"
+                fetchPriority="high"
                 decorative
               />
               <div className="absolute bottom-5 left-5 rounded-full bg-white/92 px-4 py-2 text-sm font-black shadow-[0_6px_24px_rgba(0,0,0,0.16)]">

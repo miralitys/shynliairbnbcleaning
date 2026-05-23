@@ -29,8 +29,10 @@ const viteServer = await createServer({
 })
 
 let staticHomeHtml
+let appModule
 try {
   const homeModule = await viteServer.ssrLoadModule("/src/HomeApp.tsx")
+  appModule = await viteServer.ssrLoadModule("/src/App.tsx")
   staticHomeHtml = createStaticHomeHtml(optimizedIndexHtml, homeModule)
 } finally {
   await viteServer.close()
@@ -43,7 +45,7 @@ for (const route of routes) {
   const routeFile = path.join(distDir, cleanRoute, "index.html")
 
   mkdirSync(path.dirname(routeFile), { recursive: true })
-  writeFileSync(routeFile, optimizedIndexHtml)
+  writeFileSync(routeFile, createStaticRouteHtml(optimizedIndexHtml, appModule, route))
 }
 
 writeFileSync(
@@ -77,5 +79,18 @@ function createStaticHomeHtml(html, homeModule) {
       "</head>",
       () => `<link rel="canonical" href="${homeModule.homeCanonical}" />${inlineCss ? `<style data-inline-home-css>${inlineCss}</style>` : ""}<script id="structured-data-home" type="application/ld+json">${structuredData}</script></head>`,
     )
+    .replace(/<body>[\s\S]*<\/body>/, () => `<body>\n    <div id="root">${staticMarkup}</div>\n  </body>`)
+}
+
+function createStaticRouteHtml(html, appModule, route) {
+  const staticMarkup = renderToString(React.createElement(appModule.default, { initialPath: route }))
+  const cssHref = html.match(/href="([^"]+\.css)"/)?.[1]
+  const inlineCss = cssHref
+    ? readFileSync(path.join(distDir, cssHref.replace(/^\//, "")), "utf8").replace(/<\/style/gi, "<\\/style")
+    : ""
+
+  return html
+    .replace(/\s*<link rel="preload" crossorigin href="[^"]+\.css" as="style" onload="this\.onload=null;this\.rel='stylesheet'"><noscript><link rel="stylesheet" crossorigin href="[^"]+\.css"><\/noscript>/g, "")
+    .replace("</head>", () => `${inlineCss ? `<style data-inline-route-css>${inlineCss}</style>` : ""}</head>`)
     .replace(/<body>[\s\S]*<\/body>/, () => `<body>\n    <div id="root">${staticMarkup}</div>\n  </body>`)
 }

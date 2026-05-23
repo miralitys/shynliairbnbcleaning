@@ -279,7 +279,7 @@ function ShynliBadge({ children }: { children: string }) {
   )
 }
 
-function LegalPage({ page }: { page: (typeof legalPages)[keyof typeof legalPages] }) {
+function LegalPage({ page, pathname }: { page: (typeof legalPages)[keyof typeof legalPages]; pathname: string }) {
   useEffect(() => {
     document.title = `${page.title} | ShynliAirbnbCleaning.com`
     const legalDescription = `${page.title} for ShynliAirbnbCleaning.com, covering host quote requests, booking rules, service expectations, and customer choices.`
@@ -295,7 +295,7 @@ function LegalPage({ page }: { page: (typeof legalPages)[keyof typeof legalPages
     }
 
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-    const canonicalHref = canonicalFor(window.location.pathname)
+    const canonicalHref = canonicalFor(pathname)
     if (canonical) {
       canonical.href = canonicalHref
     } else {
@@ -304,12 +304,12 @@ function LegalPage({ page }: { page: (typeof legalPages)[keyof typeof legalPages
       link.href = canonicalHref
       document.head.append(link)
     }
-  }, [page.title])
+  }, [page.title, pathname])
   useStructuredData(`legal-${page.title}`, [
     businessSchema(),
     breadcrumbSchema([
       ["Home", "https://shynliairbnbcleaning.com"],
-      [page.title, canonicalFor(window.location.pathname)],
+      [page.title, canonicalFor(pathname)],
     ]),
   ])
 
@@ -1591,6 +1591,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
               imageClassName="h-[420px] w-full object-cover"
               sizes="(min-width: 1024px) 54vw, 100vw"
               loading="eager"
+              fetchPriority="high"
             />
           </div>
         </div>
@@ -2020,8 +2021,13 @@ function useSeoMeta(enabled: boolean) {
   }, [enabled])
 }
 
-function App() {
-  const currentPath = window.location.pathname.replace(/\/$/, "") || "/"
+type AppProps = {
+  initialPath?: string
+}
+
+function App({ initialPath }: AppProps = {}) {
+  const runtimePath = initialPath ?? window.location.pathname
+  const currentPath = runtimePath.replace(/\/$/, "") || "/"
   const legalPage = legalPages[currentPath as keyof typeof legalPages]
   const seoHubPage = seoHubPages.find((page) => page.path === currentPath)
   const cityServiceMatch = serviceAreaCities.flatMap((city) =>
@@ -2036,7 +2042,7 @@ function App() {
     breadcrumbSchema([["Home", "https://shynliairbnbcleaning.com"]]),
   ] : [])
 
-  if (legalPage) return <LegalPage page={legalPage} />
+  if (legalPage) return <LegalPage page={legalPage} pathname={currentPath} />
   if (seoHubPage) return <SeoHubPage page={seoHubPage} />
   if (currentPath === "/service-areas") return <ServiceAreasPage />
   if (cityServiceMatch) return <CityServicePage city={cityServiceMatch.city} service={cityServiceMatch.service} />
@@ -2117,6 +2123,7 @@ function App() {
                 imageClassName="h-full w-full object-cover object-center"
                 sizes="(min-width: 1024px) 52vw, 100vw"
                 loading="eager"
+                fetchPriority="high"
                 decorative
               />
               <div className="absolute bottom-5 left-5 rounded-full bg-white/92 px-4 py-2 text-sm font-black shadow-[0_6px_24px_rgba(0,0,0,0.16)]">

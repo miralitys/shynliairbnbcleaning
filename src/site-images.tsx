@@ -17,6 +17,7 @@ type ResponsiveSiteImageProps = {
   imageClassName?: string
   sizes: string
   loading?: "eager" | "lazy"
+  fetchPriority?: "high" | "low" | "auto"
   decorative?: boolean
 }
 
@@ -52,6 +53,7 @@ export function ResponsiveSiteImage({
   imageClassName,
   sizes,
   loading = "lazy",
+  fetchPriority,
   decorative = false,
 }: ResponsiveSiteImageProps) {
   return (
@@ -63,6 +65,7 @@ export function ResponsiveSiteImage({
         width={image.width}
         height={image.height}
         loading={loading}
+        fetchPriority={fetchPriority}
         decoding="async"
         className={imageClassName}
         aria-hidden={decorative || undefined}
