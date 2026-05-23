@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { airbnbSiteImages, ResponsiveSiteImage } from "@/site-images"
 
 const quoteUrl = "https://shynlicleaningservice.com/quote"
 
@@ -24,13 +25,6 @@ const airbnbSiteProof = [
   ["Photos after the clean", "See the beds, bathrooms, kitchen, and supplies before the next guest arrives."],
   ["Linens and restock notes", "Beds, towels, paper goods, soaps, and owner-closet instructions stay visible."],
 ]
-
-const airbnbSiteImages = {
-  hero: "/airbnb-turnover/bedroom-towels.jpg",
-  secondary: "/airbnb-turnover/housekeeper-towels.jpg",
-  window: "/airbnb-turnover/clean-bedroom.jpg",
-  proof: "/airbnb-turnover/bathroom-towels.jpg",
-}
 
 const airbnbSitePillars = [
   {
@@ -1591,7 +1585,13 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
             </div>
           </div>
           <div className="overflow-hidden rounded-[32px] border border-[#dddddd] bg-[#f7f7f7] shadow-[0_20px_70px_rgba(0,0,0,0.10)]">
-            <img src={airbnbSiteImages.hero} alt="Guest-ready Airbnb bedroom after turnover cleaning" className="h-[420px] w-full object-cover" />
+            <ResponsiveSiteImage
+              image={airbnbSiteImages.hero}
+              alt="Guest-ready Airbnb bedroom after turnover cleaning"
+              imageClassName="h-[420px] w-full object-cover"
+              sizes="(min-width: 1024px) 54vw, 100vw"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
@@ -2111,14 +2111,28 @@ function App() {
 
           <div className="grid gap-2 md:grid-cols-[1.06fr_0.94fr]">
             <div className="relative min-h-[520px] overflow-hidden rounded-[28px] bg-[#f7f7f7]">
-              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${airbnbSiteImages.hero})` }} aria-hidden="true" />
+              <ResponsiveSiteImage
+                image={airbnbSiteImages.hero}
+                className="absolute inset-0"
+                imageClassName="h-full w-full object-cover object-center"
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                loading="eager"
+                decorative
+              />
               <div className="absolute bottom-5 left-5 rounded-full bg-white/92 px-4 py-2 text-sm font-black shadow-[0_6px_24px_rgba(0,0,0,0.16)]">
                 Guest-ready bedroom
               </div>
             </div>
             <div className="grid gap-2">
               <div className="relative min-h-[255px] overflow-hidden rounded-[28px] bg-[#f7f7f7]">
-                <div className="absolute inset-0 bg-cover bg-[50%_44%]" style={{ backgroundImage: `url(${airbnbSiteImages.secondary})` }} aria-hidden="true" />
+                <ResponsiveSiteImage
+                  image={airbnbSiteImages.secondary}
+                  className="absolute inset-0"
+                  imageClassName="h-full w-full object-cover object-[50%_44%]"
+                  sizes="(min-width: 1024px) 24vw, 100vw"
+                  loading="eager"
+                  decorative
+                />
               </div>
               <div className="rounded-[28px] border border-[#dddddd] bg-white p-5 shadow-[0_6px_24px_rgba(0,0,0,0.08)]">
                 <p className="text-sm font-black text-[#d7043f]">What hosts ask first</p>
@@ -2163,7 +2177,13 @@ function App() {
       <section className="bg-[#f7f7f7] px-4 py-16 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.86fr] lg:items-center">
           <div className="relative min-h-[620px] overflow-hidden rounded-[28px] bg-[#222222] text-white">
-            <div className="absolute inset-0 bg-cover bg-[50%_58%] opacity-72" style={{ backgroundImage: `url(${airbnbSiteImages.window})` }} aria-hidden="true" />
+            <ResponsiveSiteImage
+              image={airbnbSiteImages.window}
+              className="absolute inset-0 opacity-72"
+              imageClassName="h-full w-full object-cover object-[50%_58%]"
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              decorative
+            />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(34,34,34,0.05)_0%,rgba(34,34,34,0.38)_46%,rgba(34,34,34,0.92)_100%)]" />
             <div className="relative z-10 flex min-h-[620px] flex-col justify-end p-6 md:p-9">
               <p className="text-sm font-black text-[#ffb3c1]">The turnover window</p>
@@ -2224,7 +2244,13 @@ function App() {
               A quick handoff helps you catch low supplies, visible issues, and readiness questions before they turn into guest messages.
             </p>
             <div className="relative mt-8 min-h-72 overflow-hidden rounded-[28px] bg-white/8">
-              <div className="absolute inset-0 bg-cover bg-center opacity-82" style={{ backgroundImage: `url(${airbnbSiteImages.proof})` }} aria-hidden="true" />
+              <ResponsiveSiteImage
+                image={airbnbSiteImages.proof}
+                className="absolute inset-0 opacity-82"
+                imageClassName="h-full w-full object-cover object-center"
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                decorative
+              />
               <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(34,34,34,0.86),rgba(34,34,34,0))] p-5 pt-20">
                 <p className="text-sm font-black text-white">Bathroom and towel check</p>
               </div>
