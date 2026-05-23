@@ -6,6 +6,22 @@ services:
     autoDeployTrigger: commit
     buildCommand: npm run build
     staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=60, s-maxage=86400, stale-while-revalidate=604800
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /airbnb-turnover/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /sitemap.xml
+        name: Cache-Control
+        value: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800
+      - path: /robots.txt
+        name: Cache-Control
+        value: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800
     routes:
       - type: rewrite
         source: /*
