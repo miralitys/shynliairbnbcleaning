@@ -116,7 +116,7 @@ const serviceAreaCities = serviceAreaGroups.flatMap((group) =>
 
 const homeGuideGroups = [
   {
-    label: "Host problem guides",
+    label: "Host guides",
     pages: [
       [hostProblemGuideHub.title, hostProblemGuideHub.path] as const,
       ...hostProblemGuides.map((guide) => [guide.title, guide.path] as const),
@@ -745,7 +745,7 @@ function HomeApp() {
                   <a href="#turnover" className="hover:text-[#222222]">Can you make check-in?</a>
                   <a href="#scope" className="hover:text-[#222222]">Are linens included?</a>
                   <a href="#scope" className="hover:text-[#222222]">Can you restock supplies?</a>
-                  <a href="/host-problem-guides/" className="hover:text-[#222222]">Host problem guides</a>
+                  <a href="/host-problem-guides/" className="hover:text-[#222222]">Host guides</a>
                   <a href="#proof" className="hover:text-[#222222]">Will I get photos?</a>
                 </div>
               </div>

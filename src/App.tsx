@@ -1099,7 +1099,7 @@ const seoHubPages: SeoPageData[] = [...coreSeoHubPages, ...hostIntentPages]
 
 const seoGuideGroups = [
   {
-    label: "Host problem guides",
+    label: "Host guides",
     pages: hostProblemGuides,
   },
   {
@@ -1704,7 +1704,7 @@ function SeoHeader() {
             <span className="mt-1 block text-xs font-black text-[#d7043f]">Airbnb turnover cleaning</span>
           </span>
         </a>
-        <nav className="flex flex-wrap items-center gap-3 text-sm font-black text-[#717171]" aria-label="SEO page navigation">
+        <nav className="flex flex-wrap items-center gap-3 text-sm font-black text-[#717171]" aria-label="Site navigation">
           <a href="/service-areas/" className="hover:text-[#222222]">Service areas</a>
           <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cost</a>
           <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
@@ -1755,7 +1755,7 @@ function SeoFooter() {
             <div className="mt-4 grid gap-3">
               <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cleaning cost</a>
               <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
-              <a href="/host-problem-guides/" className="hover:text-[#222222]">Host problem guides</a>
+              <a href="/host-problem-guides/" className="hover:text-[#222222]">Host guides</a>
               <a href="/what-is-included-in-airbnb-cleaning/" className="hover:text-[#222222]">What is included</a>
               <a href="/faq/" className="hover:text-[#222222]">FAQ</a>
             </div>
@@ -1858,9 +1858,9 @@ function HostProblemGuidesHubPage() {
             </div>
             <div className="grid gap-3 sm:grid-cols-3">
               {[
-                ["5", "new articles"],
-                ["356", "sitemap URLs"],
-                ["1", "quote handoff"],
+                ["5", "host guides"],
+                ["Real", "host questions"],
+                ["Fast", "availability check"],
               ].map(([value, label]) => (
                 <div key={label} className="rounded-[22px] border border-[#dddddd] bg-white p-5">
                   <p className="text-4xl font-black leading-none text-[#d7043f]">{value}</p>
@@ -1891,9 +1891,9 @@ function HostProblemGuidesHubPage() {
       <section className="px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-[1680px] gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
-            <p className="text-sm font-black text-[#d7043f]">Why these topics</p>
+            <p className="text-sm font-black text-[#d7043f]">Why these guides</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
-              These are not generic SEO posts.
+              Built for real turnover questions.
             </h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -2007,7 +2007,7 @@ function HostProblemGuidePage({ guide }: { guide: HostProblemGuide }) {
         <section className="px-4 py-14 md:px-8 md:py-20">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
             <div>
-              <p className="text-sm font-black text-[#d7043f]">Internal links</p>
+              <p className="text-sm font-black text-[#d7043f]">Keep reading</p>
               <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Keep the cleaning plan connected.</h2>
               <p className="mt-5 text-lg font-bold leading-8 text-[#717171]">{guide.cta}</p>
               <Button asChild className="mt-6 h-12 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
@@ -2019,7 +2019,7 @@ function HostProblemGuidePage({ guide }: { guide: HostProblemGuide }) {
             </div>
             <div className="grid gap-3">
               <a href={routeHref(hostProblemGuideHub.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
-                <span>All host problem guides</span>
+                <span>All host guides</span>
                 <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
               </a>
               {guide.internalLinks.map((link) => (
@@ -2119,12 +2119,12 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
       <section className="border-t border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
-            <p className="text-sm font-black text-[#d7043f]">Host problem guides</p>
+            <p className="text-sm font-black text-[#d7043f]">Host guides</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
               Practical fixes for the cleaning problems hosts keep running into.
             </h2>
             <a href={routeHref(hostProblemGuideHub.path)} className="mt-6 inline-flex min-h-11 items-center rounded-full border border-[#dddddd] bg-white px-5 text-sm font-black transition-colors hover:border-[#d7043f] hover:text-[#d7043f]">
-              View all host problem guides
+              View all host guides
             </a>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -2141,7 +2141,7 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
       <section className="border-t border-[#dddddd] px-4 py-14 md:px-8 md:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
-            <p className="text-sm font-black text-[#d7043f]">Related searches</p>
+            <p className="text-sm font-black text-[#d7043f]">Related host questions</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Keep moving through the host questions.</h2>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">

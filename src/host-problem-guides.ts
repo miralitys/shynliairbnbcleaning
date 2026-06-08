@@ -31,16 +31,16 @@ export type HostProblemGuide = {
 
 export const hostProblemGuideHub = {
   path: "/host-problem-guides",
-  title: "Airbnb Host Problem Guides",
-  metaTitle: "Airbnb Host Problem Guides | ShynliAirbnbCleaning.com",
+  title: "Airbnb Host Cleaning Guides",
+  metaTitle: "Airbnb Host Cleaning Guides | ShynliAirbnbCleaning.com",
   description:
     "Practical Airbnb host cleaning guides for late checkout, missed turnover prevention, cleaner access, quality control, and cleanliness complaints.",
   keywords:
     "Airbnb host cleaning guides, Airbnb turnover problems, short-term rental cleaning questions, Airbnb cleaner checklist, Chicago suburbs Airbnb cleaning",
-  eyebrow: "Host problem guides",
+  eyebrow: "Host guides",
   headline: "Airbnb cleaning guides for real host problems.",
   intro:
-    "These guides are written for short-term rental hosts, co-hosts, and property managers who need fewer surprises between checkout and check-in. Each article answers a specific operational question instead of repeating a generic cleaning checklist.",
+    "These guides are written for short-term rental hosts, co-hosts, and property managers who need fewer surprises between checkout and check-in. Each guide answers a specific operational question instead of repeating a generic cleaning checklist.",
 }
 
 export const hostProblemGuides: HostProblemGuide[] = [
