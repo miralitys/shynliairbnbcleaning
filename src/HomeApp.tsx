@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { hostProblemGuideHub, hostProblemGuides } from "@/host-problem-guides"
 import { airbnbSiteImages, ResponsiveSiteImage } from "@/site-images"
 
 const quoteUrl = "https://shynlicleaningservice.com/quote"
@@ -114,6 +115,13 @@ const serviceAreaCities = serviceAreaGroups.flatMap((group) =>
 )
 
 const homeGuideGroups = [
+  {
+    label: "Host problem guides",
+    pages: [
+      [hostProblemGuideHub.title, hostProblemGuideHub.path] as const,
+      ...hostProblemGuides.map((guide) => [guide.title, guide.path] as const),
+    ],
+  },
   {
     label: "Core cleaning pages",
     pages: [
@@ -317,6 +325,7 @@ function HomeApp() {
               ["Turnover", "#turnover"],
               ["Scope", "#scope"],
               ["Proof", "#proof"],
+              ["Guides", "/host-problem-guides/"],
               ["Quote", quoteUrl],
             ].map(([label, href]) => (
               <a key={label} href={href} className="flex min-h-10 items-center rounded-full px-4 transition-colors hover:bg-[#f7f7f7] hover:text-[#222222]">
@@ -736,6 +745,7 @@ function HomeApp() {
                   <a href="#turnover" className="hover:text-[#222222]">Can you make check-in?</a>
                   <a href="#scope" className="hover:text-[#222222]">Are linens included?</a>
                   <a href="#scope" className="hover:text-[#222222]">Can you restock supplies?</a>
+                  <a href="/host-problem-guides/" className="hover:text-[#222222]">Host problem guides</a>
                   <a href="#proof" className="hover:text-[#222222]">Will I get photos?</a>
                 </div>
               </div>

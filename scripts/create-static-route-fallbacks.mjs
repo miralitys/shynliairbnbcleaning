@@ -96,6 +96,9 @@ function createStaticRouteHtml(html, appModule, route) {
     .replace(/</g, "\\u003c")
     .replace(/>/g, "\\u003e")
     .replace(/&/g, "\\u0026")
+  const keywordsMeta = routeHead.keywords
+    ? `<meta name="keywords" content="${escapeAttribute(routeHead.keywords)}" />`
+    : ""
 
   return html
     .replace(/\s*<script type="module"(?: crossorigin)? src="[^"]+"><\/script>/g, "")
@@ -109,7 +112,7 @@ function createStaticRouteHtml(html, appModule, route) {
     .replace(/\s*<link rel="canonical" href="[^"]+"\s*\/?>/g, "")
     .replace(
       "</head>",
-      () => `<link rel="canonical" href="${escapeAttribute(routeHead.canonical)}" />${inlineCss ? `<style data-inline-route-css>${inlineCss}</style>` : ""}<script id="structured-data-route" type="application/ld+json">${structuredData}</script></head>`,
+      () => `${keywordsMeta}<link rel="canonical" href="${escapeAttribute(routeHead.canonical)}" />${inlineCss ? `<style data-inline-route-css>${inlineCss}</style>` : ""}<script id="structured-data-route" type="application/ld+json">${structuredData}</script></head>`,
     )
     .replace(/<body>[\s\S]*<\/body>/, () => `<body>\n    <div id="root">${staticMarkup}</div>\n  </body>`)
 }

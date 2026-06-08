@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { hostProblemGuideHub, hostProblemGuides, type HostProblemGuide } from "@/host-problem-guides"
 import { airbnbSiteImages, ResponsiveSiteImage } from "@/site-images"
 
 const quoteUrl = "https://shynlicleaningservice.com/quote"
@@ -1098,6 +1099,10 @@ const seoHubPages: SeoPageData[] = [...coreSeoHubPages, ...hostIntentPages]
 
 const seoGuideGroups = [
   {
+    label: "Host problem guides",
+    pages: hostProblemGuides,
+  },
+  {
     label: "Core cleaning pages",
     pages: coreSeoHubPages.slice(0, 11),
   },
@@ -1274,9 +1279,9 @@ function canonicalFor(pathname: string) {
   return `https://shynliairbnbcleaning.com${cleanPath}`
 }
 
-function usePageMeta(title: string, description: string, pathname = window.location.pathname) {
+function usePageMeta(title: string, description: string, pathname = window.location.pathname, keywords?: string, titleIsExact = false) {
   useEffect(() => {
-    document.title = `${title} | ShynliAirbnbCleaning.com`
+    document.title = titleIsExact ? title : `${title} | ShynliAirbnbCleaning.com`
 
     const existing = document.querySelector('meta[name="description"]')
     if (existing) {
@@ -1286,6 +1291,18 @@ function usePageMeta(title: string, description: string, pathname = window.locat
       meta.name = "description"
       meta.content = description
       document.head.append(meta)
+    }
+
+    if (keywords) {
+      const existingKeywords = document.querySelector('meta[name="keywords"]')
+      if (existingKeywords) {
+        existingKeywords.setAttribute("content", keywords)
+      } else {
+        const meta = document.createElement("meta")
+        meta.name = "keywords"
+        meta.content = keywords
+        document.head.append(meta)
+      }
     }
 
     const canonicalHref = canonicalFor(pathname)
@@ -1298,7 +1315,7 @@ function usePageMeta(title: string, description: string, pathname = window.locat
       link.href = canonicalHref
       document.head.append(link)
     }
-  }, [description, pathname, title])
+  }, [description, keywords, pathname, title, titleIsExact])
 }
 
 function useStructuredData(id: string, nodes: unknown[]) {
@@ -1337,6 +1354,7 @@ export function getStaticRouteHead(pathname: string) {
   const currentPath = pathname.replace(/\/$/, "") || "/"
   const legalPage = legalPages[currentPath as keyof typeof legalPages]
   const seoHubPage = seoHubPages.find((page) => page.path === currentPath)
+  const hostProblemGuide = hostProblemGuides.find((guide) => guide.path === currentPath)
   const cityServiceMatch = serviceAreaCities.flatMap((city) =>
     cityServicePages.map((service) => ({ city, service, path: `/service-areas/${city.slug}/${service.slug}` })),
   ).find((match) => match.path === currentPath)
@@ -1354,6 +1372,41 @@ export function getStaticRouteHead(pathname: string) {
         breadcrumbSchema([
           ["Home", "https://shynliairbnbcleaning.com"],
           [legalPage.title, canonicalFor(currentPath)],
+        ]),
+      ],
+    }
+  }
+
+  if (currentPath === hostProblemGuideHub.path) {
+    return {
+      title: hostProblemGuideHub.metaTitle,
+      description: hostProblemGuideHub.description,
+      keywords: hostProblemGuideHub.keywords,
+      canonical: canonicalFor(hostProblemGuideHub.path),
+      structuredData: [
+        businessSchema(),
+        hostProblemGuideItemListSchema(),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          [hostProblemGuideHub.title, canonicalFor(hostProblemGuideHub.path)],
+        ]),
+      ],
+    }
+  }
+
+  if (hostProblemGuide) {
+    return {
+      title: hostProblemGuide.metaTitle,
+      description: hostProblemGuide.description,
+      keywords: hostProblemGuide.keywords,
+      canonical: canonicalFor(hostProblemGuide.path),
+      structuredData: [
+        businessSchema(),
+        articleSchema(hostProblemGuide),
+        breadcrumbSchema([
+          ["Home", "https://shynliairbnbcleaning.com"],
+          [hostProblemGuideHub.title, canonicalFor(hostProblemGuideHub.path)],
+          [hostProblemGuide.title, canonicalFor(hostProblemGuide.path)],
         ]),
       ],
     }
@@ -1545,6 +1598,52 @@ function faqSchema(faqs: [string, string][]) {
   }
 }
 
+function hostProblemGuideItemListSchema() {
+  return {
+    "@type": "ItemList",
+    "@id": `${canonicalFor(hostProblemGuideHub.path)}#host-problem-guides`,
+    name: hostProblemGuideHub.title,
+    description: hostProblemGuideHub.description,
+    itemListElement: hostProblemGuides.map((guide, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: guide.title,
+      url: canonicalFor(guide.path),
+    })),
+  }
+}
+
+function articleSchema(guide: HostProblemGuide) {
+  return {
+    "@type": "BlogPosting",
+    "@id": `${canonicalFor(guide.path)}#article`,
+    headline: guide.headline,
+    name: guide.title,
+    description: guide.description,
+    datePublished: "2026-06-08",
+    dateModified: "2026-06-08",
+    articleSection: "Airbnb host cleaning guides",
+    keywords: guide.keywords,
+    mainEntityOfPage: canonicalFor(guide.path),
+    author: {
+      "@type": "Organization",
+      name: "SHYNLI LLC",
+      url: "https://shynli.com/",
+    },
+    publisher: { "@id": "https://shynliairbnbcleaning.com/#business" },
+    about: [
+      {
+        "@type": "Thing",
+        name: "Airbnb turnover cleaning",
+      },
+      {
+        "@type": "Thing",
+        name: "Short-term rental hosting",
+      },
+    ],
+  }
+}
+
 function citySlugFor(city: string) {
   return city.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")
 }
@@ -1609,6 +1708,7 @@ function SeoHeader() {
           <a href="/service-areas/" className="hover:text-[#222222]">Service areas</a>
           <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cost</a>
           <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
+          <a href="/host-problem-guides/" className="hover:text-[#222222]">Guides</a>
           <a href="/faq/" className="hover:text-[#222222]">FAQ</a>
           <Button asChild className="h-11 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
             <a href={quoteUrl}>Get quote</a>
@@ -1655,6 +1755,7 @@ function SeoFooter() {
             <div className="mt-4 grid gap-3">
               <a href="/airbnb-cleaning-cost/" className="hover:text-[#222222]">Cleaning cost</a>
               <a href="/airbnb-cleaning-checklist/" className="hover:text-[#222222]">Checklist</a>
+              <a href="/host-problem-guides/" className="hover:text-[#222222]">Host problem guides</a>
               <a href="/what-is-included-in-airbnb-cleaning/" className="hover:text-[#222222]">What is included</a>
               <a href="/faq/" className="hover:text-[#222222]">FAQ</a>
             </div>
@@ -1700,6 +1801,198 @@ function SeoCtaBand({ city, serviceLabel }: { city?: ServiceAreaCity; serviceLab
         </Button>
       </div>
     </section>
+  )
+}
+
+function HostProblemGuidesHubPage() {
+  usePageMeta(hostProblemGuideHub.metaTitle, hostProblemGuideHub.description, hostProblemGuideHub.path, hostProblemGuideHub.keywords, true)
+  useStructuredData("host-problem-guides", [
+    businessSchema(),
+    hostProblemGuideItemListSchema(),
+    breadcrumbSchema([
+      ["Home", "https://shynliairbnbcleaning.com"],
+      [hostProblemGuideHub.title, canonicalFor(hostProblemGuideHub.path)],
+    ]),
+  ])
+
+  return (
+    <main className="min-h-screen bg-white text-[#222222]">
+      <SeoHeader />
+      <section className="px-4 py-14 md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black text-[#d7043f]">{hostProblemGuideHub.eyebrow}</p>
+            <h1 className="mt-4 text-5xl font-black leading-[0.94] md:text-7xl">{hostProblemGuideHub.headline}</h1>
+          </div>
+          <p className="max-w-3xl text-lg font-bold leading-8 text-[#717171]">{hostProblemGuideHub.intro}</p>
+        </div>
+      </section>
+
+      <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
+        <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-5">
+          {hostProblemGuides.map((guide) => (
+            <a key={guide.path} href={routeHref(guide.path)} className="group flex min-h-[360px] flex-col rounded-[24px] border border-[#dddddd] bg-white p-5 transition-colors hover:border-[#d7043f]">
+              <p className="text-sm font-black text-[#d7043f]">{guide.eyebrow}</p>
+              <h2 className="mt-4 text-2xl font-black leading-tight">{guide.title}</h2>
+              <p className="mt-4 text-sm font-bold leading-6 text-[#717171]">{guide.targetQuestion}</p>
+              <span className="mt-auto flex items-center gap-2 pt-6 text-sm font-black text-[#d7043f]">
+                Read guide
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="px-4 py-14 md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+          <div>
+            <p className="text-sm font-black text-[#d7043f]">Why these topics</p>
+            <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
+              These are not generic SEO posts.
+            </h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              ["Late checkout", "What to do when the guest takes part of the cleaning window."],
+              ["Missed turnovers", "How to build calendar, confirmation, backup, and access systems."],
+              ["Cleaner access", "What to send before the first clean so the crew can work without guessing."],
+              ["Quality control", "How to verify cleaning without turning every turnover into micromanagement."],
+              ["Cleanliness complaints", "How to respond when the guest says the listing was not clean."],
+              ["Local operations", "How these problems show up for hosts across Naperville and nearby Chicago suburbs."],
+            ].map(([title, copy]) => (
+              <div key={title} className="rounded-[24px] border border-[#dddddd] bg-white p-6">
+                <h3 className="text-2xl font-black">{title}</h3>
+                <p className="mt-3 text-base font-bold leading-7 text-[#717171]">{copy}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <SeoCtaBand />
+      <SeoFooter />
+    </main>
+  )
+}
+
+function HostProblemGuidePage({ guide }: { guide: HostProblemGuide }) {
+  usePageMeta(guide.metaTitle, guide.description, guide.path, guide.keywords, true)
+  useStructuredData(`host-problem-guide-${guide.path}`, [
+    businessSchema(),
+    articleSchema(guide),
+    breadcrumbSchema([
+      ["Home", "https://shynliairbnbcleaning.com"],
+      [hostProblemGuideHub.title, canonicalFor(hostProblemGuideHub.path)],
+      [guide.title, canonicalFor(guide.path)],
+    ]),
+  ])
+
+  return (
+    <main className="min-h-screen bg-white text-[#222222]">
+      <SeoHeader />
+      <article>
+        <section className="px-4 py-14 md:px-8 md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-sm font-black text-[#d7043f]">{guide.eyebrow}</p>
+              <h1 className="mt-4 text-5xl font-black leading-[0.94] md:text-7xl">{guide.headline}</h1>
+              <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">{guide.intro}</p>
+            </div>
+            <aside className="rounded-[28px] border border-[#dddddd] bg-[#f7f7f7] p-6">
+              <p className="text-sm font-black text-[#d7043f]">Direct answer</p>
+              <p className="mt-4 text-2xl font-black leading-tight">{guide.quickAnswer}</p>
+              <div className="mt-6 rounded-[20px] bg-white p-5">
+                <p className="text-sm font-black text-[#222222]">Target question</p>
+                <p className="mt-3 text-base font-bold leading-7 text-[#717171]">{guide.targetQuestion}</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-10 md:px-8">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-black text-[#d7043f]">Audience signal</p>
+            <p className="mt-3 max-w-4xl text-xl font-black leading-8">{guide.redditSignal}</p>
+          </div>
+        </section>
+
+        <section className="px-4 py-14 md:px-8 md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.74fr_1.26fr]">
+            <div className="lg:sticky lg:top-24">
+              <p className="text-sm font-black text-[#d7043f]">Practical guide</p>
+              <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">How to handle it without turning the turnover into chaos.</h2>
+            </div>
+            <div className="grid gap-8">
+              {guide.sections.map((section, index) => (
+                <section key={section.heading} className="border-t border-[#dddddd] pt-8 first:border-t-0 first:pt-0">
+                  <p className="text-sm font-black text-[#d7043f]">{String(index + 1).padStart(2, "0")}</p>
+                  <h3 className="mt-3 text-3xl font-black leading-tight">{section.heading}</h3>
+                  <p className="mt-4 text-lg font-bold leading-8 text-[#717171]">{section.body}</p>
+                  {section.bullets ? (
+                    <ul className="mt-5 grid gap-3">
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet} className="grid grid-cols-[12px_1fr] gap-3 text-base font-bold leading-7 text-[#717171]">
+                          <span className="mt-3 size-1.5 rounded-full bg-[#d7043f]" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </section>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.86fr_1.14fr]">
+            <div>
+              <p className="text-sm font-black text-[#d7043f]">Checklist</p>
+              <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">{guide.checklistTitle}</h2>
+            </div>
+            <div className="grid gap-3">
+              {guide.checklist.map((item) => (
+                <div key={item} className="rounded-[20px] border border-[#dddddd] bg-white p-5 text-base font-black leading-7">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-14 md:px-8 md:py-20">
+          <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+            <div>
+              <p className="text-sm font-black text-[#d7043f]">Internal links</p>
+              <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">Keep the cleaning plan connected.</h2>
+              <p className="mt-5 text-lg font-bold leading-8 text-[#717171]">{guide.cta}</p>
+              <Button asChild className="mt-6 h-12 rounded-full bg-[#d7043f] px-5 font-black text-white shadow-none hover:bg-[#b51645]">
+                <a href={quoteUrl}>
+                  Request turnover quote
+                  <ArrowRight className="size-4" />
+                </a>
+              </Button>
+            </div>
+            <div className="grid gap-3">
+              <a href={routeHref(hostProblemGuideHub.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
+                <span>All host problem guides</span>
+                <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
+              </a>
+              {guide.internalLinks.map((link) => (
+                <a key={link.path} href={routeHref(link.path)} className="group rounded-[22px] border border-[#dddddd] bg-white p-5 transition-colors hover:border-[#d7043f]">
+                  <span className="flex items-center justify-between gap-4 font-black">
+                    {link.title}
+                    <ArrowRight className="size-4 text-[#d7043f] transition-transform group-hover:translate-x-1" />
+                  </span>
+                  <span className="mt-3 block text-sm font-bold leading-6 text-[#717171]">{link.note}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </article>
+      <SeoFooter />
+    </main>
   )
 }
 
@@ -1774,6 +2067,28 @@ function SeoHubPage({ page }: { page: SeoHubPageData }) {
                 <h3 className="text-2xl font-black">{title}</h3>
                 <p className="mt-3 text-base font-bold leading-7 text-[#717171]">{copy}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+          <div>
+            <p className="text-sm font-black text-[#d7043f]">Host problem guides</p>
+            <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">
+              Practical fixes for the cleaning problems hosts keep running into.
+            </h2>
+            <a href={routeHref(hostProblemGuideHub.path)} className="mt-6 inline-flex min-h-11 items-center rounded-full border border-[#dddddd] bg-white px-5 text-sm font-black transition-colors hover:border-[#d7043f] hover:text-[#d7043f]">
+              View all host problem guides
+            </a>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {hostProblemGuides.map((guide) => (
+              <a key={guide.path} href={routeHref(guide.path)} className="group flex min-h-16 items-center justify-between rounded-[22px] border border-[#dddddd] bg-white px-5 font-black transition-colors hover:border-[#d7043f]">
+                <span>{guide.title}</span>
+                <ArrowRight className="size-4 shrink-0 text-[#d7043f] transition-transform group-hover:translate-x-1" />
+              </a>
             ))}
           </div>
         </div>
@@ -2175,6 +2490,7 @@ function App({ initialPath }: AppProps = {}) {
   const currentPath = runtimePath.replace(/\/$/, "") || "/"
   const legalPage = legalPages[currentPath as keyof typeof legalPages]
   const seoHubPage = seoHubPages.find((page) => page.path === currentPath)
+  const hostProblemGuide = hostProblemGuides.find((guide) => guide.path === currentPath)
   const cityServiceMatch = serviceAreaCities.flatMap((city) =>
     cityServicePages.map((service) => ({ city, service, path: `/service-areas/${city.slug}/${service.slug}` })),
   ).find((match) => match.path === currentPath)
@@ -2188,6 +2504,8 @@ function App({ initialPath }: AppProps = {}) {
   ] : [])
 
   if (legalPage) return <LegalPage page={legalPage} pathname={currentPath} />
+  if (currentPath === hostProblemGuideHub.path) return <HostProblemGuidesHubPage />
+  if (hostProblemGuide) return <HostProblemGuidePage guide={hostProblemGuide} />
   if (seoHubPage) return <SeoHubPage page={seoHubPage} />
   if (currentPath === "/service-areas") return <ServiceAreasPage />
   if (cityServiceMatch) return <CityServicePage city={cityServiceMatch.city} service={cityServiceMatch.service} />
