@@ -1818,18 +1818,62 @@ function HostProblemGuidesHubPage() {
   return (
     <main className="min-h-screen bg-white text-[#222222]">
       <SeoHeader />
-      <section className="px-4 py-14 md:px-8 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.84fr_1.16fr] lg:items-end">
-          <div>
+      <section className="px-4 py-12 md:px-8 md:py-16">
+        <div className="mx-auto grid max-w-[1680px] gap-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(420px,0.98fr)] lg:items-center">
+          <div className="max-w-5xl">
             <p className="text-sm font-black text-[#d7043f]">{hostProblemGuideHub.eyebrow}</p>
-            <h1 className="mt-4 text-5xl font-black leading-[0.94] md:text-7xl">{hostProblemGuideHub.headline}</h1>
+            <h1 className="mt-4 text-[clamp(3.5rem,6.4vw,7.8rem)] font-black leading-[0.9] tracking-normal">{hostProblemGuideHub.headline}</h1>
+            <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">{hostProblemGuideHub.intro}</p>
+            <div className="mt-7 flex flex-wrap gap-2">
+              <ShynliBadge>5 practical guides</ShynliBadge>
+              <ShynliBadge>Built from host questions</ShynliBadge>
+              <ShynliBadge>Chicago suburbs context</ShynliBadge>
+            </div>
           </div>
-          <p className="max-w-3xl text-lg font-bold leading-8 text-[#717171]">{hostProblemGuideHub.intro}</p>
+          <div className="grid gap-4">
+            <div className="relative min-h-[430px] overflow-hidden rounded-[28px] bg-[#222222] text-white shadow-[0_20px_70px_rgba(0,0,0,0.18)]">
+              <ResponsiveSiteImage
+                image={airbnbSiteImages.window}
+                className="absolute inset-0 opacity-78"
+                imageClassName="h-full w-full object-cover object-[50%_58%]"
+                sizes="(min-width: 1280px) 44vw, 100vw"
+                loading="eager"
+                fetchPriority="high"
+                decorative
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(34,34,34,0.03)_0%,rgba(34,34,34,0.24)_44%,rgba(34,34,34,0.9)_100%)]" />
+              <div className="relative z-10 flex min-h-[430px] flex-col justify-end p-6 md:p-8">
+                <p className="text-sm font-black text-[#ffb3c1]">Turnover field notes</p>
+                <h2 className="mt-3 max-w-xl text-4xl font-black leading-[0.96] md:text-5xl">
+                  From late checkout to guest complaints.
+                </h2>
+                <div className="mt-6 grid gap-2 sm:grid-cols-2">
+                  {["Late checkout", "Missed clean", "Access notes", "Quality check"].map((item) => (
+                    <span key={item} className="min-h-10 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm font-black text-white backdrop-blur-sm">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                ["5", "new articles"],
+                ["356", "sitemap URLs"],
+                ["1", "quote handoff"],
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-[22px] border border-[#dddddd] bg-white p-5">
+                  <p className="text-4xl font-black leading-none text-[#d7043f]">{value}</p>
+                  <p className="mt-2 text-sm font-black text-[#717171]">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-14 md:px-8 md:py-18">
-        <div className="mx-auto grid max-w-7xl gap-4 lg:grid-cols-5">
+        <div className="mx-auto grid max-w-[1680px] gap-4 lg:grid-cols-5">
           {hostProblemGuides.map((guide) => (
             <a key={guide.path} href={routeHref(guide.path)} className="group flex min-h-[360px] flex-col rounded-[24px] border border-[#dddddd] bg-white p-5 transition-colors hover:border-[#d7043f]">
               <p className="text-sm font-black text-[#d7043f]">{guide.eyebrow}</p>
@@ -1845,7 +1889,7 @@ function HostProblemGuidesHubPage() {
       </section>
 
       <section className="px-4 py-14 md:px-8 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="mx-auto grid max-w-[1680px] gap-10 lg:grid-cols-[0.82fr_1.18fr]">
           <div>
             <p className="text-sm font-black text-[#d7043f]">Why these topics</p>
             <h2 className="mt-4 text-4xl font-black leading-[0.98] md:text-6xl">

@@ -38,7 +38,7 @@ export const hostProblemGuideHub = {
   keywords:
     "Airbnb host cleaning guides, Airbnb turnover problems, short-term rental cleaning questions, Airbnb cleaner checklist, Chicago suburbs Airbnb cleaning",
   eyebrow: "Host problem guides",
-  headline: "Airbnb cleaning articles built around the problems hosts actually ask about.",
+  headline: "Airbnb cleaning guides for real host problems.",
   intro:
     "These guides are written for short-term rental hosts, co-hosts, and property managers who need fewer surprises between checkout and check-in. Each article answers a specific operational question instead of repeating a generic cleaning checklist.",
 }
