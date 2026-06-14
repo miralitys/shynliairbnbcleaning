@@ -401,7 +401,7 @@ const coreSeoHubPages: SeoPageData[] = [
     sections: [
       ["Why hosts use it", "A repeatable rental clean keeps the home from drifting below your listing photos as bookings stack up."],
       ["What we check", "Bathrooms, bedrooms, kitchen, floors, trash, towels, toiletries, visible damage, low inventory, and anything guests will notice first."],
-      ["Best fit", "Homes, condos, townhomes, guest suites, and furnished rentals where the next guest arrival matters more than a generic cleaning window."],
+      ["Best fit", "Homes, condos, townhomes, guest suites, and furnished rentals where the next guest arrival matters more than a loose cleaning window."],
     ],
   },
   {
@@ -1614,14 +1614,16 @@ function hostProblemGuideItemListSchema() {
 }
 
 function articleSchema(guide: HostProblemGuide) {
+  const articleDate = guide.publishedDate ?? "2026-06-08"
+
   return {
     "@type": "BlogPosting",
     "@id": `${canonicalFor(guide.path)}#article`,
     headline: guide.headline,
     name: guide.title,
     description: guide.description,
-    datePublished: "2026-06-08",
-    dateModified: "2026-06-08",
+    datePublished: articleDate,
+    dateModified: articleDate,
     articleSection: "Airbnb host cleaning guides",
     keywords: guide.keywords,
     mainEntityOfPage: canonicalFor(guide.path),
@@ -1825,7 +1827,7 @@ function HostProblemGuidesHubPage() {
             <h1 className="mt-4 text-[clamp(3.5rem,6.4vw,7.8rem)] font-black leading-[0.9] tracking-normal">{hostProblemGuideHub.headline}</h1>
             <p className="mt-6 max-w-3xl text-lg font-bold leading-8 text-[#717171]">{hostProblemGuideHub.intro}</p>
             <div className="mt-7 flex flex-wrap gap-2">
-              <ShynliBadge>5 practical guides</ShynliBadge>
+              <ShynliBadge>{`${hostProblemGuides.length} practical guides`}</ShynliBadge>
               <ShynliBadge>Built from host questions</ShynliBadge>
               <ShynliBadge>Chicago suburbs context</ShynliBadge>
             </div>
@@ -1848,7 +1850,7 @@ function HostProblemGuidesHubPage() {
                   From late checkout to guest complaints.
                 </h2>
                 <div className="mt-6 grid gap-2 sm:grid-cols-2">
-                  {["Late checkout", "Missed clean", "Access notes", "Quality check"].map((item) => (
+                  {["Late checkout", "Pet hair", "Smoke odor", "Stained linens"].map((item) => (
                     <span key={item} className="min-h-10 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm font-black text-white backdrop-blur-sm">
                       {item}
                     </span>
@@ -1858,7 +1860,7 @@ function HostProblemGuidesHubPage() {
             </div>
             <div className="grid gap-3 sm:grid-cols-3">
               {[
-                ["5", "host guides"],
+                [String(hostProblemGuides.length), "host guides"],
                 ["Real", "host questions"],
                 ["Fast", "availability check"],
               ].map(([value, label]) => (
@@ -1898,11 +1900,11 @@ function HostProblemGuidesHubPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {[
-              ["Late checkout", "What to do when the guest takes part of the cleaning window."],
-              ["Missed turnovers", "How to build calendar, confirmation, backup, and access systems."],
-              ["Cleaner access", "What to send before the first clean so the crew can work without guessing."],
+              ["Tight timing", "What to do when checkout, check-in, route timing, or cleaner workload creates risk."],
+              ["Guest-sensitive details", "How to handle pet hair, smoke odor, stained linens, and cleanliness complaints."],
+              ["Cleaner handoff", "What to send before the first clean so access, supplies, linens, and notes are clear."],
               ["Quality control", "How to verify cleaning without turning every turnover into micromanagement."],
-              ["Cleanliness complaints", "How to respond when the guest says the listing was not clean."],
+              ["Checkout expectations", "How to keep guest checkout tasks fair when a cleaning fee is part of the stay."],
               ["Local operations", "How these problems show up for hosts across Naperville and nearby Chicago suburbs."],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-[24px] border border-[#dddddd] bg-white p-6">
@@ -1955,7 +1957,7 @@ function HostProblemGuidePage({ guide }: { guide: HostProblemGuide }) {
 
         <section className="border-y border-[#dddddd] bg-[#f7f7f7] px-4 py-10 md:px-8">
           <div className="mx-auto max-w-7xl">
-            <p className="text-sm font-black text-[#d7043f]">Audience signal</p>
+            <p className="text-sm font-black text-[#d7043f]">What hosts are asking</p>
             <p className="mt-3 max-w-4xl text-xl font-black leading-8">{guide.redditSignal}</p>
           </div>
         </section>
@@ -2321,7 +2323,7 @@ function CityPage({ city }: { city: ServiceAreaCity }) {
             <div className="mt-5 grid gap-4 md:grid-cols-3">
               <p className="text-base font-bold leading-7 text-[#717171]">{profile.localFit}</p>
               <p className="text-base font-bold leading-7 text-[#717171]">
-                Common request: {profile.scenario}. The cleaning plan should match the guest clock, not a generic route promise.
+                Common request: {profile.scenario}. The cleaning plan should match the guest clock, not a loose route promise.
               </p>
               <p className="text-base font-bold leading-7 text-[#717171]">{profile.pricing}</p>
             </div>
@@ -2573,6 +2575,7 @@ function App({ initialPath }: AppProps = {}) {
               ["Turnover", "#turnover"],
               ["Scope", "#scope"],
               ["Proof", "#proof"],
+              ["Guides", "/host-problem-guides/"],
               ["Quote", quoteUrl],
             ].map(([label, href]) => (
               <a key={label} href={href} className="flex min-h-10 items-center rounded-full px-4 transition-colors hover:bg-[#f7f7f7] hover:text-[#222222]">
