@@ -1847,10 +1847,10 @@ function HostProblemGuidesHubPage() {
               <div className="relative z-10 flex min-h-[430px] flex-col justify-end p-6 md:p-8">
                 <p className="text-sm font-black text-[#ffb3c1]">Turnover field notes</p>
                 <h2 className="mt-3 max-w-xl text-4xl font-black leading-[0.96] md:text-5xl">
-                  From late checkout to guest complaints.
+                  From late checkout to property surprises.
                 </h2>
                 <div className="mt-6 grid gap-2 sm:grid-cols-2">
-                  {["Late checkout", "Pet hair", "Smoke odor", "Stained linens"].map((item) => (
+                  {["Late checkout", "Pest report", "Left items", "Heavy mess"].map((item) => (
                     <span key={item} className="min-h-10 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm font-black text-white backdrop-blur-sm">
                       {item}
                     </span>
@@ -1900,11 +1900,11 @@ function HostProblemGuidesHubPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {[
-              ["Tight timing", "What to do when checkout, check-in, route timing, or cleaner workload creates risk."],
-              ["Guest-sensitive details", "How to handle pet hair, smoke odor, stained linens, and cleanliness complaints."],
+              ["Tight timing", "What to do when checkout, check-in, route timing, early arrivals, or cleaner workload creates risk."],
+              ["Guest-sensitive details", "How to handle pet hair, smoke odor, stained linens, left items, and cleanliness complaints."],
               ["Cleaner handoff", "What to send before the first clean so access, supplies, linens, and notes are clear."],
               ["Quality control", "How to verify cleaning without turning every turnover into micromanagement."],
-              ["Checkout expectations", "How to keep guest checkout tasks fair when a cleaning fee is part of the stay."],
+              ["Property surprises", "How to respond when pests, heavy mess, or longer stays change the normal cleaning plan."],
               ["Local operations", "How these problems show up for hosts across Naperville and nearby Chicago suburbs."],
             ].map(([title, copy]) => (
               <div key={title} className="rounded-[24px] border border-[#dddddd] bg-white p-6">

@@ -35,9 +35,9 @@ export const hostProblemGuideHub = {
   title: "Airbnb Host Cleaning Guides",
   metaTitle: "Airbnb Host Cleaning Guides | ShynliAirbnbCleaning.com",
   description:
-    "Practical Airbnb host cleaning guides for late checkout, missed turnovers, cleaner access, pet hair, smoke odor, stained linens, checkout tasks, and guest-ready timing.",
+    "Practical Airbnb host cleaning guides for late checkout, missed turnovers, cleaner access, pet hair, smoke odor, pests, left items, excessive mess, mid-stay cleaning, and guest-ready timing.",
   keywords:
-    "Airbnb host cleaning guides, Airbnb turnover problems, short-term rental cleaning questions, Airbnb cleaner checklist, Airbnb pet hair cleaning, Airbnb smoke odor cleaning",
+    "Airbnb host cleaning guides, Airbnb turnover problems, short-term rental cleaning questions, Airbnb cleaner checklist, Airbnb bed bug cleaning, Airbnb lost and found cleaning, Airbnb mid-stay cleaning",
   eyebrow: "Host guides",
   headline: "Airbnb cleaning guides for real host problems.",
   intro:
@@ -874,5 +874,410 @@ export const hostProblemGuides: HostProblemGuide[] = [
     ],
     cta:
       "If you are unsure whether a turnover window is realistic, send Shynli the ZIP, property size, guest times, access notes, laundry setup, and any pet or heavy-use details. We can help confirm the route and scope before the booking depends on it.",
+  },
+  {
+    path: "/airbnb-bed-bug-pest-response-plan",
+    title: "Airbnb Bed Bug and Pest Response Plan",
+    metaTitle: "Airbnb Bed Bug and Pest Response Plan | ShynliAirbnbCleaning.com",
+    description:
+      "What Airbnb hosts should do when a guest reports bed bugs or pests, including documentation, cleaner safety, linen handling, pest control, and when to pause turnover cleaning.",
+    keywords:
+      "Airbnb bed bug response, Airbnb pest cleaning plan, Airbnb guest reports bed bugs, short-term rental pest issue, Airbnb cleaner pest protocol",
+    publishedDate: "2026-06-16",
+    eyebrow: "Pest report",
+    headline: "What should hosts do when a guest reports bed bugs or pests?",
+    targetQuestion:
+      "Should the cleaner keep working if a guest reports bed bugs, insects, or another pest concern?",
+    quickAnswer:
+      "Treat a pest report as a safety and documentation issue before it is a cleaning issue. Pause normal turnover work if live activity is possible, document what was found, avoid moving exposed linens through the home, call a licensed pest professional, and resume cleaning only after the host has a clear next step.",
+    intro:
+      "A bed bug or pest report can put a host into panic mode. The next guest may be arriving soon, the cleaner may already be on site, and the host may not know whether the claim is real, exaggerated, or caused by something else. The safest plan is simple: document, protect the cleaner, keep the property from spreading the issue, and bring in the right professional before promising that the home is clear.",
+    redditSignal:
+      "Hosts discuss bed bug accusations, pest inspections, guest refunds, and whether cleaners should wash everything or stop until pest control confirms what is happening.",
+    sections: [
+      {
+        heading: "Do not ask the cleaner to solve a pest problem alone",
+        body:
+          "A cleaner can notice signs, take photos, bag linens, and report what they see. A cleaner should not be expected to diagnose an infestation or certify that a property is safe. If live bugs, bites, droppings, nests, or repeated pest complaints are involved, the host needs a licensed pest professional and a written plan before the next stay depends on the property.",
+        bullets: [
+          "Ask for clear photos of what was found, where it was found, and which room is affected.",
+          "Avoid shaking linens, dragging bedding through the home, or moving soft goods without a plan.",
+          "Keep exposed items separate from clean guest-ready inventory.",
+          "Do not tell the next guest the property is clear until the right professional has weighed in.",
+        ],
+      },
+      {
+        heading: "Separate a sighting from an infestation",
+        body:
+          "One bug in a property does not always mean an infestation, but it still needs a careful response. A guest photo, cleaner note, pest inspection, and room-by-room check help the host decide what happened. The goal is not to argue with the guest in the first message. The goal is to get facts quickly enough to protect the property and the next booking.",
+      },
+      {
+        heading: "Protect linens and soft surfaces",
+        body:
+          "Beds, mattress protectors, pillow covers, throws, curtains, sofa seams, rugs, and laundry bins are the areas that matter most during a pest concern. If the cleaner is told to continue, the host should give clear instructions for bagging, laundering, isolating, or leaving items for pest control. Guessing in the moment creates risk.",
+      },
+      {
+        heading: "Know when to block the calendar",
+        body:
+          "A normal same-day turnover may not be enough after a serious pest report. If a pest professional needs to inspect or treat the home, the host may need to block the next stay, delay check-in, or move the guest. That decision is painful, but handing a possible pest issue to the next guest can become much more expensive.",
+      },
+      {
+        heading: "Use cleaning as the recovery step, not the diagnosis",
+        body:
+          "After the pest issue is inspected or treated, cleaning becomes part of recovery: linens, surfaces, floors, mattress covers, under-bed areas, furniture edges, and final readiness. The cleaner needs to know what pest control did, what can be touched, what should be discarded, and what proof the host wants after the reset.",
+      },
+    ],
+    checklistTitle: "Pest report response checklist",
+    checklist: [
+      "Ask for photos, room location, and a short written description.",
+      "Pause normal turnover work if live pest activity is possible.",
+      "Keep exposed linens and soft goods separate from clean inventory.",
+      "Contact a licensed pest professional when the issue could affect guest safety.",
+      "Decide whether the next check-in should be delayed, moved, or canceled.",
+      "Resume cleaning only with clear instructions after inspection or treatment.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleanliness Complaint Response",
+        path: "/airbnb-cleanliness-complaint-response",
+        note: "Use this when the pest report arrives as a guest complaint during or after a stay.",
+      },
+      {
+        title: "Airbnb Cleaning Damage Report",
+        path: "/airbnb-cleaning-damage-report",
+        note: "Use this to document photos, rooms, and issue notes after checkout.",
+      },
+      {
+        title: "Airbnb Deep Cleaning",
+        path: "/airbnb-deep-cleaning",
+        note: "Use this for the recovery clean after pest inspection or treatment is complete.",
+      },
+    ],
+    cta:
+      "If a guest reports bed bugs or pests, send Shynli the ZIP, affected room, photos, next check-in time, and whether pest control has been contacted. We can help plan the cleaning side without pretending cleaning replaces pest treatment.",
+  },
+  {
+    path: "/airbnb-lost-and-found-cleaning-handoff",
+    title: "Airbnb Lost and Found Cleaning Handoff",
+    metaTitle: "Airbnb Lost and Found Cleaning Handoff | ShynliAirbnbCleaning.com",
+    description:
+      "How Airbnb hosts can handle guest items left behind after checkout, including cleaner photos, storage notes, shipping boundaries, and avoiding liability confusion.",
+    keywords:
+      "Airbnb lost and found, Airbnb guest left items, Airbnb cleaner found belongings, short-term rental lost items, Airbnb left behind items",
+    publishedDate: "2026-06-16",
+    eyebrow: "Left items",
+    headline: "How should hosts handle items guests leave behind after checkout?",
+    targetQuestion:
+      "What should my cleaner do if they find clothes, chargers, jewelry, medicine, bags, or other guest belongings?",
+    quickAnswer:
+      "Give the cleaner a simple lost-and-found handoff: photograph the item where it was found, move it only if needed, bag and label it, tell the host where it is stored, and let the host handle guest communication and shipping. The cleaner should not become the guest's shipping desk or property manager.",
+    intro:
+      "Left-behind items sound small until they create a review threat, a missing-item accusation, or a rushed message while the next guest is arriving. The cleaner may find clothes, chargers, headphones, medication, food, passports, jewelry, toys, or full bags. Hosts need a calm process that protects the guest, the cleaner, and the next turnover.",
+    redditSignal:
+      "Hosts often ask how long to keep lost items, who pays to ship them, whether cleaners should mail them, and how to respond when a guest claims something is missing.",
+    sections: [
+      {
+        heading: "Photograph before moving the item",
+        body:
+          "The first photo matters. It shows where the item was found and helps avoid confusion later. If the item must be moved so the cleaner can finish the turnover, take a second photo of where it was stored. This is especially useful for expensive-looking items, medication, electronics, jewelry, luggage, and anything a guest may urgently ask about.",
+        bullets: [
+          "Take one photo in place before touching the item.",
+          "Take one photo after the item is bagged or stored.",
+          "Send the host the room name and exact storage location.",
+          "Do not mix guest items with owner supplies, linens, or trash.",
+        ],
+      },
+      {
+        heading: "Keep the cleaner out of guest negotiation",
+        body:
+          "The host should decide how to message the guest, how long items are held, whether pickup is allowed, and how shipping is paid. The cleaner's job is to report and secure the item, not argue about value, pay for postage, wait for a pickup, or meet a guest alone after checkout.",
+      },
+      {
+        heading: "Have a storage rule before the first item appears",
+        body:
+          "A labeled bin, owner closet shelf, or locked area can prevent lost items from disappearing into the property. The host should decide how long items are held and what happens after that period, while checking local rules for valuable, sensitive, or regulated items. Write the rule down so every cleaner handles it the same way.",
+      },
+      {
+        heading: "Handle urgent and sensitive items differently",
+        body:
+          "Medication, passports, wallets, IDs, work laptops, keys, and baby items may need faster host attention than a shirt or phone charger. The cleaner should flag urgent items right away. The host should keep all communication on the platform when possible and avoid promising delivery before shipping details and payment are clear.",
+      },
+      {
+        heading: "Do not let lost items break the next turnover",
+        body:
+          "If the guest left a large amount of property, bags, or personal items after checkout, the host may need to treat it as an access and timing problem. The cleaner still has to reset the home for the next guest. Decide quickly whether items can be safely gathered, where they go, and whether extra time is needed.",
+      },
+    ],
+    checklistTitle: "Lost-and-found cleaner instructions",
+    checklist: [
+      "Photograph the item where it was found.",
+      "Bag or group items only when needed to finish the turnover.",
+      "Label the bag with date, property, room, and reservation name if available.",
+      "Store the item in the approved location.",
+      "Send the host photos and a short note.",
+      "Do not ship, meet, or negotiate with the guest unless the host explicitly arranged it.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleaner Access Instructions",
+        path: "/airbnb-cleaner-access-instructions",
+        note: "Use this to define storage areas, owner closets, and cleaner boundaries before the first clean.",
+      },
+      {
+        title: "Airbnb Cleaning With Photo Report",
+        path: "/airbnb-cleaning-with-photo-report",
+        note: "Use this to decide how left items should appear in photo notes.",
+      },
+      {
+        title: "Airbnb Cleaning Damage Report",
+        path: "/airbnb-cleaning-damage-report",
+        note: "Use this when left items are mixed with damage, stains, or unusual checkout conditions.",
+      },
+    ],
+    cta:
+      "If left items keep creating host stress, Shynli can help set the cleaner handoff: photos, bagging, storage location, and notes that keep the turnover moving without putting the cleaner in the middle.",
+  },
+  {
+    path: "/airbnb-early-check-in-cleaning-plan",
+    title: "Airbnb Early Check-In Cleaning Plan",
+    metaTitle: "Airbnb Early Check-In Cleaning Plan | ShynliAirbnbCleaning.com",
+    description:
+      "How Airbnb hosts can handle early check-in and luggage drop-off requests without interrupting cleaners, risking guest belongings, or rushing the turnover.",
+    keywords:
+      "Airbnb early check-in cleaning, Airbnb luggage drop off cleaner, early check-in Airbnb turnover, Airbnb guests arrive before cleaning, short-term rental early check-in",
+    publishedDate: "2026-06-16",
+    eyebrow: "Early arrival",
+    headline: "How should hosts handle early check-in while the cleaner is still working?",
+    targetQuestion:
+      "Should I let guests drop bags or enter early if the cleaner is still inside the property?",
+    quickAnswer:
+      "Make early check-in possible only after ready status is confirmed. If luggage drop-off is offered, keep it separate from the cleaned space and do not make the cleaner responsible for guest belongings. A cleaner should not have to guard bags, answer guest questions, or work around early arrivals.",
+    intro:
+      "Early check-in can feel like an easy guest perk until it collides with the cleaning window. A guest at the door can slow the cleaner down, create awkward access issues, expose unfinished rooms, and put personal belongings into a space that is not yet ready. Hosts need a rule that is kind to guests without making the cleaner carry the risk.",
+    redditSignal:
+      "Hosts debate early arrivals, luggage drop-off, guests interrupting cleaners, liability for bags, and whether early check-in should be allowed only after the cleaner leaves.",
+    sections: [
+      {
+        heading: "Use ready status as the gate",
+        body:
+          "The clean is not done until the cleaner confirms ready status. Beds may be half made, floors may still be wet, trash may still be inside, and supplies may not be restocked. Letting a guest in before that point can turn a normal turnover into a guest complaint. If early check-in is possible, it should happen after the cleaner says the home is ready.",
+      },
+      {
+        heading: "Do not turn the cleaner into a front desk",
+        body:
+          "Cleaners should not have to watch luggage, give tours, answer Wi-Fi questions, manage parking, or negotiate with guests at the door. Those interruptions slow the work and blur responsibility. If guests arrive early, the host or co-host should handle communication, not the cleaner.",
+        bullets: [
+          "Tell guests that access begins only after ready confirmation.",
+          "Keep cleaner contact information private unless there is a planned reason to share it.",
+          "Do not ask the cleaner to accept bags unless that task is agreed and paid for.",
+          "Avoid guest access to rooms that are still being cleaned.",
+        ],
+      },
+      {
+        heading: "If you offer luggage drop-off, separate it from the turnover",
+        body:
+          "A safer luggage option is a locked garage, storage closet, luggage room, shed, or other area that does not require guests to enter the cleaned living space. The host should set the rule, code, camera policy if any, and pickup time. The cleaner should know the area exists but should not become responsible for the contents.",
+      },
+      {
+        heading: "Charge or block time only when it is real",
+        body:
+          "Guaranteed early check-in is not the same as free early access when the home happens to be ready. If a host promises early arrival, they may need to block the previous night, pay for a tighter cleaning route, or add a fee that matches the work. If the home is ready early by chance, the host can offer access without pressuring the cleaner.",
+      },
+      {
+        heading: "Protect the final walkthrough",
+        body:
+          "The final walkthrough catches small things: hair, trash, towels, low supplies, odor, open windows, wet floors, and items left behind. Early guest access often steals this last check. Keep the cleaner's final minutes protected because those minutes often prevent the review problem.",
+      },
+    ],
+    checklistTitle: "Early check-in rules that protect the turnover",
+    checklist: [
+      "Early check-in is allowed only after ready status.",
+      "Luggage drop-off, if offered, stays outside the cleaned living space.",
+      "The cleaner is not responsible for guest bags or guest questions.",
+      "The host handles all early-arrival communication.",
+      "Guaranteed early access is priced or scheduled separately.",
+      "Final walkthrough happens before the guest enters.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleaner Turnover Time Plan",
+        path: "/airbnb-cleaner-turnover-time-plan",
+        note: "Use this to decide whether the cleaning window can support early access.",
+      },
+      {
+        title: "Late Checkout Airbnb Cleaning Plan",
+        path: "/late-checkout-airbnb-cleaning-plan",
+        note: "Use this when the previous guest takes time away from the same cleaning window.",
+      },
+      {
+        title: "Airbnb Cleaning Before Check-In",
+        path: "/airbnb-cleaning-before-check-in",
+        note: "Use this to define what must be done before guests enter.",
+      },
+    ],
+    cta:
+      "If guests often ask for early access, send Shynli the checkout time, check-in time, property size, luggage option, and cleaner route needs. We can help separate a guest perk from a rushed turnover.",
+  },
+  {
+    path: "/airbnb-excessive-mess-cleaning-plan",
+    title: "Airbnb Excessive Mess Cleaning Plan",
+    metaTitle: "Airbnb Excessive Mess Cleaning Plan | ShynliAirbnbCleaning.com",
+    description:
+      "What Airbnb hosts should do when guests leave excessive trash, party mess, heavy dishes, spills, or a home that needs more than the standard turnover clean.",
+    keywords:
+      "Airbnb excessive mess cleaning, Airbnb guest trashed house, Airbnb extra cleaning plan, short-term rental party cleanup, Airbnb cleaning after messy guest",
+    publishedDate: "2026-06-16",
+    eyebrow: "Heavy mess",
+    headline: "What should hosts do when guests leave an excessive mess?",
+    targetQuestion:
+      "How do I handle a guest who leaves trash, dishes, spills, food, or party mess that goes beyond a normal turnover?",
+    quickAnswer:
+      "Document before resetting, separate standard turnover work from extra cleaning, protect the next check-in, and keep invoices or photos if you may request reimbursement. The cleaner needs permission to spend extra time, bring help, or move non-urgent detail work into a recovery clean.",
+    intro:
+      "Some turnovers are normal. Some are not. Excessive trash, moldy dishes, sticky floors, spilled drinks, confetti, food in beds, oily kitchens, extra guests, or party mess can turn a normal checkout into a different job. The host needs to know what the cleaner found, what can still be finished before check-in, and what should be documented before the evidence disappears.",
+    redditSignal:
+      "Hosts often ask whether they can charge for extra cleaning when guests leave a gross mess, and cleaners describe turnovers where the standard fee no longer matches the work.",
+    sections: [
+      {
+        heading: "Document before the mess is gone",
+        body:
+          "Photos and short cleaner notes should happen before the reset, especially if the mess may become an extra cleaning claim. Capture trash, dishes, stains, food, spills, damaged items, extra bedding used, odor sources, and rooms that need extra time. Once everything is cleaned, the host may have no way to explain why the turnover took longer.",
+        bullets: [
+          "Take wide room photos and close photos of the worst areas.",
+          "Note extra time, extra bags, extra laundry, and extra supplies used.",
+          "Separate normal cleaning from added heavy-mess work when invoicing.",
+          "Keep communication calm and factual.",
+        ],
+      },
+      {
+        heading: "Decide if the next check-in is still realistic",
+        body:
+          "An excessive mess can eat the whole buffer. The cleaner may need more time for trash removal, dishes, floor recovery, laundry, odor, and surface detail. If the next guest is arriving soon, the host has to decide quickly: extra help, delayed arrival, partial scope with recovery clean, or blocking the night if the home cannot honestly be made ready.",
+      },
+      {
+        heading: "Do not hide heavy mess inside the standard checklist",
+        body:
+          "A standard turnover usually covers normal guest use. Heavy mess is different because it adds time and changes priorities. If the cleaner is expected to absorb every extreme checkout into the same rate and window, quality will drop and the property will slowly fall behind.",
+      },
+      {
+        heading: "Protect the health and safety line",
+        body:
+          "Some messes are not just messy. Bodily fluids, unsafe trash, sharp objects, pests, smoke residue, broken glass, or strong odors may need a different response. The cleaner should be able to stop and call the host when the condition is unsafe or outside the agreed scope.",
+      },
+      {
+        heading: "Use a recovery clean after the urgent reset",
+        body:
+          "If the home can be made guest-ready but not fully recovered, write a follow-up list: oven, inside fridge, under furniture, baseboards, cabinet fronts, upholstery, walls, patio, or extra laundry. This keeps the next arrival protected while making sure the property does not carry the mess into future reviews.",
+      },
+    ],
+    checklistTitle: "Excessive mess response checklist",
+    checklist: [
+      "Photograph the mess before cleaning starts.",
+      "Ask the cleaner to estimate extra time and whether help is needed.",
+      "Protect bathrooms, beds, kitchen, trash, floors, entry, and odor first.",
+      "Separate standard turnover from extra cleaning work.",
+      "Keep invoices, photos, and notes if a reimbursement request may be needed.",
+      "Schedule a recovery clean for detail work that cannot fit before check-in.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleaning Damage Report",
+        path: "/airbnb-cleaning-damage-report",
+        note: "Use this to document stains, broken items, trash, and issue notes.",
+      },
+      {
+        title: "Airbnb Checkout Instructions and Cleaning Fee Guide",
+        path: "/airbnb-checkout-instructions-cleaning-fee",
+        note: "Use this to keep guest checkout expectations fair without relying on chores.",
+      },
+      {
+        title: "Airbnb Deep Cleaning",
+        path: "/airbnb-deep-cleaning",
+        note: "Use this when the mess leaves buildup that a same-day reset cannot solve.",
+      },
+    ],
+    cta:
+      "If a guest leaves the property beyond normal use, send Shynli the photos, next check-in time, rooms affected, and what the cleaner found. We can help separate the urgent guest-ready reset from extra cleaning and follow-up detail work.",
+  },
+  {
+    path: "/airbnb-mid-stay-cleaning-plan",
+    title: "Airbnb Mid-Stay Cleaning Plan",
+    metaTitle: "Airbnb Mid-Stay Cleaning Plan | ShynliAirbnbCleaning.com",
+    description:
+      "How Airbnb hosts can plan mid-stay cleaning for weekly, monthly, and extended bookings, including guest privacy, restocking, linens, inspection notes, and pricing.",
+    keywords:
+      "Airbnb mid-stay cleaning, Airbnb long stay cleaning, Airbnb monthly stay housekeeping, short-term rental mid-stay clean, Airbnb extended stay cleaning",
+    publishedDate: "2026-06-16",
+    eyebrow: "Longer stays",
+    headline: "Should Airbnb hosts offer mid-stay cleaning for longer bookings?",
+    targetQuestion:
+      "How do I handle cleaning when a guest stays for one week, one month, or longer?",
+    quickAnswer:
+      "Mid-stay cleaning should be explained before the booking or early in the stay. Keep it respectful of guest privacy, define whether it is optional or required, clarify price and scope, and use it for light cleaning, restocking, linen refresh, and issue notes before the final checkout clean becomes harder.",
+    intro:
+      "Longer Airbnb stays can look easier because there are fewer turnovers. The hidden risk is that the home may go weeks without a professional look. Dust, spills, clogged drains, low supplies, stains, pests, odors, and small maintenance issues can grow quietly until checkout. A mid-stay cleaning plan protects the property while still respecting that the guest is living there.",
+    redditSignal:
+      "Hosts discuss 7-day, 14-day, 30-day, and monthly stays, whether mid-stay cleaning should be required, how to price it, and how to avoid surprising guests with unwanted entry.",
+    sections: [
+      {
+        heading: "Decide whether mid-stay cleaning is optional or required",
+        body:
+          "Optional cleaning works well when the guest wants housekeeping. Required cleaning may make sense for long stays, high-value properties, pet stays, or homes where the host needs periodic condition checks. The key is disclosure. A guest should know the rule before they book or before the stay begins, not when the cleaner appears at the door.",
+      },
+      {
+        heading: "Keep the scope lighter than a turnover",
+        body:
+          "A mid-stay clean is not the same as a checkout reset. Guests still have personal items in the home. The cleaner may focus on bathrooms, kitchen surfaces, floors, trash, towels, light linen refresh, restocking, and visible issue notes. Staging, moving guest belongings, deep appliance work, and full turnover reset usually wait until checkout.",
+        bullets: [
+          "Ask guests to secure valuables and personal items before the visit.",
+          "Confirm which rooms should be cleaned and which should be skipped.",
+          "Restock agreed supplies and report low inventory.",
+          "Note maintenance concerns without moving through personal belongings.",
+        ],
+      },
+      {
+        heading: "Respect guest privacy and access",
+        body:
+          "Mid-stay cleaning requires better communication than checkout cleaning. The host should confirm date, arrival window, entry method, pets, parking, and whether the guest will be home. If the guest is working remotely or has children, the cleaner needs a realistic window and clear boundaries.",
+      },
+      {
+        heading: "Use the visit to catch problems early",
+        body:
+          "A mid-stay clean can prevent a hard final turnover. The cleaner can spot slow leaks, low supplies, smoke odor, pet issues, clogged drains, heavy trash, stained linens, or damage while there is still time to fix it. This is not a surprise inspection. It is a maintenance and guest-care touchpoint that should be explained clearly.",
+      },
+      {
+        heading: "Price it separately from the final clean",
+        body:
+          "Longer stays can create more final cleaning work, but adding surprise fees after booking creates friction. Decide whether mid-stay cleaning is built into the rate, offered as an optional paid service, or required for stays over a certain length. The cleaner's time, travel, supplies, laundry, and restocking should be accounted for.",
+      },
+    ],
+    checklistTitle: "Mid-stay cleaning setup",
+    checklist: [
+      "Define the stay length that triggers a mid-stay clean.",
+      "Tell guests whether it is optional, included, or required.",
+      "Confirm date, arrival window, access, pets, and guest presence.",
+      "Set the lighter in-stay scope: bathrooms, kitchen, floors, trash, linens, supplies, and notes.",
+      "Ask guests to secure personal items before the cleaner arrives.",
+      "Use the visit to catch supplies, maintenance, odor, stains, or damage early.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Restocking Service",
+        path: "/airbnb-restocking-service",
+        note: "Use this when mid-stay cleaning includes paper goods, soaps, coffee, and guest essentials.",
+      },
+      {
+        title: "Airbnb Linen Service",
+        path: "/airbnb-linen-service",
+        note: "Use this if the mid-stay visit includes sheets, towels, or linen refresh.",
+      },
+      {
+        title: "Airbnb Cleaning for Remote Hosts",
+        path: "/airbnb-cleaning-for-remote-hosts",
+        note: "Use this when the host needs visibility without being at the property.",
+      },
+    ],
+    cta:
+      "If longer bookings are becoming harder to reset after checkout, send Shynli the stay length, property size, guest schedule, access notes, linen setup, and restocking expectations. We can help shape a mid-stay cleaning plan that respects the guest and protects the property.",
   },
 ]
