@@ -1850,7 +1850,7 @@ function HostProblemGuidesHubPage() {
                   From late checkout to property surprises.
                 </h2>
                 <div className="mt-6 grid gap-2 sm:grid-cols-2">
-                  {["Late checkout", "Trash overflow", "Outdoor reset", "Mold report"].map((item) => (
+                  {["Guest-ready reset", "Laundry rules", "Starter supplies", "Remote handoff"].map((item) => (
                     <span key={item} className="min-h-10 rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm font-black text-white backdrop-blur-sm">
                       {item}
                     </span>
@@ -1901,9 +1901,9 @@ function HostProblemGuidesHubPage() {
           <div className="grid gap-4 md:grid-cols-2">
             {[
               ["Tight timing", "What to do when checkout, check-in, route timing, early arrivals, or cleaner workload creates risk."],
-              ["Guest-sensitive details", "How to handle pet hair, smoke odor, stained linens, dirty kitchens, left items, and cleanliness complaints."],
-              ["Cleaner handoff", "What to send before the first clean so access, supplies, owner closets, trash, and notes are clear."],
-              ["Quality control", "How to verify cleaning without turning every turnover into micromanagement."],
+              ["Guest-sensitive details", "How to handle pet hair, smoke odor, stained linens, dirty kitchens, guest-ready reset, left items, and cleanliness complaints."],
+              ["Cleaner handoff", "What to send before the first clean so access, supplies, laundry rules, owner closets, trash, and notes are clear."],
+              ["Quality control", "How to verify cleaning, hire better, and review remote handoffs without turning every turnover into micromanagement."],
               ["Property surprises", "How to respond when pests, heavy mess, mold concerns, outdoor spaces, or longer stays change the normal cleaning plan."],
               ["Local operations", "How these problems show up for hosts across Naperville and nearby Chicago suburbs."],
             ].map(([title, copy]) => (

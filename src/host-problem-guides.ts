@@ -35,9 +35,9 @@ export const hostProblemGuideHub = {
   title: "Airbnb Host Cleaning Guides",
   metaTitle: "Airbnb Host Cleaning Guides | ShynliAirbnbCleaning.com",
   description:
-    "Practical Airbnb host cleaning guides for late checkout, trash, dishes, owner closets, outdoor spaces, mold concerns, pet hair, smoke odor, pests, left items, excessive mess, and guest-ready timing.",
+    "Practical Airbnb host cleaning guides for guest-ready reset, laundry rules, starter supplies, remote photo handoff, cleaner hiring, late checkout, trash, dishes, mold concerns, and guest-ready timing.",
   keywords:
-    "Airbnb host cleaning guides, Airbnb turnover problems, short-term rental cleaning questions, Airbnb trash cleaning, Airbnb dishes turnover, Airbnb owner closet setup, Airbnb outdoor cleaning, Airbnb mold cleaning plan",
+    "Airbnb host cleaning guides, Airbnb turnover problems, short-term rental cleaning questions, Airbnb guest-ready reset, Airbnb laundry rules, Airbnb starter supplies, Airbnb remote host cleaning, Airbnb cleaner hiring questions",
   eyebrow: "Host guides",
   headline: "Airbnb cleaning guides for real host problems.",
   intro:
@@ -218,6 +218,11 @@ export const hostProblemGuides: HostProblemGuide[] = [
         path: "/cleaning-for-property-managers",
         note: "Use this when you manage more than one listing or co-host for owners.",
       },
+      {
+        title: "Airbnb Cleaner Hiring Questions",
+        path: "/airbnb-cleaner-hiring-questions",
+        note: "Use this before trusting a new cleaner with guest arrivals.",
+      },
     ],
     cta:
       "If missed turnovers are your biggest host fear, Shynli can help turn the clean into a clearer handoff: route fit, access notes, scope, linen expectations, photo notes, and ready status for listings across the local service map.",
@@ -306,6 +311,11 @@ export const hostProblemGuides: HostProblemGuide[] = [
         note: "Use this when supplies, linens, and guest-facing items need clearer storage rules.",
       },
       {
+        title: "Airbnb Remote Host Cleaning Handoff",
+        path: "/airbnb-remote-host-cleaning-handoff",
+        note: "Use this when cleaner photos, supply notes, and ready status need a stronger remote system.",
+      },
+      {
         title: "Airbnb Linen Service",
         path: "/airbnb-linen-service",
         note: "Use this to clarify clean sets, used sets, and bed setup.",
@@ -384,6 +394,16 @@ export const hostProblemGuides: HostProblemGuide[] = [
         title: "Airbnb Cleaning Reviews Guide",
         path: "/airbnb-cleaning-reviews-guide",
         note: "Use this to connect cleaner quality with guest feedback patterns.",
+      },
+      {
+        title: "Airbnb Guest-Ready Reset Checklist",
+        path: "/airbnb-guest-ready-reset-checklist",
+        note: "Use this to define the final room setup and walkthrough after the clean.",
+      },
+      {
+        title: "Airbnb Remote Host Cleaning Handoff",
+        path: "/airbnb-remote-host-cleaning-handoff",
+        note: "Use this when you rely on photos and notes instead of inspecting in person.",
       },
       {
         title: "Airbnb Deep Cleaning",
@@ -552,6 +572,11 @@ export const hostProblemGuides: HostProblemGuide[] = [
         note: "Use this to decide what the cleaner should document after a pet stay.",
       },
       {
+        title: "Airbnb Guest-Ready Reset Checklist",
+        path: "/airbnb-guest-ready-reset-checklist",
+        note: "Use this to define the final room setup guests see after the cleaning work is done.",
+      },
+      {
         title: "Airbnb Deep Cleaning",
         path: "/airbnb-deep-cleaning",
         note: "Use this when pet hair or odor has become buildup rather than a normal turnover task.",
@@ -714,6 +739,11 @@ export const hostProblemGuides: HostProblemGuide[] = [
         note: "Use this to think through washer/dryer timing and off-site laundry needs.",
       },
       {
+        title: "Airbnb Laundry Start Rules",
+        path: "/airbnb-laundry-start-rules",
+        note: "Use this to decide whether guests should start towels, gather linens, or leave laundry to the cleaner.",
+      },
+      {
         title: "Airbnb Cleaning Damage Report",
         path: "/airbnb-cleaning-damage-report",
         note: "Use this when stained or damaged items need documentation after checkout.",
@@ -803,6 +833,16 @@ export const hostProblemGuides: HostProblemGuide[] = [
         title: "Airbnb Dishes and Kitchen Reset Plan",
         path: "/airbnb-dishes-kitchen-reset-plan",
         note: "Use this when checkout dishes, fridge food, and kitchen reset need a cleaner plan.",
+      },
+      {
+        title: "Airbnb Laundry Start Rules",
+        path: "/airbnb-laundry-start-rules",
+        note: "Use this before asking guests to start towels, sheets, or any laundry at checkout.",
+      },
+      {
+        title: "Airbnb Starter Supplies Plan",
+        path: "/airbnb-starter-supplies-plan",
+        note: "Use this when checkout tasks and supply expectations need to match the guest promise.",
       },
       {
         title: "Airbnb Turnover Checklist",
@@ -1292,6 +1332,11 @@ export const hostProblemGuides: HostProblemGuide[] = [
         note: "Use this when mid-stay cleaning includes paper goods, soaps, coffee, and guest essentials.",
       },
       {
+        title: "Airbnb Starter Supplies Plan",
+        path: "/airbnb-starter-supplies-plan",
+        note: "Use this to define what guests should find stocked at arrival and during longer stays.",
+      },
+      {
         title: "Airbnb Linen Service",
         path: "/airbnb-linen-service",
         note: "Use this if the mid-stay visit includes sheets, towels, or linen refresh.",
@@ -1539,6 +1584,11 @@ export const hostProblemGuides: HostProblemGuide[] = [
         note: "Use this to define what should be checked at each clean.",
       },
       {
+        title: "Airbnb Starter Supplies Plan",
+        path: "/airbnb-starter-supplies-plan",
+        note: "Use this when guest-facing supplies need clearer counts and stay-length rules.",
+      },
+      {
         title: "Airbnb Restocking Service",
         path: "/airbnb-restocking-service",
         note: "Use this when supply replacement is part of the service plan.",
@@ -1702,5 +1752,443 @@ export const hostProblemGuides: HostProblemGuide[] = [
     ],
     cta:
       "If a guest reports mold, mildew, or musty odor, send Shynli the location, photos, next check-in timing, and any moisture history. We can help with cleaning documentation and reset scope while keeping repair or remediation boundaries clear.",
+  },
+  {
+    path: "/airbnb-guest-ready-reset-checklist",
+    title: "Airbnb Guest-Ready Reset Checklist",
+    metaTitle: "Airbnb Guest-Ready Reset Checklist | ShynliAirbnbCleaning.com",
+    description:
+      "How Airbnb hosts can reset the details guests notice first, including beds, remotes, curtains, towels, entry, thermostat, supplies, and final photos.",
+    keywords:
+      "Airbnb guest-ready reset, Airbnb staging checklist, Airbnb turnover reset, short-term rental guest ready checklist, Airbnb cleaner final walkthrough",
+    publishedDate: "2026-06-23",
+    eyebrow: "Guest-ready reset",
+    headline: "What should cleaners reset so the Airbnb feels guest-ready?",
+    targetQuestion:
+      "How do I make sure the property feels ready for the next guest, not just cleaned?",
+    quickAnswer:
+      "Use a guest-ready reset checklist after the cleaning tasks are finished. Beds, towels, remotes, guest book, curtains, lights, thermostat, entry, kitchen basics, supplies, and final room photos should match the standard guests expect from the listing photos.",
+    intro:
+      "A clean Airbnb can still feel unfinished when the details are out of place. Guests notice the first thirty seconds: entry, smell, lighting, bed presentation, towels, kitchen counter, remotes, guidebook, and whether the home matches the listing photos. The reset should turn the property from cleaned into ready.",
+    redditSignal:
+      "Hosts ask cleaners to match room photos, open curtains, place remotes and guest books correctly, and reset beds the same way every time because small staging details affect the guest's first impression.",
+    sections: [
+      {
+        heading: "Make the listing photos the reset standard",
+        body:
+          "The cleaner should not have to guess how each room is supposed to look. Save simple reference photos for bedrooms, living room, bathrooms, kitchen, entry, patio, and any guest-facing setup. These are not decoration demands. They are a practical way to show where towels, pillows, remotes, throws, coffee items, and guidebooks belong.",
+        bullets: [
+          "Use clear daytime photos of each room after a correct reset.",
+          "Show the bed setup, towel placement, pillows, remotes, and guest book.",
+          "Keep the standard realistic for a normal turnover window.",
+          "Update photos when furniture, linens, or amenities change.",
+        ],
+      },
+      {
+        heading: "Reset the items guests reach for first",
+        body:
+          "Guests usually notice misplaced basics before they notice deep details. The TV remote should be where the guide says it is. Wi-Fi notes should be visible if you use a printed card. Towels should be clean and staged consistently. The kitchen should feel ready for coffee, dishes, trash, and handwashing without the guest searching through cabinets.",
+      },
+      {
+        heading: "Check entry, lighting, and comfort settings",
+        body:
+          "The arrival path sets the tone. The entry should be clean, trash-free, and easy to walk through. Curtains or blinds should follow the house standard. Lights should not be left in a confusing state. Thermostat settings should follow the host's written preference and local weather, especially during hot summers or cold Chicago-area winters.",
+        bullets: [
+          "Entry mat, door glass, porch, and first floor path should look cared for.",
+          "Windows, blinds, and curtains should follow the host's normal reset photo.",
+          "Thermostat and lights should be left as instructed, not guessed.",
+          "Wet floors, open windows, loose trash, or strong odors should be flagged before check-in.",
+        ],
+      },
+      {
+        heading: "Leave time for the final walkthrough",
+        body:
+          "The final walkthrough is where many review problems are caught: hair in the sink, a used towel behind the door, a low toilet paper roll, a remote under the couch, a full trash bag, or a sticky kitchen handle. If the schedule removes the final walkthrough, the listing may be clean but not truly guest-ready.",
+      },
+      {
+        heading: "Use photos to confirm readiness, not just staging",
+        body:
+          "Photos are most useful when they follow the same order every time. Ask for bedrooms, bathrooms, kitchen, living room, entry, supplies, and any issue areas. The goal is not to micromanage a good cleaner. The goal is to make the ready status visible before the guest arrives.",
+      },
+    ],
+    checklistTitle: "Guest-ready reset items to confirm",
+    checklist: [
+      "Beds made to the room photo standard.",
+      "Clean towels staged where guests expect them.",
+      "Remotes, guidebook, Wi-Fi notes, and welcome items in their normal places.",
+      "Curtains, blinds, lights, thermostat, and entry set as instructed.",
+      "Kitchen basics visible: sink, counters, coffee area, trash, dish soap, and hand soap.",
+      "Bathrooms checked for hair, used towels, paper goods, soap, and odors.",
+      "Final photos sent in the same order after the walkthrough.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleaning Checklist",
+        path: "/airbnb-cleaning-checklist",
+        note: "Use this for the broader cleaning scope before the final reset.",
+      },
+      {
+        title: "Airbnb Cleaning With Photo Report",
+        path: "/airbnb-cleaning-with-photo-report",
+        note: "Use this to decide which room photos should confirm readiness.",
+      },
+      {
+        title: "Airbnb Cleaning Quality Control",
+        path: "/airbnb-cleaning-quality-control",
+        note: "Use this when you need a fair system for checking the final result.",
+      },
+      {
+        title: "Airbnb Cleaning Between Guests",
+        path: "/airbnb-cleaning-between-guests",
+        note: "Use this for the larger checkout-to-check-in reset plan.",
+      },
+    ],
+    cta:
+      "If your home looks clean but guests still mention small readiness issues, send Shynli the room photos, entry notes, supply standard, and next check-in timing. We can help turn the final reset into a repeatable handoff.",
+  },
+  {
+    path: "/airbnb-laundry-start-rules",
+    title: "Airbnb Laundry Start Rules for Guests and Cleaners",
+    metaTitle: "Airbnb Laundry Start Rules for Guests and Cleaners | ShynliAirbnbCleaning.com",
+    description:
+      "Should Airbnb guests start laundry before checkout? A practical host guide for towels, sheets, cleaner workflow, stains, backup linens, and turnover timing.",
+    keywords:
+      "Airbnb laundry start rules, should Airbnb guests start laundry, Airbnb towels in washer, Airbnb cleaner laundry plan, short-term rental linen turnover",
+    publishedDate: "2026-06-23",
+    eyebrow: "Laundry rules",
+    headline: "Should Airbnb guests start laundry before checkout?",
+    targetQuestion:
+      "Should I ask guests to start towels or sheets before checkout, or does that make the cleaner's job harder?",
+    quickAnswer:
+      "Ask guests to start laundry only if the rule is disclosed, simple, and fits the cleaner's workflow. Many hosts are better off asking guests to gather towels and leave beds alone, while the cleaner uses clean backup sets, checks stains, and starts laundry in the right order.",
+    intro:
+      "Laundry is one of the biggest hidden time traps in Airbnb cleaning. A guest may think they are helping by starting towels, but the cycle may be too long, overloaded, mixed with sheets, or started with stained items that needed attention first. The host needs a clear rule that protects guest experience and cleaner timing.",
+    redditSignal:
+      "Guests and hosts debate whether laundry should be part of checkout. Hosts mention that guest-started loads can tie up the washer, disrupt the cleaner's system, hide stains, or help only when the rule is simple and expected.",
+    sections: [
+      {
+        heading: "Decide the rule before guests book",
+        body:
+          "Laundry rules should not surprise guests on checkout morning. If you ask for anything, keep it light and disclosed: place used towels in one spot, leave beds unmade, or start one towel load only if your cleaner wants that. Do not rely on guests to wash, dry, fold, and reset linens unless you are prepared for inconsistent results.",
+        bullets: [
+          "Tell guests exactly what you want and what you do not want.",
+          "Avoid asking guests to wash sheets and remake beds.",
+          "Keep the rule short enough to feel like checkout help, not a chore list.",
+          "Make sure the cleaner agrees with the rule before publishing it.",
+        ],
+      },
+      {
+        heading: "Know why guest-started laundry can backfire",
+        body:
+          "Guests may overload the washer, use the wrong setting, mix towels with sheets, miss stains, leave wet items sitting, or choose a long cycle that blocks the cleaner. If the cleaner arrives with a precise order for towels, sheets, protectors, blankets, and backup sets, guest-started laundry can slow the turnover down instead of helping.",
+      },
+      {
+        heading: "Let the cleaner control the laundry order",
+        body:
+          "A cleaner usually knows what needs to happen first: pull used linens, check for stains, start the right load, make beds from clean backup sets, stage towels, and decide what goes off site or waits for later. That order matters more than having a random load already spinning when the cleaner walks in.",
+      },
+      {
+        heading: "Use backup sets instead of waiting on one load",
+        body:
+          "Same-day turnovers should not depend on the previous guest's exact sheets and towels being washed before check-in. Keep clean backup sets by bed size and towel type. This lets the cleaner make beds and restock bathrooms while used laundry is treated, washed, taken off site, or processed after the urgent reset.",
+      },
+      {
+        heading: "Write a separate rule for long stays and heavy use",
+        body:
+          "A two-night stay and a month-long stay do not create the same laundry load. Long stays, large groups, pets, makeup stains, pool towels, and extra blankets may need more backup inventory or extra laundry time. Put that into the cleaning plan instead of hoping a checkout instruction solves it.",
+      },
+    ],
+    checklistTitle: "Laundry rule that protects the turnover",
+    checklist: [
+      "Decide whether guests should do nothing, gather towels, or start one simple load.",
+      "Tell guests the rule before checkout day.",
+      "Ask the cleaner which laundry order actually helps.",
+      "Keep clean backup sheets and towels ready for each turnover.",
+      "Separate stained or damaged linens before washing.",
+      "Do not let laundry cycles steal the final walkthrough.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Laundry Service",
+        path: "/airbnb-laundry-service",
+        note: "Use this for the broader laundry scope and timing discussion.",
+      },
+      {
+        title: "Airbnb Linen Service",
+        path: "/airbnb-linen-service",
+        note: "Use this to plan clean sets, used sets, and bed reset rules.",
+      },
+      {
+        title: "Airbnb Stained Linens and Towels Plan",
+        path: "/airbnb-stained-linens-plan",
+        note: "Use this when stains or damaged linens are slowing down the reset.",
+      },
+      {
+        title: "Airbnb Checkout Instructions and Cleaning Fee Guide",
+        path: "/airbnb-checkout-instructions-cleaning-fee",
+        note: "Use this to keep guest checkout tasks fair and clear.",
+      },
+    ],
+    cta:
+      "If laundry keeps making turnovers tight, send Shynli the bed sizes, towel count, washer and dryer setup, checkout rule, and next check-in window. We can help separate guest courtesy from the laundry plan the cleaner actually needs.",
+  },
+  {
+    path: "/airbnb-starter-supplies-plan",
+    title: "Airbnb Starter Supplies Plan",
+    metaTitle: "Airbnb Starter Supplies Plan | ShynliAirbnbCleaning.com",
+    description:
+      "How many starter supplies should Airbnb hosts leave? Plan toilet paper, paper towels, trash bags, soaps, dishwasher tabs, coffee, and restocking notes.",
+    keywords:
+      "Airbnb starter supplies, Airbnb toilet paper supplies, Airbnb trash bags, Airbnb restocking plan, short-term rental guest supplies",
+    publishedDate: "2026-06-23",
+    eyebrow: "Starter supplies",
+    headline: "How many starter supplies should Airbnb hosts leave for guests?",
+    targetQuestion:
+      "Should I leave a starter pack, fully stock the property, or ask guests to buy their own supplies?",
+    quickAnswer:
+      "Define the supply standard by guest count, stay length, and listing promise. At minimum, guests should not arrive without basics for cleanliness and normal use: toilet paper, hand soap, dish soap, trash bags, paper towels, dishwasher tabs if there is a dishwasher, and any amenities clearly promised in the listing.",
+    intro:
+      "Supply complaints feel small until they show up in a review. A guest may forgive a limited starter pack if it was clearly explained. They are less forgiving when they arrive for a weekend and cannot find trash bags, toilet paper, hand soap, or dish soap. Hosts need a supply plan that is fair, visible, and easy for the cleaner to check.",
+    redditSignal:
+      "Hosts and guests debate starter packs, long-stay expectations, trash bags, toilet paper, dishwasher pods, and whether guests should buy basics after paying for a short-term rental.",
+    sections: [
+      {
+        heading: "Separate starter pack from fully stocked",
+        body:
+          "A starter pack means enough supplies to begin the stay, not unlimited restocking for every booking length. Fully stocked means the host intends to provide more generous inventory. Either model can work, but the listing, house rules, and cleaner instructions should match. A vague supply promise creates guest frustration and cleaner guesswork.",
+        bullets: [
+          "Short stays usually need enough basics for the whole visit or a comfortable start.",
+          "Long stays should state whether supplies are starter-only or restocked during the stay.",
+          "High-end listings should be careful with bare-minimum supply standards.",
+          "Any promised amenity should be present when the guest arrives.",
+        ],
+      },
+      {
+        heading: "Protect the cleanliness basics first",
+        body:
+          "Some supplies directly affect cleanliness. Trash bags help guests keep food waste contained. Dish soap and dishwasher tabs help them clean dishes. Hand soap supports bathroom and kitchen hygiene. Toilet paper and paper towels are basic comfort items. These should be easier to find than decorative extras.",
+      },
+      {
+        heading: "Write the count the cleaner should leave",
+        body:
+          "Do not ask the cleaner to use judgment without a standard. Write the par level: how many toilet paper rolls per bathroom, how many paper towel rolls, how many trash bags, how many dishwasher tabs, how much coffee, and whether backup stock should be visible or locked. Counts make restocking faster and easier to verify.",
+      },
+      {
+        heading: "Store extra inventory without inviting overuse",
+        body:
+          "Some hosts leave everything visible and never have a problem. Others find that guests empty closets. If inventory keeps disappearing, separate guest-facing supplies from cleaner-access storage. The cleaner needs enough access to reset the home, while guests only need the amount intended for the stay.",
+      },
+      {
+        heading: "Use low-supply photos before the problem reaches guests",
+        body:
+          "Ask for a photo or note when supplies are below the agreed level. This is especially helpful for remote hosts and busy weekends. The cleaner can check what is visible, but the host still needs to keep the property stocked or arrange deliveries before the next turnover.",
+      },
+    ],
+    checklistTitle: "Starter supplies to define before the next stay",
+    checklist: [
+      "Toilet paper count per bathroom.",
+      "Paper towels and trash bags for the stay length.",
+      "Hand soap, dish soap, dishwasher tabs, sponge, and basic kitchen cleanup items.",
+      "Coffee, toiletries, laundry pods, or extras only if they are part of the listing standard.",
+      "Guest-facing supplies separated from locked backup inventory when needed.",
+      "Low-supply photo or note when inventory drops below the host's par level.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Restocking Service",
+        path: "/airbnb-restocking-service",
+        note: "Use this when supply checks are part of the confirmed cleaning scope.",
+      },
+      {
+        title: "Airbnb Cleaning Supplies Guide",
+        path: "/airbnb-cleaning-supplies-guide",
+        note: "Use this to define the full guest essentials list.",
+      },
+      {
+        title: "Airbnb Owner Closet and Supply Storage Setup",
+        path: "/airbnb-owner-closet-supply-setup",
+        note: "Use this when backup supplies need better storage rules.",
+      },
+      {
+        title: "Airbnb Trash and Recycling Turnover Plan",
+        path: "/airbnb-trash-recycling-turnover-plan",
+        note: "Use this when trash bags, bin rules, and odor risk need a clearer plan.",
+      },
+    ],
+    cta:
+      "If guests keep asking for basic supplies or cleaners keep finding empty shelves, send Shynli the supply list, owner closet photos, stay length pattern, and restocking standard. We can help make the supply check practical for each turnover.",
+  },
+  {
+    path: "/airbnb-remote-host-cleaning-handoff",
+    title: "Airbnb Remote Host Cleaning Handoff",
+    metaTitle: "Airbnb Remote Host Cleaning Handoff | ShynliAirbnbCleaning.com",
+    description:
+      "How remote Airbnb hosts can verify turnover cleaning with structured photos, supply notes, issue escalation, ready status, and occasional local checks.",
+    keywords:
+      "Airbnb remote host cleaning handoff, remote Airbnb turnover photos, Airbnb cleaner photo checklist, short-term rental remote host, Airbnb ready status",
+    publishedDate: "2026-06-23",
+    eyebrow: "Remote handoff",
+    headline: "How can remote hosts verify the Airbnb is ready without being on site?",
+    targetQuestion:
+      "Do I just trust cleaner photos, or should I have a stronger system for remote turnover checks?",
+    quickAnswer:
+      "Use a structured handoff: same-order room photos, supply notes, issue notes, ready status, and an escalation rule before the cleaner leaves. Remote hosts should also plan occasional local inspections because photos help visibility, but they do not replace every smell, surface, or maintenance check.",
+    intro:
+      "Remote hosting works only when the handoff is clear. Random photos sent after the cleaner leaves can help, but they may still leave the host guessing: are all beds changed, are supplies stocked, is trash out, are there stains, did anything break, and is the home ready for check-in? A better handoff gives the host enough information to act before the guest arrives.",
+    redditSignal:
+      "Remote hosts ask whether cleaner photos are enough, how to review turnovers before check-in, and whether they need a local person to inspect the property instead of relying on trust alone.",
+    sections: [
+      {
+        heading: "Ask for structured photos, not random photos",
+        body:
+          "The photo order should be the same every time. Bedrooms, bathrooms, kitchen, living room, entry, supplies, trash area, and any problem spots. When the order changes every clean, the host spends more time guessing what is missing. A structured photo set makes review faster and helps the cleaner know what matters.",
+        bullets: [
+          "Room photos should show the reset, not just one attractive angle.",
+          "Supply photos should show low items or par-level concerns.",
+          "Issue photos should show stains, damage, missing items, access problems, or heavy mess.",
+          "Final photos should be sent before the cleaner is fully unavailable when possible.",
+        ],
+      },
+      {
+        heading: "Use a ready-status message",
+        body:
+          "A ready-status message should answer one simple question: can the next guest enter now? It can be short: clean complete, beds reset, towels staged, trash out, supplies checked, no visible issues, or issue noted. If something is unfinished, the message should say what it is and whether the host needs to act.",
+      },
+      {
+        heading: "Set the escalation rule before there is a problem",
+        body:
+          "The cleaner should know what requires immediate contact: guest still inside, wrong code, water leak, strong odor, pest concern, smoke, broken bed, missing linens, no toilet paper, heavy trash, or anything that could affect check-in. Remote hosts lose time when the cleaner waits until the end to mention an urgent issue.",
+      },
+      {
+        heading: "Keep supplies and linen notes separate from room photos",
+        body:
+          "A beautiful bedroom photo does not tell the host whether clean backups are running low. Ask for separate notes on toilet paper, paper towels, trash bags, soap, towels, sheets, stained items, and owner closet levels. This is the part of the handoff that prevents the next turnover from becoming a supply emergency.",
+      },
+      {
+        heading: "Add occasional local checks",
+        body:
+          "Photos are useful, but they do not show every smell, sticky floor, under-bed issue, drain problem, or slow maintenance concern. A remote host should still plan periodic local checks from a co-host, trusted person, property manager, or separate inspection when the listing volume or review risk justifies it.",
+      },
+    ],
+    checklistTitle: "Remote host cleaning handoff",
+    checklist: [
+      "Same-order photos for bedrooms, bathrooms, kitchen, living room, entry, and exterior guest areas when included.",
+      "Ready-status message before guest arrival.",
+      "Low-supply and linen inventory notes.",
+      "Photos or notes for damage, stains, odors, left items, trash, pests, moisture, or access problems.",
+      "Escalation rule for anything that could block check-in.",
+      "Periodic local inspection for issues photos cannot prove.",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleaning for Remote Hosts",
+        path: "/airbnb-cleaning-for-remote-hosts",
+        note: "Use this for the broader remote-host service page.",
+      },
+      {
+        title: "Airbnb Cleaning Photos Guide",
+        path: "/airbnb-cleaning-photos-guide",
+        note: "Use this to decide what photos are actually worth requesting.",
+      },
+      {
+        title: "Airbnb Cleaning Quality Control",
+        path: "/airbnb-cleaning-quality-control",
+        note: "Use this when remote review needs a fair quality-control routine.",
+      },
+      {
+        title: "Airbnb Cleaning Maintenance Notes",
+        path: "/airbnb-cleaning-maintenance-notes",
+        note: "Use this when cleaner notes need to surface visible property issues.",
+      },
+    ],
+    cta:
+      "If you manage from another city, send Shynli the property notes, photo list, supply standard, escalation rules, and next check-in timing. We can help make the handoff clearer without turning the cleaner into a full property manager.",
+  },
+  {
+    path: "/airbnb-cleaner-hiring-questions",
+    title: "Airbnb Cleaner Hiring Questions",
+    metaTitle: "Airbnb Cleaner Hiring Questions | ShynliAirbnbCleaning.com",
+    description:
+      "Questions Airbnb hosts should ask before hiring a cleaner, including turnover experience, timing, laundry, supplies, photos, access, backups, and scope.",
+    keywords:
+      "Airbnb cleaner hiring questions, hire Airbnb cleaner, short-term rental cleaner questions, Airbnb turnover cleaner checklist, Airbnb cleaner interview",
+    publishedDate: "2026-06-23",
+    eyebrow: "Hiring cleaner",
+    headline: "What should hosts ask before hiring an Airbnb cleaner?",
+    targetQuestion:
+      "How do I know whether a cleaner can handle short-term rental turnovers, not just regular house cleaning?",
+    quickAnswer:
+      "Ask about Airbnb turnover experience, same-day timing, laundry, linens, restocking, photo handoff, access problems, extra mess, backup coverage, pricing, and first-clean expectations. Then run a paid trial clean and inspect the first few turnovers before trusting the calendar blindly.",
+    intro:
+      "Hiring an Airbnb cleaner is different from hiring a normal house cleaner. The home has to be ready for a guest, often on a deadline, with beds, bathrooms, kitchen, trash, supplies, linens, access, photos, and issue notes all handled in one window. The right questions help hosts find a cleaner who understands the guest clock.",
+    redditSignal:
+      "Hosts ask where to find trustworthy Airbnb cleaners, how to let go of doing turnovers themselves, and how to manage cleaner quality without learning from the next guest's complaint.",
+    sections: [
+      {
+        heading: "Ask about short-term rental experience",
+        body:
+          "A cleaner can be excellent at regular residential work and still struggle with Airbnb turnovers. Ask whether they have cleaned furnished rentals between guests, handled back-to-back check-ins, changed linens, followed house photos, restocked supplies, and sent ready-status updates. Experience matters because the pace and priorities are different.",
+      },
+      {
+        heading: "Talk through the first turnover before booking",
+        body:
+          "Give the cleaner a real scenario: checkout time, check-in time, bedrooms, bathrooms, beds, laundry setup, parking, access, supplies, and whether photos are needed. Ask what could make the window unrealistic. A good cleaner will ask questions instead of promising every tight turnover without seeing the details.",
+        bullets: [
+          "How much time do you need for this size and scope?",
+          "What happens if the guest leaves late?",
+          "Do you need clean backup linens ready before arrival?",
+          "Can you send photos and issue notes before the guest checks in?",
+        ],
+      },
+      {
+        heading: "Define scope and extra time clearly",
+        body:
+          "Before the first clean, write what is included and what is not. Dishes, laundry, restocking, patio reset, grill checks, inside appliances, heavy trash, pet hair, smoke odor, stained linens, and deep cleaning should not be left vague. Vague scope turns into tension when the cleaner finds a property that needs more than a standard reset.",
+      },
+      {
+        heading: "Ask how they handle access and backup problems",
+        body:
+          "A turnover can fail because of a wrong code, parking issue, guest still inside, locked supply closet, sick cleaner, or too many same-day jobs. Ask how the cleaner confirms the calendar, what happens if they cannot enter, and whether backup coverage exists. This is especially important for remote hosts and busy weekends.",
+      },
+      {
+        heading: "Use a paid trial and inspect early",
+        body:
+          "The first clean should not be a blind commitment. Pay for the work, inspect the result, review photos, and give specific feedback. Check the first few turnovers more closely. If the cleaner improves with feedback, you can build the system. If the same issues repeat, the fit may not be right.",
+      },
+    ],
+    checklistTitle: "Questions to ask before hiring",
+    checklist: [
+      "Have you cleaned Airbnb or short-term rental turnovers before?",
+      "How do you handle same-day checkout and check-in windows?",
+      "Do you change beds, stage towels, check supplies, and handle laundry if included?",
+      "Can you send room photos, low-supply notes, and issue photos?",
+      "What is included in your standard turnover and what costs extra?",
+      "What happens if access fails, a guest leaves late, or the property is unusually messy?",
+      "Can we do a paid trial clean and review the checklist together?",
+    ],
+    internalLinks: [
+      {
+        title: "Airbnb Cleaning Company",
+        path: "/airbnb-cleaning-company",
+        note: "Use this when comparing professional turnover help.",
+      },
+      {
+        title: "How to Prepare for an Airbnb Cleaner",
+        path: "/how-to-prepare-for-airbnb-cleaner",
+        note: "Use this to send the right details before the first visit.",
+      },
+      {
+        title: "Airbnb Turnover Backup Plan",
+        path: "/airbnb-turnover-backup-plan",
+        note: "Use this when one missed clean could become a check-in emergency.",
+      },
+      {
+        title: "Airbnb Cleaner Access Instructions",
+        path: "/airbnb-cleaner-access-instructions",
+        note: "Use this to prevent code, parking, supply, and building access problems.",
+      },
+    ],
+    cta:
+      "If you are comparing cleaners for a local Airbnb, send Shynli the listing ZIP, room count, guest timing, laundry setup, restocking needs, and what you want documented after every clean. We can tell you what scope and timing are realistic before the first turnover depends on it.",
   },
 ]
