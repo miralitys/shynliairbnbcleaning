@@ -757,13 +757,23 @@ function HomeApp() {
                   <a href="#turnover" className="hover:text-[#222222]">Short-term rentals</a>
                   <a href="/service-areas/" className="hover:text-[#222222]">Service areas</a>
                   <a href={quoteUrl} className="hover:text-[#222222]">Contact</a>
+                  <a href="tel:+16308127077" className="hover:text-[#222222]">(630) 812-7077</a>
+                  <a href="mailto:info@shynli.com" className="hover:text-[#222222]">info@shynli.com</a>
+                  <a
+                    href="https://www.google.com/maps/place/?q=place_id:ChIJw5zPGN2Y-GMRTHBrFh1rKYE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#222222]"
+                  >
+                    5.0 from 44 Google reviews
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="mt-12 flex flex-col gap-4 border-t border-[#dddddd] pt-6 text-sm font-bold text-[#717171] md:flex-row md:items-center md:justify-between">
-            <p>© 2026 ShynliAirbnbCleaning.com. A Shynli service concept.</p>
+            <p>© 2026 ShynliAirbnbCleaning.com, part of Shynli Cleaning Service.</p>
             <div className="flex flex-wrap gap-4">
               <a href="/privacy-policy/" className="hover:text-[#222222]">Privacy</a>
               <a href="/terms-of-service/" className="hover:text-[#222222]">Terms</a>
