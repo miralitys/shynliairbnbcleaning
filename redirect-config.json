@@ -7,5 +7,20 @@
     "www.shynliairbnbcleaning.com"
   ],
   "deployment": "Move the web domain bindings to the existing Node redirect service. Keep DNS unchanged.",
-  "rollbackPublishDirectory": "dist"
+  "rollbackPublishDirectory": "dist",
+  "onrenderRedirect": {
+    "version": "2026-10-23.2",
+    "hostname": "shynliairbnbcleaning.onrender.com",
+    "buildCommand": "node scripts/prepare-onrender-redirect.mjs",
+    "publishDirectory": "redirect-origin",
+    "route": {
+      "type": "rewrite",
+      "source": "/*",
+      "destination": "https://shynlicom.onrender.com/__airbnb_redirect/*"
+    },
+    "rollbackCommit": "e9e538ae887602d0e1be5a8ffd882c855a571f35",
+    "rollbackBuildCommand": "npm run build",
+    "rollbackPublishDirectory": "dist",
+    "rollback": "Restore the previous Render routing rules, build command and dist publication path. The original website files are retained unchanged."
+  }
 }

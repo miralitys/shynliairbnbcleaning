@@ -7,8 +7,12 @@ services:
     repo: https://github.com/miralitys/shynliairbnbcleaning.git
     branch: main
     autoDeployTrigger: commit
-    buildCommand: npm run build
-    staticPublishPath: ./dist
+    buildCommand: node scripts/prepare-onrender-redirect.mjs
+    staticPublishPath: ./redirect-origin
+    routes:
+      - type: rewrite
+        source: /*
+        destination: https://shynlicom.onrender.com/__airbnb_redirect/*
     headers:
       - path: /*
         name: X-Robots-Tag

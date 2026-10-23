@@ -15,3 +15,21 @@ No DNS, mail records or settings on shynlicleaningservice.com are changed. Both 
 Rollback: restore the Airbnb custom-domain bindings to the retained Static Site, retain dist as its publish directory, remove its noindex header, and deploy the retained source or commit e55604cf1a2294df14a27a141ed57c677e29853b. Restore any prior Render settings from the before snapshot. The Node handler can remain without affecting shynli.com. The 301 cache lifetime is one hour.
 
 References: [Render custom domains](https://render.com/docs/custom-domains), [Render static redirects and rewrites](https://render.com/docs/redirects-rewrites).
+
+Onrender migration configuration version `2026-10-23.2`
+
+`https://shynliairbnbcleaning.onrender.com` now uses the same mapping as its public domain.
+Render publishes the `redirect-origin` directory with a deployment marker only, built with
+`node scripts/prepare-onrender-redirect.mjs`. Its `/*` rule internally rewrites
+to `https://shynlicom.onrender.com/__airbnb_redirect/*`. The existing Node handler returns a server-side
+301 directly to the final main-site URL. The internal rewrite adds no client
+redirect hop. The sole new diagnostic file `/__shynli_redirect_version.txt`
+answers 200 with noindex; all former website paths use the redirect handler. Query parameters are preserved by Render and the Node handler.
+The mapping code remains version `2026-10-23.1` and is unchanged.
+
+Original `src/`, `public/` and committed `dist/` files are unchanged. Previous
+source revision: `e9e538ae887602d0e1be5a8ffd882c855a571f35`. To restore this Static Site, remove the external
+rewrite, restore its prior route rules, set Publish Directory to `dist`, restore
+Build Command to `npm run build`, and deploy the retained
+revision. Its retained noindex header can be removed when restoring public
+content. DNS, custom-domain bindings and the main website are unchanged.
