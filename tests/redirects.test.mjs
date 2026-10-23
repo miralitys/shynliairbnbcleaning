@@ -36,7 +36,7 @@ test("all 42 city hubs and arbitrary city subpages go directly to city slugs wit
 })
 
 test("booking paths, fallbacks and encoded or malformed paths", () => {
-  for (const source of ["/quote", "/quote/step/2", "/booking", "/BOOKING/CONFIRM", "/book-now", "/request-a-quote", "/api/quote/submit", "/a/booking/b"]) expect(source, "/quote")
+  for (const source of ["/quote", "/quote/step/2", "/booking", "/BOOKING/CONFIRM", "/book-now", "/request-a-quote", "/api/quote/submit", "/a/booking/b", "/get-a-quote", "/booking-confirmation", "/request/quote-form"]) expect(source, "/quote")
   for (const source of ["/nonexistent-xyz", "/assets/app.js", "/service-areas/not-a-city", "/%zz", "//evil.example/", "/quoted-text"]) expect(source, DEFAULT_TARGET)
   expect("/service-areas/BURR%2DRIDGE/", "/burrridge")
   expect("/host-problem-guides/unlisted", "/blog/airbnb")
