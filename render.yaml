@@ -1,3 +1,5 @@
+# Retained Static Site for rollback. Public Airbnb domains are served by the
+# existing Node redirect service srv-d80u9tnlk1mc739ucneg with unchanged DNS.
 services:
   - type: web
     name: shynliairbnbcleaning
@@ -5,9 +7,9 @@ services:
     repo: https://github.com/miralitys/shynliairbnbcleaning.git
     branch: main
     autoDeployTrigger: commit
-    buildCommand: npm ci && npm run build
-    staticPublishPath: ./redirect-public
-    routes:
-      - type: rewrite
-        source: /*
-        destination: https://shynlicom.onrender.com/__airbnb_redirect/*
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Robots-Tag
+        value: noindex

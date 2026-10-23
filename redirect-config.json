@@ -2,12 +2,10 @@
   "version": "2026-10-23.1",
   "sourceService": "srv-d81162bbc2fs738jqpr0",
   "originService": "srv-d80u9tnlk1mc739ucneg",
-  "publishDirectory": "redirect-public",
-  "routes": [
-    {
-      "type": "rewrite",
-      "source": "/*",
-      "destination": "https://shynlicom.onrender.com/__airbnb_redirect/*"
-    }
-  ]
+  "customDomains": [
+    "shynliairbnbcleaning.com",
+    "www.shynliairbnbcleaning.com"
+  ],
+  "deployment": "Move the web domain bindings to the existing Node redirect service. Keep DNS unchanged.",
+  "rollbackPublishDirectory": "dist"
 }
